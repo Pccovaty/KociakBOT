@@ -1,0 +1,22 @@
+{
+  "name": "KociakBOT",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kociak",
+  "license": "ISC",
+  "description": "Testowy Bot Dicord",
+  "dependencies": {
+    "cat.js": "0.0.3",
+    "discord.js": "^11.3.2",
+    "fortnite": "^4.1.1",
+    "fs": "0.0.1-security",
+    "moment": "^2.22.2",
+    "nodemon": "^1.18.1",
+    "snekfetch": "^4.0.4",
+    "superagent": "^3.8.3",
+    "weather-js": "^2.0.0"
+  }
+}
