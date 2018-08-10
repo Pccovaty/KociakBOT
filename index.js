@@ -81,7 +81,7 @@ bot.on("guildMemberRemove", async member => {
 bot.on("ready", async() => {
 
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
-  bot.user.setActivity("kb! - prefix", {type: "WATCHING"});
+  bot.user.setActivity("<pomoc | v2.2.1", {type: "WATCHING"});
 
 });
 
