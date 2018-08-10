@@ -18,7 +18,7 @@ module.exports.run = async(bot, message, args) => {
     .addField("Promocja! (promocja trwa do 01.08.2018 12:00)", "SVIP + Własny kolor na zawsze 20000 💸 (monet)", true)
     .addField("Własna kategoria i 3 kanały", "15000 💸 (monet)")
     .addField("Chciałbyś coś kupić ze sklepu?", "oznacz ``@Support Team!``")
-    .setFooter("Aby sprawdzić ile się ma 💸 (monet serwerowych) to wystarczy wpisać komende --monety");
+    .setFooter("Aby sprawdzić ile się ma 💸 (monet serwerowych) to wystarczy wpisać komende <monety");
 
   message.channel.send(skEmbed);
   message.react("452183703267835910");
