@@ -5,7 +5,7 @@ module.exports.run = async(bot, message, args) => {
 
   if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Nie masz permisji do ``mute``");
 
-  const toMute = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
+  const toMute = await message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
   if (!toMute) return message.channel.send("Nie podałeś/aś nazwy użytkownika ani identyfikatora");
 
   if (toMute.id === message.author.id) return message.channel.send("Nie możesz siebie wyciszyć.");
