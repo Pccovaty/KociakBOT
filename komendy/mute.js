@@ -20,7 +20,6 @@ module.exports.run = async(bot, message, args) => {
     time: Date.now() + parseInt(args[1]) * 1000
 
   };
-  console.log(role);
   await toMute.addRole(role);
 
   fs.writeFile("./mutes.json", JSON.stringify(bot.mutes, null, 4), err => {
