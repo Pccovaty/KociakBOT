@@ -1,0 +1,20 @@
+//const Discord = require("discord.js");
+
+//module.exports.run = async (bot, message, args) => {
+
+//let coinembed = new Discord.RichEmbed()
+//.setAuthor(message.author.username)
+//.setColor("#0000FF")
+//.addField("💸", `**${coinAmt}** monet dodane do twojego banku!`)
+
+//message.channel.send(coinembed).then(msg => {msg.delete(1)});
+//}
+
+//to było na index.js 64 linijka
+
+
+////}
+
+//module.exports.help = {
+//  name: "pobocznekomendyrazdwatrzy"
+}

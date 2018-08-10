@@ -1,0 +1,19 @@
+const Discord = require("discord.js");
+
+module.exports.run = async(bot, message, args) => {
+  const bicon = bot.user.displayAvatarURL;
+  const botembed = new Discord.RichEmbed()
+    .setDescription("Developerzy bota KociakBOT")
+    .setColor("#9b0090")
+    .setThumbnail(bicon)
+    .addField("Global developerzy", "``๖̶̶̶ζ͜͡Kociak 💞#6365, ๖̶̶̶ۣۣۜۜ͜ζ͜͡Słodziak 💞#9231``")
+    .addField("developerzy", "``brak``")
+    .addField("Pomoc przy bocie", "``fratik#0001``");
+
+  message.channel.send(botembed);
+  message.react("452183703267835910");
+};
+
+module.exports.help = {
+  name: "developerzy"
+};
