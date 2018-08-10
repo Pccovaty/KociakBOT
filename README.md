@@ -1,0 +1,2 @@
+# KociakBOT
+prywatny bocik
