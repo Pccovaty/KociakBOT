@@ -110,7 +110,7 @@ bot.on("message", async message => {
     };
   }
   if (!messages[message.author.id]) {
-    messagess[message.author.id] = {
+    messages[message.author.id] = {
       messages: 0
     };
   }
