@@ -1,6 +1,7 @@
 
 const Discord = require("discord.js");
 const moment = require("moment");
+const messages = require("../messages.json");
 
 module.exports.run = async(bot, message, args) => {
   let user;
@@ -9,6 +10,12 @@ module.exports.run = async(bot, message, args) => {
 
   } else {
     user = message.author;
+  }
+  //Messagese
+  if (!messages[message.author.id]) {
+    messages[message.author.id] = {
+      messages: 0
+    };
   }
 
   const member = message.guild.member(user);
@@ -21,7 +28,7 @@ module.exports.run = async(bot, message, args) => {
     .addField("Dołączył na discorda", `${moment(user.createdAt).format('DD.MM.YYYY HH:mm:ss')}`, true)
     .addField("Dołączył na serwer", `${moment(member.joinedAt).format("DD.MM.YYYY HH:mm:ss")}`, true)
     .addField("Ostatnia wiadomość", user.lastMessage || "Brak ostatniej wiadomości", true)
-    .addField("Łącznie napisanych wiadomości", user.message, true)
+    .addField("Łącznie napisanych wiadomości", messages[message.author.id].messages, true)
     .addField("Status", `${user.presence.status}`, true)
     .addField("W grze", `${user.presence.game ? user.presence.game.name : "Brak"}`, true)
     .addField("Role", member.roles.map(roles => `${roles.name}`).join(", "), true);
