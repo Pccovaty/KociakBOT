@@ -124,11 +124,13 @@ bot.on("message", async message => {
   const prefix = prefixes[message.guild.id].prefixes;
 
   const messageArray = message.content.split(" ");
-  const cmd = messageArray[0];
-  const args = messageArray.slice(1);
-
-  const commandfile = bot.commands.get(cmd.slice(prefix.length));
-  if (commandfile) commandfile.run(bot, message, args);
+ const cmd = messageArray[0];
+const args = messageArray.slice(1);
+if(cmd.substring(0, prefix.length) != prefix){
+    return;
+}
+const commandfile = bot.commands.get(cmd.slice(prefix.length));
+if (commandfile) commandfile.run(bot, message, args);
 
 });
 
