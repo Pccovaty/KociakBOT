@@ -4,7 +4,9 @@ const fs = require("fs");
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
 bot.mutes = [];
+
 const coins = require("./coins.json");
+const messages = require("./messages.json");
 
 fs.readdir("./komendy/", (err, files) => {
 
@@ -107,6 +109,11 @@ bot.on("message", async message => {
       coins: 0
     };
   }
+  if (!messages[message.author.id]) {
+    messagess[message.author.id] = {
+      messages: 0
+    };
+  }
 
   const coinAmt = Math.floor(Math.random(5)) + 5;
   const baseAmt = Math.floor(Math.random(5)) + 5;
@@ -120,6 +127,15 @@ bot.on("message", async message => {
       if (err) console.log(err);
     });
 
+  }
+  //messages
+  {
+    messages[message.author.id] = {
+      messages: messages[message.author.id].coins + 1
+    };
+    fs.writeFile("./messages.json", JSON.stringify(messages), (err) => {
+      if (err) console.log(err);
+    });
   }
   const prefix = prefixes[message.guild.id].prefixes;
 
