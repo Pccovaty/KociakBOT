@@ -131,7 +131,7 @@ bot.on("message", async message => {
   //messages
   {
     messages[message.author.id] = {
-      messages: messages[message.author.id].coins + 1
+      messages: messages[message.author.id].messages + 1
     };
     fs.writeFile("./messages.json", JSON.stringify(messages), (err) => {
       if (err) console.log(err);
