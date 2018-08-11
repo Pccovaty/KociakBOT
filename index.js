@@ -5,8 +5,8 @@ const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
 bot.mutes = [];
 
-const coins = require("./coins.json");
-const messages = require("./messages.json");
+var coins = require("./coins.json");
+var messages = require("./messages.json");
 
 fs.readdir("./komendy/", (err, files) => {
 
