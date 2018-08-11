@@ -5,8 +5,8 @@ const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
 bot.mutes = [];
 
-const coins = require("./coins.json");
-const messages = require("./messages.json");
+var coins = require("./coins.json");
+var messages = require("./messages.json");
 
 fs.readdir("./komendy/", (err, files) => {
 
@@ -131,7 +131,7 @@ bot.on("message", async message => {
   //messages
   {
     messages[message.author.id] = {
-      messages: messages[message.author.id].coins + 1
+      messages: messages[message.author.id].messages + 1
     };
     fs.writeFile("./messages.json", JSON.stringify(messages), (err) => {
       if (err) console.log(err);
