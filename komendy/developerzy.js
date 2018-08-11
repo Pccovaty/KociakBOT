@@ -7,8 +7,8 @@ module.exports.run = async(bot, message, args) => {
     .setColor("#9b0090")
     .setThumbnail(bicon)
     .addField("Global developerzy", "``๖̶̶̶ζ͜͡Kociak 💞#6365, ๖̶̶̶ۣۣۜۜ͜ζ͜͡Słodziak 💞#9231``")
-    .addField("developerzy", "``brak``")
-    .addField("Pomoc przy bocie", "``fratik#0001``");
+    .addField("developerzy", "``xCookieTM#9613``,")
+    .addField("Pomoc przy bocie", "``fratik#0001``, ``Seba#0335`` ");
 
   message.channel.send(botembed);
   message.react("452183703267835910");
