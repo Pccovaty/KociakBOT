@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const fs = module.require("fs");
 
 module.exports.run = async(bot, message, args) => {
-
+  message.react('👌')
   if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Nie masz permisji do ``mute``");
 
   const toMute = await message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
@@ -26,9 +26,8 @@ module.exports.run = async(bot, message, args) => {
     if (err) throw err;
 
   });
-  message.channel.send(`Wyciszyłem ${toMute}`);
+  message.channel.send(`Pomyślnie wyciszono użytownika ${toMute} na X czasu`);
   return;
-  message.react('👌');
 };
 
 module.exports.help = {
