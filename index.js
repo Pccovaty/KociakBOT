@@ -67,7 +67,7 @@ bot.on("guildMemberAdd", async member => {
   const welcomechannel = member.guild.channels.find("name", "👋witaj-zegnaj👋");
   const welcomeEmebed = new Discord.RichEmbed()
   .setColor("#9b0090")
-  .setThumbnail(`message.author.avatarURL`)
+  .setThumbnail(`member.author.avatarURL`)
   .addField(`Witaj **${member.user.username}** na Our Community`, `**Na samym początku, zapoznaj się z regulaminem który jest na kanale <#435827081654304789> \n Jeżeli już przeczytałeś(aś) regulamin to możesz przejść do kanału <#461987816499445771>, gdzie możesz dodać sobie role typu 4FUN \n Mamy kanał do przedstawienia się, fajnie by było jakbyś wpadł(a) <#455059398033670144> \n Już wszystko zobaczyłeś(aś)? Przejdź na kanał <#435686053408538626> \n \n aktualnie jest nas: ${member.guild.memberCount}**`);
  welcomechannel.send(welcomeEmebed);
 });
@@ -78,7 +78,7 @@ bot.on("guildMemberRemove", async member => {
   const welcomechannel = member.guild.channels.find("name", "👋witaj-zegnaj👋");
   const welcomeEmbed = new Discord.RichEmbed()
     .setColor("#9b0090")
-    .setThumbnail(`message.author.avatarURL`)
+    .setThumbnail(`member.author.avatarURL`)
     .addField(`O nie! użytkownik ${member.user.username} wyszedł z serwera!`, "Nie wytrzymał presji i uciekł do ciepłych krajów")
     .addField(`Aktualnie zostało nas ${member.guild.memberCount}`, "Mamy nadzieje że wrócisz!")
   welcomechannel.send(welcomeEmbed);
