@@ -123,7 +123,7 @@ bot.on("message", async message => {
     coins[message.author.id] = {
       coins: coins[message.author.id].coins + coinAmt
     };
-    fs.writeFile("./coins.json", JSON.stringify(coins), (err) => {
+    fs.writeFile("coins.json", JSON.stringify(coins), (err) => {
       if (err) console.log(err);
     });
 
@@ -133,7 +133,7 @@ bot.on("message", async message => {
     messages[message.author.id] = {
       messages: messages[message.author.id].messages + 1
     };
-    fs.writeFile("./messages.json", JSON.stringify(messages), (err) => {
+    fs.writeFile("messages.json", JSON.stringify(messages), (err) => {
       if (err) console.log(err);
     });
   }
