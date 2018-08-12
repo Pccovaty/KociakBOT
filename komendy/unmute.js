@@ -9,7 +9,7 @@ module.exports.run = async(bot, message, args) => {
   if (!role || !toMute.roles.has(role.id)) return message.channel.send("Ten użytkownik jest już odciszony!");
 
   await toMute.removeRole(role);
-  message.channel.send(`Odciszyłem ${toMute}`);
+  message.channel.send(`Pomyślnie odciszono użytkownika ${toMute}`);
 
   return;
   message.react("452183703267835910");
