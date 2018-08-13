@@ -2,11 +2,10 @@ const Discord = require("discord.js");
 
 module.exports.run = async(bot, message, args) => {
     
-  let osoba = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+  let osoba = message.mentions.users.first();
   let embed = new Discord.RichEmbed()
-  .setDescription("Wojna na poduszki")
   .setColor("#ffffff")
-  .addField(`**${message.author.username}** rzucił(a) poduszką w ${osoba}`, "ciekawie o co poszło :)")
+  .addField(`**${message.author.username}** rzucił(a) poduszką w ${osoba.username}`)
   .setImage("https://nyanyan.it/upload/202203_85dph9ny12kgso64ztfixaqj0luwbe73vrcm.gif")
   message.channel.send(embed);
 }
