@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const errors = require("../utils/errors.js");
 
 module.exports.run = async (bot, message, args) => {
-
+  message.react("452183703267835910");
   //!addrole @andrew Dog Person
   if (!message.member.hasPermission("MANAGE_ROLES")) return errors.noPerms(message, "MANAGE_ROLES");
   if (args[0] == "help") {
