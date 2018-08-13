@@ -16,7 +16,7 @@ module.exports.run = async (bot, message, args) => {
   let gRole = message.guild.roles.find(`name`, role);
   if (!gRole) return message.reply("Nie znalazlem roli");
 
-  if (rMember.roles.has(gRole.id)) return message.reply("Nie ma takiej roli...");
+  if (rMember.roles.has(gRole.id)) return message.reply("Ten użytkownik ma już role **${gRole.name}**..");
   await (rMember.addRole(gRole.id));
 
   try {
