@@ -5,7 +5,7 @@ module.exports.run = async(bot, message, args) => {
   const target = message.mentions.users.first() || message.author;
 
   const embed = new Discord.RichEmbed()
-    .setDescription(`**${target.username}**`, "twój avatar")
+    .setDescription(`**${target.username}** avatar`)
     .setImage(target.displayAvatarURL)
     .setColor("#9b0090");
 
