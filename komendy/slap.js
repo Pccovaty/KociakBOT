@@ -3,9 +3,9 @@ const Discord = require("discord.js");
     
   let osoba = message.mentions.users.first();
   let embed = new Discord.RichEmbed()
-  .setAuthor(`${message.author.username}#${message.author.discriminator} uderzył ${osoba.username}#${osoba.discriminator}😢`)
+  .setAuthor(`${message.author.username}#${message.author.discriminator} uderzył ${osoba.username}#${osoba.discriminator} 😢`)
    .setColor("#ffffff")
-  .setImage("https://media.giphy.com/media/LB1kIoSRFTC2Q/giphy.gif")
+  .setImage("https://media.giphy.com/media/jLeyZWgtwgr2U/giphy.gif")
   message.channel.send(embed);
 }
  module.exports.help = {
