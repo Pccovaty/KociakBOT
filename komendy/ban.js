@@ -15,7 +15,7 @@ module.exports.run = async(bot, message, args) => {
     .addField("Zbanowany przez", `<@${message.author.id}>`)
     .addField("ID Osoby która zbanowała", `${message.author.id}`)
     .addField("Zbanowany na kanale", message.channel)
-    .addField("Godzina", moment(message.createdAt).format("DD.MM.YYYY, H:mm:ss"))
+    .addField("Data i godzina", moment(message.createdAt).format("DD.MM.YYYY, H:mm:ss"))
     .addField("Powód", bReason);
 
   const incidentchannel = message.guild.channels.find("name", "❕bany❕");
@@ -23,7 +23,7 @@ module.exports.run = async(bot, message, args) => {
   message.channel.send(`Pomyślnie zbanowano użytkownika: ${bUser}, Powód: **${bReason}**, więcej informacji na <#465570658408202250>`);
 
   const embeeed = new Discord.RichEmbed()
-    .setDescription("O nie! Zostałeś zbanowany na serwerze **Our Community**!")
+    .setDescription("O nie! Zostałeś zbanowany na serwerze **♕ Our Community ♕**!")
     .setColor("#ff0000")
     .addField("Zostałeś zbanowany przez", `<@${message.author.id}>`)
     .addField("Powód", bReason)
