@@ -4,7 +4,7 @@ const moment = require("moment");
 module.exports.run = async(bot, message, args) => {
   const bicon = bot.user.displayAvatarURL;
   const botembed = new Discord.RichEmbed()
-    .setDescription("Informacje o Bocie")
+    .setDescription("Informacje dotyczące bota")
     .setColor("#9b0090")
     .setThumbnail(bicon)
     .addField("Nazwa Bota", bot.user.username)
