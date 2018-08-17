@@ -11,7 +11,7 @@ module.exports.run = async(bot, message, args) => {
     .addField("Komendy informacyjne (7):", "**-profil <@mention>** pokazuje profil użytkownika \n **-ping** - pokazuje aktualny ping \n **-avatar <@mention>** - pokazuje użytkownika avatar \n **-botinfo** - pokazuje dane bota \n **-serverinfo** - pokazuje dane serwera \n **-monety** pokazuje stan twoich monet \n **-developerzy** - pokazuje developerów bota KociakBOT")
     .addField("Komendy inne (6):", "**-say** - wysyła to samo \n **-prefix** - pokazuje aktualny prefix \n **-8ball** - zapytaj magiczną kulkę o wszystko! (w budowie!) \n **-dog** - wysyła losowe zdjęcie psa \n **-cat** - wysyła losowe zdjęcie kota \n **-rzuc <mention>** - rzuca w danego uzytkownika poduszką")
     .addField("Komendy gildijne (2):", "**-aktualnegildie** - pokazuje aktualne gildie na serwerze \n **-gildiaJedzenie** pokazuje opis gildii jedzenie")
-    .setFooter("Prefix na wszystkie powyzsze komendy to kb!");
+    .setFooter("Prefix na wszystkie powyzsze komendy to oc!");
     message.react("452183703267835910");
   message.author.send(pomocembed);
   message.channel.send("📔 | Lista komend została wysłana pomyślnie na prywatnej wiadomości")
