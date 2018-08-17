@@ -4,7 +4,7 @@ module.exports.run = async(bot, message, args) => {
   
   const bicon = bot.user.displayAvatarURL;
   const pomocembed = new Discord.RichEmbed()
-    .setDescription("Lista komend w bocie KociakBOT")
+    .setDescription("Lista komend w bocie ♕ Our Community ♕")
     .setColor("#9b0090")
     .setThumbnail(bicon)
     .addField("Komendy administracyjne (10):", "**-mute <@menton>** - wycisza użytkownika \n **-unmute <@mention>** - odcisza użytkownika \n **-kick <@mention>** - wyrzuca użytkownika z serwera \n **-ban <@mention>** - wyrzuca na zawsze użytkownika z serwera \n **-clear <ilość wiadomości>** - usuwa X wiadomomości \n **-warn <@mention>** - ostrzega użytkownika \n **-warnlevel <@mention>** - pokazuje ile dany użytkownik ma ostrzeżeń \n **-dodaj <@mention> <ile monet>** - dodaje X monet do danego użytkownika \n **-addrole <Mention> <rola>** - Dodaje danemu użytkownikowi daną rangę \n **-removerole <Mention> <rola>** - usuwa danemu użytkownikowi daną rangę")
