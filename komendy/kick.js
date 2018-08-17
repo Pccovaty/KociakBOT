@@ -14,7 +14,7 @@ module.exports.run = async(bot, message, args) => {
     .addField("Wyrzucony Użytkownik", `${kUser}`)
     .addField("ID wyrzuconego użytkownika", `${kUser.id}`)
     .addField("Wyrzucony przez", `<@${message.author.id}>`)
-    .addField("O godzinie", moment(message.createdAt).format("YYYY.MM.DD, HH:mm:ss"))
+    .addField("Data i godzina", moment(message.createdAt).format("YYYY.MM.DD, HH:mm:ss"))
     .addField("Powód", kReason);
 
   const kickChannel = message.guild.channels.find("name", "❕kicki❕");
