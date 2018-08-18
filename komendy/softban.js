@@ -3,7 +3,7 @@ const fs = module.require("fs");
 
 module.exports.run = async(bot, message, args) => {
   message.react('👌')
-  if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Nie masz permisji do ``mute``");
+  if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Nie masz permisji do komendy ``mute``");
 
   const toMute = await message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
   if (!toMute) return message.channel.send("Nie podałeś/aś nazwy użytkownika ani identyfikatora");
