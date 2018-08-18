@@ -55,19 +55,18 @@ module.exports.run = async (bot, message, args) => {
   .setColor("#dddbdb")
   .addField("Wyciszony użytkownik", tomute)
   .addField("Wyciszony na kanale", message.channel)
-  .addField("Data i godzina wyciszenia", moment(message.createdAt).format("DD.MM.YYYY HH:mm:ss))
   .addField("Na czas", mutetime)
   .addField("Powód", reason);
 
-  let incidentschannel = message.guild.channels.find(`name`, "muty");
-  if(!incidentschannel) return message.reply("Nie znalazłem kanału muty");
+  let incidentschannel = message.guild.channels.find(`name`, "❕wyciszenia❕");
+  if(!incidentschannel) return message.reply("Nie znalazłem kanału ❕wyciszenia❕");
   incidentschannel.send(muteembed);
 
   await(tomute.addRole(muterole.id));
 let muteset = new Discord.RichEmbed()
   .setTitle("Softban")
   .setColor("#56f546")
-  .setDescription(`Twoje wyciszenie się skończyło.`)
+  .setDescription(`\n Twoje wyciszenie się skończyło. \n`)
   setTimeout(function(){
     
     tomute.removeRole(muterole.id);
