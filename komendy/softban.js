@@ -41,7 +41,7 @@ module.exports.run = async (bot, message, args) => {
   message.delete().catch(O_o=>{});
 
   try{
-    await tomute.send(`Our Community`)
+    await tomute.send(mutembed)
   }catch(e){
     message.channel.send(`Użytkownik został wyciszony ... ale jego DM jest zablokowane. Został wyciszony na ${mutetime}`)
   }
@@ -73,6 +73,8 @@ module.exports.run = async (bot, message, args) => {
   .setColor("#dddbdb")
   .addField(`użytkownik ${tomute} został wyciszony przez ${message.author.tag} na kanale ${message.channel} na czas ${mutetime} \n powód: ${reason}`)
 }
+
+
 
 module.exports.help = {
   name: "softban"
