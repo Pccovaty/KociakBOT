@@ -39,6 +39,10 @@ module.exports.run = async (bot, message, args) => {
   if(!mutetime) return message.reply("Nie określiłeś czasu!");
 
   message.delete().catch(O_o=>{});
+ let mutembed = new Discord.RichEmbed()
+  .setDescription("Softban")
+  .setColor("#dddbdb")
+  .addField(`użytkownik ${tomute} został wyciszony przez ${message.author.tag} na kanale ${message.channel} na czas ${mutetime} \n powód: ${reason}`)
 
   try{
     await tomute.send(mutembed)
@@ -68,12 +72,8 @@ module.exports.run = async (bot, message, args) => {
 
 
 //end of module
-  let mutembed = new Discord.RichEmbed()
-  .setDescription("Softban")
-  .setColor("#dddbdb")
-  .addField(`użytkownik ${tomute} został wyciszony przez ${message.author.tag} na kanale ${message.channel} na czas ${mutetime} \n powód: ${reason}`)
-}
 
+}
 
 
 module.exports.help = {
