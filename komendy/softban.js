@@ -55,7 +55,7 @@ module.exports.run = async (bot, message, args) => {
   .setColor("#dddbdb")
   .addField("Wyciszony użytkownik", tomute)
   .addField("Wyciszony na kanale", message.channel)
-  .addField("Data i godzina wyciszenia", message.createdAt)
+  .addField("Data i godzina wyciszenia",` ${moment(message.createdAt).format("DD.MM.YYYY HH:mm:ss)}`)
   .addField("Na czas", mutetime)
   .addField("Powód", reason);
 
