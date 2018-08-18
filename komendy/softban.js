@@ -42,7 +42,7 @@ module.exports.run = async (bot, message, args) => {
  let mutembed = new Discord.RichEmbed()
   .setTitle("Softban")
   .setColor("#dddbdb")
-  .setDescription(`użytkownik ${tomute} został wyciszony przez ${message.author.tag} \n na kanale ${message.channel} na czas ${mutetime} \n powód: ${reason}`)
+  .setDescription(`użytkownik ${tomute} został wyciszony przez **${message.author.tag}** \n na kanale ${message.channel} na czas **${mutetime}** \n \n **powód:** ${reason}`)
   .setFooter("♕ Our Community ♕ | Zapraszamy!")
   try{
     await tomute.send(mutembed)
@@ -67,6 +67,7 @@ let muteset = new Discord.RichEmbed()
   .setTitle("Softban")
   .setColor("#56f546")
   .setDescription(`\n Twoje wyciszenie się skończyło. \n`)
+  .setFooter("♕ Our Community ♕ | Zapraszamy spowrotem!")
   setTimeout(function(){
     
     tomute.removeRole(muterole.id);
