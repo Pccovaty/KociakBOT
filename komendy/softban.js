@@ -41,13 +41,13 @@ module.exports.run = async (bot, message, args) => {
   message.delete().catch(O_o=>{});
 
   try{
-    await tomute.send(`Cześć! Zostałeś wyciszony na ${mutetime}. Przepraszam!`)
+    await tomute.send(`Our Community`)
   }catch(e){
     message.channel.send(`Użytkownik został wyciszony ... ale jego DM jest zablokowane. Został wyciszony na ${mutetime}`)
   }
 
   let muteembed = new Discord.RichEmbed()
-  .setDescription(`Mute executed by ${message.author}`)
+  .setDescription(`Kolejny mute, tym razem przez ${message.author}`)
   .setColor("#dddbdb")
   .addField("Wyciszony użytkownik", tomute)
   .addField("Wyciszony na kanale", message.channel)
@@ -68,6 +68,10 @@ module.exports.run = async (bot, message, args) => {
 
 
 //end of module
+  let mutembed = new Discord.RichEmbed()
+  .setDescription("Softban")
+  .setColor("#dddbdb")
+  .addField(`użytkownik ${tomute} został wyciszony przez ${message.author.tag} na kanale ${message.channel} na czas ${mutetime} \n powód: ${reason}`)
 }
 
 module.exports.help = {
