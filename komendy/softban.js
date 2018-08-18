@@ -42,7 +42,7 @@ module.exports.run = async (bot, message, args) => {
  let mutembed = new Discord.RichEmbed()
   .setDescription("Softban")
   .setColor("#dddbdb")
-  .addField(`użytkownik ${tomute} został wyciszony przez ${message.author.tag} na kanale ${message.channel} na czas ${mutetime} \n powód: ${reason}`)
+  .setAuthor(`użytkownik ${tomute} został wyciszony przez ${message.author.tag} na kanale ${message.channel} na czas ${mutetime} \n powód: ${reason}`)
 
   try{
     await tomute.send(mutembed)
