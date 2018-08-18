@@ -43,7 +43,7 @@ module.exports.run = async (bot, message, args) => {
   .setTitle("Softban")
   .setColor("#dddbdb")
   .setDescription(`użytkownik ${tomute} został wyciszony przez ${message.author.tag} \n na kanale ${message.channel} na czas ${mutetime} \n powód: ${reason}`)
-  .setFooter(`moment(message.createdAT).calendar();` | message.avatarURL)
+  .setFooter("♕ Our Community ♕ | Zapraszamy!")
   try{
     await tomute.send(mutembed)
   }catch(e){
@@ -55,7 +55,7 @@ module.exports.run = async (bot, message, args) => {
   .setColor("#dddbdb")
   .addField("Wyciszony użytkownik", tomute)
   .addField("Wyciszony na kanale", message.channel)
-  .addField("Data i godzina wyciszenia", `moment(message.createdAt).format("DD.MM.YYYY HH:mm:ss)`)
+  .addField("Data i godzina wyciszenia", moment(message.createdAt).format("DD.MM.YYYY HH:mm:ss))
   .addField("Na czas", mutetime)
   .addField("Powód", reason);
 
