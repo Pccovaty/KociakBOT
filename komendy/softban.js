@@ -40,10 +40,10 @@ module.exports.run = async (bot, message, args) => {
 
   message.delete().catch(O_o=>{});
  let mutembed = new Discord.RichEmbed()
-  .setDescription("Softban")
+  .setauthor("Softban")
   .setColor("#dddbdb")
-  .setAuthor(`użytkownik ${tomute} został wyciszony przez ${message.author.tag} na kanale ${message.channel} na czas ${mutetime} \n powód: ${reason}`)
-
+  .setDescription(`użytkownik ${tomute} został wyciszony przez ${message.author.tag} na kanale ${message.channel} na czas ${mutetime} \n powód: ${reason}`)
+  .setFooter(`moment(message.createdAT).calendar();` | message.avatarURL)
   try{
     await tomute.send(mutembed)
   }catch(e){
