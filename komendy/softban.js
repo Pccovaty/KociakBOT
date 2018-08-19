@@ -10,8 +10,8 @@ module.exports.run = async (bot, message, args) => {
     return;
   }
   let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-  if(!tomute) return message.reply("Couldn't find user.");
-  if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply("Nie można go wyciszyć!");
+  if(!tomute) return message.reply("Nie znalazłem użytkownika");
+  if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply("Nie można wyciszyć tego użytkownika!");
   let reason = args.slice(2).join(" ");
   if(!reason) return message.reply("Podaj przyczynę.");
 
