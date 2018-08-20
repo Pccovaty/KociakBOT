@@ -86,15 +86,14 @@ bot.on("guildMemberRemove", async member => {
   welcomechannel.send(welcomeEmbed);
 
 });
-const data = setInterval(function () {
+
+bot.on("ready", async() => {
+  const data = setInterval(function () {
 
        let data = moment().tz("Europe/Warsaw").format("DD.MM.YYYY");
        bot.channels.get('475314963389612032').setName("◈ Dzisiaj jest: " + data);
 
     }, 1 * 1000);
-
-
-bot.on("ready", async() => {
 
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
   bot.user.setActivity("oc!pomoc | v3.2.2", {type: "WATCHING"});
