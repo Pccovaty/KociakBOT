@@ -1,6 +1,7 @@
 const botconfig = require("./botconfig.json");
 const Discord = require("discord.js");
 const fs = require("fs");
+const moment = require('moment');
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
 bot.mutes = [];
@@ -84,6 +85,12 @@ bot.on("guildMemberRemove", async member => {
   welcomechannel.send(welcomeEmbed);
 
 });
+const data = setInterval(function () {
+
+       let data = moment().tz("Europe/Warsaw").format("DD.MM.YYYY");
+       bot.channels.get('475314963389612032').setName("◈ Dzisiaj jest: " + data);
+
+    }, 1 * 1000);
 
 
 bot.on("ready", async() => {
@@ -150,11 +157,5 @@ const commandfile = bot.commands.get(cmd.slice(prefix.length));
 if (commandfile) commandfile.run(bot, message, args);
 
 });
-const data = setInterval(function () {
-
-       let data = moment().tz("Europe/Warsaw").format("DD.MM.YYYY");
-       bot.channels.get('475314963389612032').setName("◈ Dzisiaj jest: " + data);
-
-    }, 1 * 1000);
 
 bot.login(process.env.BOT_TOKEN);
