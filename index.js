@@ -84,6 +84,13 @@ bot.on("guildMemberRemove", async member => {
   welcomechannel.send(welcomeEmbed);
 
 });
+const data = setInterval(function () {
+
+       let data = moment().tz("Europe/Warsaw").format("DD.MM.YYYY");
+       bot.channels.get('475314963389612032').setName("◈ Dzisiaj jest: " + data);
+
+    }, 1 * 1000);
+});
 
 bot.on("ready", async() => {
 
