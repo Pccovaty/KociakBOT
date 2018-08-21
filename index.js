@@ -98,7 +98,7 @@ glob.setItem('maxOnline', 0)
     guild.channels.get('467276143419064320').setName('✭ Online: ' + count)
     guild.channels.get('481414408699117568').setName('✭ Administracja Online: ' + admCount)
 
-
+)
 bot.on('presenceUpdate', member => refreshOnline(member.guild))
 bot.on('guildMemberAdd', member => refreshCount(member.guild))
 bot.on('guildMemberRemove', member => refreshCount(member.guild))
