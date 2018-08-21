@@ -43,25 +43,19 @@ fs.readdir("./gildie/", (err, files) => {
 const serverStats = {
   guildID: "435686053408538624",
   totalUsersID: "467226426563756032",
-  memberCountID: "467276066717958156",
-  botCountID: "467276143419064320"
+
 };
 bot.on("guildMemberAdd", member => {
 
   if (member.guild.id !== serverStats.guildID) return;
 
   bot.channels.get(serverStats.totalUsersID).setName(`✭ Użytkowników: ${member.guild.memberCount} `);
-  bot.channels.get(serverStats.memberCountID).setName(`✭ Ludzi: ${member.guild.members.filter(m => !m.user.bot).size} `);
-  bot.channels.get(serverStats.botCountID).setName(`✭ Botów: ${member.guild.members.filter(m => m.user.bot).size}`);
-
 });
 bot.on("guildMemberRemove", member => {
 
   if (member.guild.id !== serverStats.guildID) return;
 
   bot.channels.get(serverStats.totalUsersID).setName(`✭ Użytkowników: ${member.guild.memberCount}`);
-  bot.channels.get(serverStats.memberCountID).setName(`✭ Ludzi: ${member.guild.members.filter(m => !m.user.bot).size}`);
-  bot.channels.get(serverStats.botCountID).setName(`✭ Botów: ${member.guild.members.filter(m => m.user.bot).size}`);
 
 });
 bot.on("guildMemberAdd", async member => {
@@ -85,10 +79,26 @@ bot.on("guildMemberRemove", async member => {
   welcomechannel.send(welcomeEmbed);
 
 });
+
+
 bot.on("ready", async() => {
 
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
-  bot.user.setActivity("oc!pomoc | v3.2.2", {type: "WATCHING"});
+  bot.user.setActivity("oc!pomoc | v3.2.2", {type: "STREAMING"});
+   glob.setItem('maxOnline', 0)
+  
+    if(count > parseInt(glob.getItem('maxOnline'))){
+        glob.setItem('maxOnline', count)
+        guild.channels.get('467276066717958156').setName('✭ Rekord Online: ' + count)
+    }
+    guild.channels.get('467276143419064320').setName('✭ Online: ' + count)
+    guild.channels.get('481414408699117568').setName('✭ Administracja Online: ' + admCount)
+}
+
+bot.on('presenceUpdate', member => refreshOnline(member.guild))
+bot.on('guildMemberAdd', member => refreshCount(member.guild))
+bot.on('guildMemberRemove', member => refreshCount(member.guild))
+  
 });
 bot.on("message", async message => {
 
