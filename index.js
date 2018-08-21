@@ -73,7 +73,7 @@ bot.on("guildMemberAdd", member => {
   bot.channels.get(serverStats.memberCountID).setName(`✭ Ludzi: ${member.guild.members.filter(m => !m.user.bot).size}`);
   bot.channels.get(serverStats.onlinecountID).setName(`👋 ${member.user.username}`);
   bot.channels.get(serverStats.botCountID).setName(`✭ Botów: ${member.guild.members.filter(m => m.user.bot).size}`);
-  bot.channels.get(serverStats.onlineosobyID).setName(`✭ Online: ${member.user.presence.status.size}`);
+  bot.channels.get(serverStats.onlineosobyID).setName(`✭ Online: ${member.user.presence.status}`);
 });
 bot.on("guildMemberRemove", member => {
 
