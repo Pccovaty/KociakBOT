@@ -40,26 +40,32 @@ fs.readdir("./gildie/", (err, files) => {
   });
 });
 
-//const serverStats = {
-//  guildID: "435686053408538624",
- // totalUsersID: "467226426563756032",
+const serverStats = {
+  guildID: "435686053408538624",
+  totalUsersID: "467226426563756032",
+  memberCountID: "467276066717958156",
+  botCountID: "467276143419064320",
+  onlinecountID: "481414408699117568"
+};
+bot.on("guildMemberAdd", member => {
 
+  if (member.guild.id !== serverStats.guildID) return;
 
-//};
-//bot.on("guildMemberAdd", member => {
+  bot.channels.get(serverStats.totalUsersID).setName(`✭ Użytkowników: ${member.guild.memberCount}`);
+  bot.channels.get(serverStats.memberCountID).setName(`✭ Ludzi: ${member.guild.members.filter(m => !m.user.bot).size}`);
+  bot.channels.get(serverStats.onlinecountID).setName(`✭ Online: ${member.guild.members.filter(m => m.user.name).size}`);
+  bot.channels.get(serverStats.botCountID).setName(`✭ Botów: ${member.guild.members.filter(m => m.user.bot).size}`);
 
-  //if (member.guild.id !== serverStats.guildID) return;
+});
+bot.on("guildMemberRemove", member => {
 
-  //bot.channels.get(serverStats.totalUsersID).setName(`✭ Użytkowników: ${member.guild.memberCount} `);
+  if (member.guild.id !== serverStats.guildID) return;
 
-//});
-//bot.on("guildMemberRemove", member => {
-
-  //if (member.guild.id !== serverStats.guildID) return;
-
-  //bot.channels.get(serverStats.totalUsersID).setName(`✭ Użytkowników: ${member.guild.memberCount}`);
-
-//});
+  bot.channels.get(serverStats.totalUsersID).setName(`✭ Użytkowników: ${member.guild.memberCount}`);
+  bot.channels.get(serverStats.memberCountID).setName(`✭ Ludzi: ${member.guild.members.filter(m => !m.user.bot).size}`);
+  bot.channels.get(serverStats.botCountID).setName(`✭ Botów: ${member.guild.members.filter(m => m.user.bot).size}`);
+  bot.channels.get(serverStats.onlinecountID).setName(`✭ Online: ${member.guild.members.filter(m => m.user.name).size}`);
+});
 bot.on("guildMemberAdd", async member => {
   console.log(`${member.id} dołączył(a) na serwer.`);
 
