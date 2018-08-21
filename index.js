@@ -73,7 +73,7 @@ bot.on("guildMemberAdd", member => {
   bot.channels.get(serverStats.memberCountID).setName(`✭ Ludzi: ${member.guild.members.filter(m => !m.user.bot).size}`);
   bot.channels.get(serverStats.onlinecountID).setName(`👋 ${member.user.username}`);
   bot.channels.get(serverStats.botCountID).setName(`✭ Botów: ${member.guild.members.filter(m => m.user.bot).size}`);
-  bot.channels.get(serverStats.onlineID).setName(`✭ Online: ${member.user.lastmessage}`);
+  bot.channels.get(serverStats.onlineID).setName(`✭ Online: ${member.user.presence.status.filter(m => m.user.bot).size}`);
 });
 bot.on("guildMemberRemove", member => {
 
@@ -82,7 +82,7 @@ bot.on("guildMemberRemove", member => {
   bot.channels.get(serverStats.totalUsersID).setName(`✭ Użytkowników: ${member.guild.memberCount}`);
   bot.channels.get(serverStats.memberCountID).setName(`✭ Ludzi: ${member.guild.members.filter(m => !m.user.bot).size}`);
   bot.channels.get(serverStats.botCountID).setName(`✭ Botów: ${member.guild.members.filter(m => m.user.bot).size}`);
-  bot.channels.get(serverStats.onlineosobyID).setname(`✭ Online: ${member.user.presence.status}`);
+  bot.channels.get(serverStats.onlineID).setname(`✭ Online: ${member.user.presence.status.filter(m => m.user.bot).size}`);
 });
 bot.on("guildMemberAdd", async member => {
   console.log(`${member.id} dołączył(a) na serwer.`);
