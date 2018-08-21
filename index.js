@@ -60,8 +60,7 @@ const serverStats = {
   totalUsersID: "467226426563756032",
   memberCountID: "467276066717958156",
   botCountID: "467276143419064320",
-  onlinecountID: "481414408699117568",
-  totalonlineID: "481554942239440897"
+  onlinecountID: "481414408699117568"
   
 
 };
@@ -73,7 +72,6 @@ bot.on("guildMemberAdd", member => {
   bot.channels.get(serverStats.memberCountID).setName(`✭ Ludzi: ${member.guild.members.filter(m => !m.user.bot).size}`);
   bot.channels.get(serverStats.onlinecountID).setName(`👋 ${member.user.username}`);
   bot.channels.get(serverStats.botCountID).setName(`✭ Botów: ${member.guild.members.filter(m => m.user.bot).size}`);
-  bot.channels.get(serverStats.totalonlineID).setName(`✭ Online: ${member.user.presence.status}.size`);
 });
 bot.on("guildMemberRemove", member => {
 
@@ -82,7 +80,7 @@ bot.on("guildMemberRemove", member => {
   bot.channels.get(serverStats.totalUsersID).setName(`✭ Użytkowników: ${member.guild.memberCount}`);
   bot.channels.get(serverStats.memberCountID).setName(`✭ Ludzi: ${member.guild.members.filter(m => !m.user.bot).size}`);
   bot.channels.get(serverStats.botCountID).setName(`✭ Botów: ${member.guild.members.filter(m => m.user.bot).size}`);
-  bot.channels.get(serverStats.totalonlineID).setname(`✭ Online: ${member.user.status}.size`);
+
 });
 bot.on("guildMemberAdd", async member => {
   console.log(`${member.id} dołączył(a) na serwer.`);
