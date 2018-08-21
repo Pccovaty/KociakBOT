@@ -91,25 +91,8 @@ bot.on("guildMemberRemove", async member => {
 bot.on("ready", async() => {
 
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
-  bot.user.setActivity("oc!pomoc | v3.2.2", {type: "WATCHING"});
-    glob.setItem('maxOnline', 0)
-    if(count > parseInt(glob.getItem('maxOnline'))){
-        glob.setItem('maxOnline', count)
-        guild.channels.get('481414408699117568').setName('• Rekord Online: ' + count)
-    }
-    guild.channels.get('467276143419064320').setName('• Online: ' + count)
-    guild.channels.get('467276066717958156').setName('• Administracja Online: ' + admCount)
-}
-
-let refreshCount = guild =>
-    guild.channels.get('467226426563756032').setName('• Użytkownicy: ' + guild.memberCount)
-
-bot.on('presenceUpdate', member => refreshOnline(member.guild))
-bot.on('guildMemberAdd', member => refreshCount(member.guild))
-bot.on('guildMemberRemove', member => refreshCount(member.guild))
+  bot.user.setActivity("Our Community | oc!pomoc", {type: "WATCHING"});
 });
-
-
 bot.on("message", async message => {
 
   if (message.author.bot) return;
