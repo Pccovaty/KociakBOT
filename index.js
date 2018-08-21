@@ -61,7 +61,7 @@ const serverStats = {
   memberCountID: "467276066717958156",
   botCountID: "467276143419064320",
   onlinecountID: "481414408699117568",
-  onlineosobyID: "481549103193391104"
+  onlineID: "481549103193391104"
   
 
 };
@@ -73,7 +73,7 @@ bot.on("guildMemberAdd", member => {
   bot.channels.get(serverStats.memberCountID).setName(`✭ Ludzi: ${member.guild.members.filter(m => !m.user.bot).size}`);
   bot.channels.get(serverStats.onlinecountID).setName(`👋 ${member.user.username}`);
   bot.channels.get(serverStats.botCountID).setName(`✭ Botów: ${member.guild.members.filter(m => m.user.bot).size}`);
-  bot.channels.get(serverStats.onlineosobyID).setName(`✭ Online: ${member.user.presence.status}`);
+  bot.channels.get(serverStats.onlineID).setName(`✭ Online: ${member.user.lastmessage}`);
 });
 bot.on("guildMemberRemove", member => {
 
