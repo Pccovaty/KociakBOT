@@ -9,6 +9,21 @@ bot.mutes = [];
 var coins = require("./coins.json");
 var messages = require("./messages.json");
 
+fs.readdir("./partnerzy/", (err, files) => {
+
+  if (err) console.log(err);
+  const jsfile = files.filter(f => f.split(".").pop() === "js");
+  if (jsfile.length <= 0) {
+    console.log("Nie znaleziono komendy");
+    return;
+  }
+
+  jsfile.forEach((f, i) => {
+    const props = require(`./partnerzy/${f}`);
+    console.log(`${f} zaladowano partnerstwo!`);
+    bot.commands.set(props.help.name, props);
+  });
+});
 fs.readdir("./komendy/", (err, files) => {
 
   if (err) console.log(err);
