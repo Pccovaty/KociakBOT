@@ -93,7 +93,7 @@ bot.on("guildMemberAdd", async member => {
 });
 bot.on("message", async message => {
   if (message.content === "<@465227329661304834>") {
-    return message.reply("Aktualny prefix to ``<``.");
+    return message.channel.send("Aktualny prefix to ``<``.");
   }
 
 });
@@ -113,7 +113,7 @@ bot.on("guildMemberRemove", async member => {
 bot.on("ready", async() => {
 
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
-  bot.user.setActivity("Our Community | oc!pomoc", {type: "WATCHING"});
+  bot.user.setActivity("Our Community | oc!pomoc", {type: "STREAMING"});
 });
 bot.on("message", async message => {
 
