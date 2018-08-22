@@ -91,7 +91,12 @@ bot.on("guildMemberAdd", async member => {
   .addField(`Witaj **${member.user.username}** na Our Community`, `**Na samym początku, zapoznaj się z regulaminem który jest na kanale <#435827081654304789> \n Jeżeli już przeczytałeś(aś) regulamin to możesz przejść do kanału <#461987816499445771>, gdzie możesz dodać sobie role typu 4FUN \n Mamy kanał do przedstawienia się, fajnie by było jakbyś wpadł(a) <#455059398033670144> \n Już wszystko zobaczyłeś(aś)? Przejdź na kanał <#435686053408538626> \n \n aktualnie jest nas: ${member.guild.memberCount}**`);
  welcomechannel.send(welcomeEmebed);
 });
+bot.on("message", async message => {
+  if (message.content === "<@465227329661304834>") {
+    return message.reply("Aktualny prefix to ``<``.");
+  }
 
+});
 bot.on("guildMemberRemove", async member => {
   console.log(`${member.id} wyszedł z serwera.`);
 
