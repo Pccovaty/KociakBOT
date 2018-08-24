@@ -11,7 +11,7 @@ module.exports.run = async(bot, message, args) => {
     .setColor(0xffffff)
     .setTitle("Głosowanie rozpoczęte!")
     .setDescription(`**${args.join(" ")}**`)
-    .setFooter(`Ankieta utworzona przez: ${message.author.username}`, `${message.author.avatarURL}`);
+    .setFooter(`Glosowanie utworzone przez: ${message.author.username}`, `${message.author.avatarURL}`);
 
   let msg = await message.channel.send(embed);
 
