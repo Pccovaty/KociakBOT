@@ -11,11 +11,10 @@ module.exports.run = async(bot, message, args) => {
     .addField("Nazwa serwera", message.guild.name, true)
     .addField("Region", message.guild.region, true)
     .addField("Level weryfikacji", message.guild.verificationLevel, true)
-    .addField("Pozycja", message.guild.position || "Nie została określona", true)
     .addField("Kanał AFK", message.guild.afkChannel || "Brak", true)
     .addField("Rola domyślna", message.guild.defaultRole, true)
-    .addField("Utworzony dnia", moment(message.guild.createdAt).format("YYYY.MM.DD, H:mm:ss", true))
-    .addField("dołączyłeś na serwer", moment(message.member.joinedAt).format("YYYY.MM.DD, H:mm:ss", true))
+    .addField("Utworzony dnia", moment(message.guild.createdAt).format("DD.MM.YYYY, H:mm:ss", true))
+    .addField("dołączyłeś na serwer", moment(message.member.joinedAt).format("DD.MM.YYYY, H:mm:ss", true))
     .addField("Łączna liczba członków", message.guild.memberCount, true);
 
   message.channel.send(serverembed);
