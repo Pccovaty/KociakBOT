@@ -113,7 +113,8 @@ bot.on("guildMemberRemove", async member => {
 bot.on("ready", async() => {
 
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
-  bot.user.setActivity("Prefix: <", {type: "STREAMING"});
+  bot.user.setActivity("Prefix: <", {type: "WATCHING"});
+  bot.user.setActivity("Prefix: Z", {type: "STREAMING"});
 });
 bot.on("message", async message => {
 
