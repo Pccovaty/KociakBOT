@@ -58,8 +58,8 @@ module.exports.run = async (bot, message, args) => {
   .addField("Na czas", mutetime)
   .addField("Powód", reason);
 
-  let incidentschannel = message.guild.channels.find(`name`, "❕wyciszenia❕");
-  if(!incidentschannel) return message.reply("Nie znalazłem kanału ❕wyciszenia❕");
+  let incidentschannel = message.guild.channels.find(`name`, "wyciszenia");
+  if(!incidentschannel) return message.reply("Nie znalazłem kanału wyciszenia");
   incidentschannel.send(muteembed);
 
   await(tomute.addRole(muterole.id));
