@@ -34,8 +34,8 @@ module.exports.run = async(bot, message, args) => {
     .addField("Maksymalna liczba ostrzeżeń", "**15**")
     .addField("Powód", reason);
 
-  const warnchannel = message.guild.channels.find("name", "❕warny❕");
-  if (!warnchannel) return message.reply("Nie znalazłem kanału ``❕warny❕``");
+  const warnchannel = message.guild.channels.find("name", "warny");
+  if (!warnchannel) return message.reply("Nie znalazłem kanału ``warny``");
 
   warnchannel.send(warnEmbed);
 
