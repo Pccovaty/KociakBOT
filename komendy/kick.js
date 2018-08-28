@@ -17,8 +17,8 @@ module.exports.run = async(bot, message, args) => {
     .addField("Data i godzina", moment(message.createdAt).format("YYYY.MM.DD, HH:mm:ss"))
     .addField("Powód", kReason);
 
-  const kickChannel = message.guild.channels.find("name", "❕kicki❕");
-  if (!kickChannel) return message.channel.send("Nie można znaleźć kanału ``❕kicki❕``");
+  const kickChannel = message.guild.channels.find("name", "kicki");
+  if (!kickChannel) return message.channel.send("Nie można znaleźć kanału ``kicki``");
   message.channel.send(`Pomyślnie wyrzucono użytkownika: **${kUser}**, Powód: ${kReason}, więcej informacji na <#465570677135769600> `);
   message.guild.member(kUser).kick(kReason);
   kickChannel.send(kickEmbed);
