@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 module.exports.run = async(bot, message, args) => {
 
   if(!args[2]) return message.reply("A czy pytanie nie powinno kończyć się znakiem zapytania? (?)");
-  let replies = ["Tak", "Nie", "Nie wiem", "Zapytaj później", "Chyba tak...", "Chyba nie...", "Być może", "Co to jest w ogóle za pytanie!?", "A jak myślisz?" "Moja odpowiedź brzmi nie" ]
+  let replies = ["Tak", "Nie", "Nie wiem", "Zapytaj później", "Chyba tak...", "Chyba nie...", "Być może", "Co to jest w ogóle za pytanie!?", "A jak myślisz?", "Moja odpowiedź brzmi nie"]
 
   let result = Math.floor((Math.random() * replies.length))
   let question = args.slice(1).join(" ");
