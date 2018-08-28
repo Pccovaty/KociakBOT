@@ -31,7 +31,7 @@ module.exports.run = async(bot, message, args) => {
     .addField("Łącznie napisanych wiadomości", messages[message.author.id].messages, true)
     .addField("Status", `${user.presence.status}`, true)
     .addField("W grze", `${user.presence.game ? user.presence.game.name : "Brak"}`, true)
-    .addField("Role", member.roles.map(roles => `${roles}`).join("\👉"), true);
+    .addField("Role", member.roles.map(roles => `${roles}`).join("▶"), true);
 
   message.channel.send(embed);
 
