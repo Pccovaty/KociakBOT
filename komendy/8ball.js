@@ -2,19 +2,14 @@ const Discord = require("discord.js");
 
 module.exports.run = async(bot, message, args) => {
 
-  if(!args[2]) return message.reply("Napisz całe pytanie :sunglasses:");
-  let replies = ["Tak", "Nie", "Nie wiem", "Zapytaj później", "Chyba tak", "Chyba nie", "Jezus jest odpowiedzią na każde pytanie :)"]
+  if(!args[2]) return message.reply("A czy pytanie nie powinno kończyć się znakiem zapytania? (?)");
+  let replies = ["Tak", "Nie", "Nie wiem", "Zapytaj później", "Chyba tak...", "Chyba nie...", "Być może", "Co to jest w ogóle za pytanie!?", "A jak myślisz?" "Moja odpowiedź brzmi nie" ]
 
   let result = Math.floor((Math.random() * replies.length))
   let question = args.slice(1).join(" ");
 
-  let ballembed = new Discord.RichEmbed()
-  .setTitle(`${message.author.tag}`, `${message.author.avatarURL}`)
-  .setColor("#FF9900")
-  .addField("Pytanie", question)
-  .addField("Odpowiedź", replies[result])
-  .setFooter(`${message.author.tag}`, `${message.author.avatarURL}`);
-  message.channel.send(ballembed);
+  
+  message.channel.send(`:8ball: | ${replies[result]}, **${message.author.tag}** `);
 }
 
 module.exports.help = {
