@@ -12,8 +12,8 @@ module.exports.run = async(bot, message, args) => {
 
   message.channel.send("Propozycja została poprawnie wysłana i pojawiła się na kanale <#476730302283120643>");
 
-  const sRoom = message.guild.channels.find("name", "🔧propozycje🔧");
-  if (!sRoom) return message.channel.send("Nie znaleziono kanału #🔧propozycje🔧");
+  const sRoom = message.guild.channels.find("name", "propozycje");
+  if (!sRoom) return message.channel.send("Nie znaleziono kanału #propozycje");
 
   sRoom.send(sEmbed);
 
