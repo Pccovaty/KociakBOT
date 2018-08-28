@@ -18,8 +18,8 @@ module.exports.run = async(bot, message, args) => {
     .addField("Data i godzina", moment(message.createdAt).format("DD.MM.YYYY, H:mm:ss"))
     .addField("Powód", bReason);
 
-  const incidentchannel = message.guild.channels.find("name", "❕bany❕");
-  if (!incidentchannel) return message.channel.send("Nie mogę znaleźć kanału. ``❕bany❕``");
+  const incidentchannel = message.guild.channels.find("name", "bany");
+  if (!incidentchannel) return message.channel.send("Nie mogę znaleźć kanału. ``bany``");
   message.channel.send(`Pomyślnie zbanowano użytkownika: ${bUser}, Powód: **${bReason}**, więcej informacji na <#465570658408202250>`);
 
   const embeeed = new Discord.RichEmbed()
