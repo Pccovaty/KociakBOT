@@ -7,7 +7,7 @@ module.exports.run = async(bot, message, args) => {
   const sEmbed = new Discord.RichEmbed()
     .setDescription("Propozycja")
     .setColor("#10ff00")
-    .addField("Użytkownik proponujący", message.author.username)
+    .addField("Użytkownik proponujący", message.author.tag)
     .addField("Treść", reason || "Brak");
 
   message.channel.send("Propozycja została poprawnie wysłana i pojawiła się na kanale <#476730302283120643>");
