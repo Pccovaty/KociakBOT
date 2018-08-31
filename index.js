@@ -79,7 +79,7 @@ bot.on("guildMemberAdd", async member => {
 });
 bot.on("message", async message => {
   if (message.content === "<@465227329661304834>") {
-    return message.channel.send("Taak? mój prefix to ``<``.");
+    return message.channel.send("<:Info:484996951515856906> | mój prefix to ``<``.");
   }
 
 });
