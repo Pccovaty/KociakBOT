@@ -95,9 +95,9 @@ bot.on("guildMemberRemove", async member => {
 
 });
 
-
-client.user.setActivity('YouTube', { type: 'WATCHING' })
-  .then(presence => console.log(`Activity set to ${presence.game ? presence.game.name : 'Kappa'}`))
+bot.on("ready", async () => {
+ bot.user.setActivity('YouTube', { type: 'WATCHING' })
+  .then(presence => console.log(`Activity set to ${presence.game ? presence.game.name : '<pomoc'}`))
   .catch(console.error);
 });
 bot.on("message", async message => {
