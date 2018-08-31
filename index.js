@@ -94,11 +94,10 @@ bot.on("guildMemberRemove", async member => {
   welcomechannel.send(welcomeEmbed);
 
 });
+bot.on("ready", async() => {
 
-bot.on("ready", async () => {
- bot.user.setActivity('YouTube', { type: 'WATCHING' })
-  .then(presence => console.log(`Activity set to ${presence.game ? presence.game.name : '<pomoc'}`))
-  .catch(console.error);
+  console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
+  bot.user.setActivity("by ๖̶̶̶ζ͜͡Kociak 💞#6365", {type: "WATCHING"});
 });
 bot.on("message", async message => {
 
