@@ -96,10 +96,9 @@ bot.on("guildMemberRemove", async member => {
 });
 
 
-bot.on("ready", async() => {
-
-  console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
-  bot.user.setActivity("by ๖̶̶̶ζ͜͡Kociak 💞#6365 ", {type: "WATCHING"});
+bot.user.setActivity('YouTube', { type: 'WATCHING' })
+  .then(presence => console.log(`Activity set to ${presence.game ? presence.game.name : 'Kappa'}`))
+  .catch(console.error);
 });
 bot.on("message", async message => {
 
