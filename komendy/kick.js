@@ -22,7 +22,7 @@ module.exports.run = async(bot, message, args) => {
 
     incidentchannel.send(kickeembed);
 
-
+};
 module.exports.help = {
   name: "kick"
 };
