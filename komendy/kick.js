@@ -5,9 +5,9 @@ module.exports.run = async(bot, message, args) => {
     const kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   if (!kUser) return message.channel.send("Nie znaleziono użytkownika");
   const kReason = args.join(" ").slice(22);
-  if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Nie możesz wyrzucić tej osoby!!");
-  if (kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Nie możesz wyrzucić tej osoby!");
-  message.channel.send(`Pomyślnie wyrzucono użytkownika: **${kUser}**, Powód: ${kReason}`);
+  if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":lock: Dostęp zablokowany! Nie posiadasz roli ``moderator`` lub wyższej.");
+  if (kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":lock: Dostęp zablokowany! Nie posiadasz roli ``moderator`` lub wyższej.");
+  message.channel.send(`:ok_hand:`);
   message.guild.member(kUser).kick(kReason);
 
   const kickeembed = new Discord.RichEmbed()
