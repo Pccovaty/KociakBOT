@@ -9,9 +9,9 @@ const gifs = require("./gifs.json");
     // jeśli osoba oznaczy siebie odpowiada jej wiadomością
       if (message.mentions.users.first().id == message.author.id) return message.reply("**Wszystko... okej?...**")
        // 'gifs.kiss" pochodzi z json, Math.floor i Math.random() wybiera randomowy link
-      var gifImage = GifKiss.kiss[Math.floor(Math.random()*gifs.kiss.length)];
+      var gifImage = gifs.kiss[Math.floor(Math.random()*gifs.kiss.length)];
       const embed = new Discord.RichEmbed()
-          .setDescription(`@${message.author.tag} is kissing @${message.mentions.users.first().tag}`)
+          .setDescription(`@${message.author.tag} pocałował(a) @${message.mentions.users.first().tag}`)
           .setImage(gifImage)
       message.channel.send({embed});
  
