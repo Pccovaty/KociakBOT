@@ -11,7 +11,7 @@ const gifs = require("./gifs.json");
        // 'gifs.kiss" pochodzi z json, Math.floor i Math.random() wybiera randomowy link
       var gifImage = gifs.kiss[Math.floor(Math.random()*gifs.kiss.length)];
       const embed = new Discord.RichEmbed()
-          .setDescription(`@${message.author.tag} pocałował(a) @${message.mentions.users.first().tag}`)
+          .setDescription(`**${message.author.tag}** pocałował(a) **${message.mentions.users.first().tag}**`)
           .setImage(gifImage)
       message.channel.send({embed});
  
