@@ -5,8 +5,8 @@ module.exports.run = async(bot, message, args) => {
   const member = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   if (!member) return message.channel.send("Oznacz użytkownika!");
   const bReason = args.join(" ").slice(22);
-  if (!message.member.hasPermission("Moderator")) return message.channel.send(":lock: Dostęp zablokowany! Nie posiadasz roli ``Moderator`` lub wyższej!`");
-  if (member.hasPermission("Moderator")) return message.channel.send(":lock: Dostęp zablokowany! Nie posiadasz roli ``Moderator`` lub wyższej!");
+  if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":lock: Dostęp zablokowany! Nie posiadasz roli ``Moderator`` lub wyższej!`");
+  if (member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":lock: Dostęp zablokowany! Nie posiadasz roli ``Moderator`` lub wyższej!");
   const banEmbed = new Discord.RichEmbed()
     .setDescription("~Ban~")
     .setColor("#9b0090")
