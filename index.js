@@ -5,7 +5,7 @@ const moment = require('moment');
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
 bot.mutes = [];
-var gif = requier("./gif.json");
+var gif = require("./gif.json");
 var coins = require("./coins.json");
 var messages = require("./messages.json");
 
