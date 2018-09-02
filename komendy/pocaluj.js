@@ -4,9 +4,9 @@ let GifKiss = JSON.parse(fs.readFileSync("./app/gifs.json", "utf8"));
  module.exports.run = async(bot, message, args) => {
  
     // jeśli osoba nikogo nie oznaczy, odpowiada ją wiadomością.
-      if (message.mentions.users.size < 1) return message.reply("**you need to mention someone**");
+      if (message.mentions.users.size < 1) return message.reply("**Musisz oznaczyć kogoś**");
     // jeśli osoba oznaczy siebie odpowiada jej wiadomością
-      if (message.mentions.users.first().id == message.author.id) return message.reply("**Are you... okay?...**")
+      if (message.mentions.users.first().id == message.author.id) return message.reply("**Wszystko... okej?...**")
        // 'gifs.kiss" pochodzi z json, Math.floor i Math.random() wybiera randomowy link
       var gifImage = GifKiss.kiss[Math.floor(Math.random()*gifs.kiss.length)];
       const embed = new Discord.RichEmbed()
