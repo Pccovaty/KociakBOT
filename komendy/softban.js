@@ -38,7 +38,7 @@ if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply(":lock
       let mutetime = args[1];
       if(!mutetime) return message.reply("Nie określiłeś(aś) czasu!");
     
-      
+      message.delete().catch(O_o=>{});
      let mutembed = new Discord.RichEmbed()
       .setTitle("Mute")
       .setColor("#ff0000")
@@ -72,10 +72,6 @@ if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply(":lock
         
         tomute.removeRole(muterole.id);
         tomute.send(muteset);
-      let incidentschannel = message.guild.channels.find(`name`, "mod-log");
-      if(!incidentschannel) return message.reply("Nie znalazłem kanału ``mod-log``");
-      incidentschannel.send(muteset);
-    
       }, ms(mutetime));
     
     
