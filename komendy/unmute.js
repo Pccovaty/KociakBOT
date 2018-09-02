@@ -5,7 +5,7 @@ module.exports.run = async(bot, message, args) => {
 
   const toMute = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
   if (!toMute) return message.channel.send("Nie podałeś/aś nazwy użytkownika ani identyfikatora");
-  const role = message.guild.roles.find(r => r.name === "Muted");
+  const role = message.guild.roles.find(r => r.name === "Softban");
   if (!role || !toMute.roles.has(role.id)) return message.channel.send("Ten użytkownik jest już odciszony!");
 
   await toMute.removeRole(role);
