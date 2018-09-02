@@ -3,10 +3,11 @@ const moment = require("moment");
 
 module.exports.run = async(bot, message, args) => {
   const member = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-  if (!member) return message.channel.send("Oznacz użytkownika!");
+  if (!member) return message.channel.send("Najpierw oznacz użytkownika!");
   const bReason = args.join(" ").slice(22);
   if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":lock: Dostęp zablokowany! Nie posiadasz roli ``Moderator`` lub wyższej!`");
   if (member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":lock: Dostęp zablokowany! Nie posiadasz roli ``Moderator`` lub wyższej!");
+    message.guild.member(member).ban(bReason);
   const banEmbed = new Discord.RichEmbed()
     .setDescription("~Ban~")
     .setColor("#9b0090")
@@ -28,7 +29,7 @@ module.exports.run = async(bot, message, args) => {
 
   bUser.send(embeeed);
 
-  message.guild.member(member).ban(bReason);
+
   incidentchannel.send(banEmbed);
   message.react("452183703267835910");
 
