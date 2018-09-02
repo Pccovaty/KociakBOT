@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const fs = require("fs");
-const gifs = require("./gifs.json");
+const gifs = require("/gifs.json");
 
  module.exports.run = async(bot, message, args) => {
  
