@@ -1,6 +1,7 @@
-  const Discord = require("discord.js");
+const Discord = require("discord.js");
 const fs = require("fs");
-let GifKiss = JSON.parse(fs.readFileSync("./app/gifs.json", "utf8"));
+const gifs = require("./gifs.json");
+
  module.exports.run = async(bot, message, args) => {
  
     // jeśli osoba nikogo nie oznaczy, odpowiada ją wiadomością.
