@@ -1,5 +1,5 @@
   const Discord = require("discord.js");
-const fs = require("fs-extra");
+const fs = require("fs");
 let GifKiss = JSON.parse(fs.readFileSync("./app/gifs.json", "utf8"));
  module.exports.run = async(bot, message, args) => {
  
