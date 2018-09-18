@@ -4,7 +4,7 @@ module.exports.run = async(bot, message, args) => {
   message.delete();
   const embed = new Discord.RichEmbed()
     .setColor('RANDOM')
-    .setDescription("<:Info:484996951515856906> Partnerem(ką) serwera jest(są):" + args.join(" "));
+    .setDescription("<:Info:484996951515856906> Partnerem(ką) serwera jest(są): " + args.join(" "));
 
   message.channel.send(embed);
 };
