@@ -10,5 +10,5 @@ module.exports.run = async(bot, message, args) => {
   message.react("452183703267835910");
 };
 module.exports.help = {
-  name: "partnerzy"
+  name: "partnerzay"
 };
