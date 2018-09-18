@@ -94,7 +94,11 @@ bot.on("guildMemberRemove", async member => {
   welcomechannel.send(welcomeEmbed);
 
 });
+bot.on("ready", async() => {
 
+  console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
+  bot.user.setActivity("Zajrzyj do nas :).", {type: "WATCHING"});
+});
 bot.on("message", async message => {
 
   if (message.author.bot) return;
@@ -121,11 +125,7 @@ bot.on("message", async message => {
   const coinAmt = Math.floor(Math.random(5)) + 5;
   const baseAmt = Math.floor(Math.random(5)) + 5;
   console.log(`${coinAmt} ; ${baseAmt}`);
-bot.on("ready", async() => {
 
-  console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
-  bot.user.setActivity("Zajrzyj do nas :). <bot", {type: "WATCHING"});
-});
   if (coinAmt === baseAmt) {
     coins[message.author.id] = {
       coins: coins[message.author.id].coins + coinAmt
