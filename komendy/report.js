@@ -16,7 +16,7 @@ module.exports.run = async(bot, message, args) => {
 
   const reportschannel = message.guild.channels.find("name", "mod-log");
   if (!reportschannel) return message.channel.send("Nie mogę znaleźć kanału ``mod-log``");
-  message.channel.send(`**${message.author} pomyślnie zgłoszono użytkownika: **${rUser}**, Powód: **${rreason}**`);
+  message.channel.send(`**${message.author} pomyślnie zgłoszono użytkownika: **${rUser}**, Powód: **${rreason}** **`);
   message.delete().catch(O_o => {});
   reportschannel.send(reportEmbed);
   message.react("452183703267835910");
