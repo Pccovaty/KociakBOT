@@ -10,16 +10,13 @@ module.exports.run = async(bot, message, args) => {
     .setDescription("Zgłoszenie")
     .setColor("#15f153")
     .addField("Zgłoszony Użytkownik", `${rUser}`)
-    .addField("ID Zgłoszonego Użytkownika", `${rUser.id}`)
     .addField("Zgłoszony/a przez", `${message.author}`)
-    .addField("ID osoby która zgłasza", `${message.author.id}`)
     .addField("Kanał", message.channel)
-    .addField("Data zgłoszenia", moment(message.createdAt).format("DD/YYYY/MM, H:mm:ss"))
     .addField("Powód", rreason);
 
-  const reportschannel = message.guild.channels.find("name", "❕reporty❕");
-  if (!reportschannel) return message.channel.send("Nie mogę znaleźć kanału ``❕reporty❕``");
-  message.channel.send(`${message.author} pomyślnie zgłoszono użytkownika: **${rUser}**, Powód: **${rreason}**, więcej informacji na <#465253134059438100> `);
+  const reportschannel = message.guild.channels.find("name", "mod-log");
+  if (!reportschannel) return message.channel.send("Nie mogę znaleźć kanału ``mod-log``");
+  message.channel.send(`Here. Zgłoszenie!`);
   message.delete().catch(O_o => {});
   reportschannel.send(reportEmbed);
   message.react("452183703267835910");
