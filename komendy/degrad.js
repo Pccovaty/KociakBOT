@@ -12,6 +12,8 @@ module.exports.run = async(bot, message, args) => {
     
     message.channel.send(discord)
 
+    message.guild.member(member)
+    
 }
 
 module.exports.help = {
