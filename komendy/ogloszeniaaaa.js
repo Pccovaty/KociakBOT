@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async(bot, message, args) => {
 
-    const msg = await message.channel.send("<@435826416488022017> Nowe ogloszenie!");
+    const msg = await message.channel.send("<@&435826416488022017> Nowe ogloszenie!");
     if (!message.member.roles.find(r => r.name === "Administracja")) return message.channel.send("");
     if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<:lock:485090231427661824> | Dostęp zablokowany! Nie posiadasz uprawnień ``Administrator``");
 
