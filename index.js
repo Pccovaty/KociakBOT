@@ -144,4 +144,4 @@ if (commandfile) commandfile.run(bot, message, args);
 
 });
 
-bot.login("NTAwMzYyMDA2NzUxMDg0NTk1.Dqpzzg.3lZQrpaX3SvHA3djVwtbg8aKZ-Q");
+bot.login(process.env.BOT_TOKEN);
