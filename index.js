@@ -28,12 +28,11 @@ fs.readdir("./komendy/", (err, files) => {
 
 
 const serverStats = {
-  guildID: "429883945501327360",
-  totalUsersID: "502568241667899393",
-  memberCountID: "502568268544999454",
-  botCountID: "502568287457116160",
-  onlinecountID: "502568301378011147",
-  testID: "502568312514019328"
+  guildID: "435686053408538624",
+  totalUsersID: "467226426563756032",
+  memberCountID: "467276066717958156",
+  botCountID: "467276143419064320",
+  onlinecountID: "481414408699117568"
 
 };
 bot.on("guildMemberAdd", member => {
