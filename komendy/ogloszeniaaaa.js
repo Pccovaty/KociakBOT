@@ -13,7 +13,8 @@ module.exports.run = async(bot, message, args) => {
     .setFooter(`Ogłoszenie by: ${message.author.tag}`, `${message.author.avatarURL}`);
 
     message.channel.send(embed)
-    msg.delete()
+    msg.delete({timeout: 10000})
+    message.delete({timeout: 10000});
 };
 module.exports.help = {
   name: "og"
