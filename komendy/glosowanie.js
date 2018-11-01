@@ -3,12 +3,12 @@ const Discord = require("discord.js");
 module.exports.run = async(bot, message, args) => {
 
   if (!message.member.roles.find(r => r.name === "Administracja")) return message.channel.send("❌ Błąd | Nie posiadasz roli  ``Administracja``");
-  if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(":lock | Dostęp zablokowany! Nie posiadasz roli z uprawieniami ``ADMINISTRATOR``");
+  if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(":lock: | Dostęp zablokowany! Nie posiadasz roli z uprawieniami ``ADMINISTRATOR``");
 
   if (!args[0]) return message.channel.send("Prawidłowe użycie to: <głosowanie [pytanie]");
 
   const embed = new Discord.RichEmbed()
-    .setColor(0xffffff)
+    .setColor("#008dff")
     .setTitle("Głosowanie rozpoczęte!")
     .setDescription(`**${args.join(" ")}**`)
     .setFooter(`Glosowanie utworzone przez: ${message.author.username}`, `${message.author.avatarURL}`);
