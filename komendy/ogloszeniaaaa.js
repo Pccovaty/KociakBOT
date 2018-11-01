@@ -14,6 +14,7 @@ module.exports.run = async(bot, message, args) => {
             .setFooter(`Ogłoszenie by: ${message.author.tag}`, `${message.author.avatarURL}`);
           message.channel.send('<@&435826416488022017>' ).then(msg => msg.delete(500));
           message.channel.send(embed);
+     message.delete({timeout: 1000});
     
     }
     
