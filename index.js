@@ -45,16 +45,17 @@ bot.on("guildMemberRemove", member => {
   if (member.guild.id !== serverStats.guildID) return;
 
   bot.channels.get(serverStats.totalUsersID).setName(`✭ ${member.guild.memberCount} os | 500 os`);
+  });
 bot.on("guildMemberAdd", async member => {
   console.log(`${member.id} dołączył(a) na serwer.`);
-
+});
   const welcomechannel = member.guild.channels.find("name", "witaj-zegnaj");
   const welcomeEmebed = new Discord.RichEmbed()
   .setColor("RANDOM")
   .setDescription(`Witaj **${member.user.username}** na **Community Grafików** \n \n Cieszymy się że jesteś!`)
   .setFooter(`© 2017-2018 Kociak#6365`);
  welcomechannel.send(welcomeEmebed);
-});
+
 
 bot.on("guildMemberRemove", async member => {
   console.log(`${member.id} wyszedł z serwera.`);
