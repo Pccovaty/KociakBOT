@@ -37,23 +37,22 @@ bot.on("guildMemberAdd", member => {
 
   if (member.guild.id !== serverStats.guildID) return;
 
-  bot.channels.get(serverStats.totalUsersID).setName(`✭ ${member.guild.memberCount}os | 500os`);
+  bot.channels.get(serverStats.totalUsersID).setName(`✭ ${member.guild.memberCount} os | 500 os`);
  bot.channels.get(serverStats.onlinecountID).setName(`👋 ${member.user.tag}`);
 });
 bot.on("guildMemberRemove", member => {
 
   if (member.guild.id !== serverStats.guildID) return;
 
-  bot.channels.get(serverStats.totalUsersID).setName(`✭ ${member.guild.memberCount}os | 500os`);
-});
+  bot.channels.get(serverStats.totalUsersID).setName(`✭ ${member.guild.memberCount} os | 500 os`);!
 bot.on("guildMemberAdd", async member => {
   console.log(`${member.id} dołączył(a) na serwer.`);
 
   const welcomechannel = member.guild.channels.find("name", "witaj-zegnaj");
   const welcomeEmebed = new Discord.RichEmbed()
   .setColor("RANDOM")
-  .setDescription(`Witaj **${member.user.username}** na **Our Community** \n \n **Na samym początku, zapoznaj się z regulaminem który jest na kanale <#435827081654304789> \n Jeżeli już przeczytałeś(aś) regulamin to możesz przejść do kanału <#461987816499445771>, gdzie możesz dodać sobie role typu 4FUN \n Mamy kanał do przedstawienia się, fajnie by było jakbyś wpadł(a) <#455059398033670144> \n Już wszystko zobaczyłeś(aś)? Przejdź na kanał <#435686053408538626> \n \n aktualnie jest nas: ${member.guild.memberCount}**`)
-  .setFooter(`© 2017-2018 Our Community`)
+  .setDescription(`Witaj **${member.user.username}** na **Community Grafików** \n Cieszymy się że jesteś!`)
+  .setFooter(`© 2017-2018 Kociak#6365`)
  welcomechannel.send(welcomeEmebed);
 });
 
