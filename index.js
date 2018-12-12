@@ -44,7 +44,7 @@ bot.on("guildMemberRemove", member => {
 
   if (member.guild.id !== serverStats.guildID) return;
 
-  bot.channels.get(serverStats.totalUsersID).setName(`✭ ${member.guild.memberCount} os | 500 os`);!
+  bot.channels.get(serverStats.totalUsersID).setName(`✭ ${member.guild.memberCount} os | 500 os`);
 bot.on("guildMemberAdd", async member => {
   console.log(`${member.id} dołączył(a) na serwer.`);
 
