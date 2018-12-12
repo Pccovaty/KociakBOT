@@ -37,31 +37,31 @@ bot.on("guildMemberAdd", member => {
 
   if (member.guild.id !== serverStats.guildID) return;
 
-  bot.channels.get(serverStats.totalUsersID).setName(`✭ ${member.guild.memberCount} os | 500 os`);
- bot.channels.get(serverStats.onlinecountID).setName(`👋 ${member.user.tag}`);
+  bot.channels.get(serverStats.totalUsersID).setName(`✭ ${member.guild.memberCount}os | 500os`);
+  bot.channels.get(serverStats.onlinecountID).setName(`👋 ${member.user.tag}`);
 });
 bot.on("guildMemberRemove", member => {
 
   if (member.guild.id !== serverStats.guildID) return;
 
-  bot.channels.get(serverStats.totalUsersID).setName(`✭ ${member.guild.memberCount} os | 500 os`);
-  });
+  bot.channels.get(serverStats.totalUsersID).setName(`✭ ${member.guild.memberCount}os | 500os`);
+});
 bot.on("guildMemberAdd", async member => {
   console.log(`${member.id} dołączył(a) na serwer.`);
-});
+
   const welcomechannel = member.guild.channels.find("name", "witaj-zegnaj");
   const welcomeEmebed = new Discord.RichEmbed()
   .setColor("RANDOM")
-  .setDescription(`Witaj **${member.user.username}** na **Community Grafików** \n \n Cieszymy się że jesteś!`)
-  .setFooter(`© 2017-2018 Kociak#6365`);
- welcomechannel.send(welcomeEmebed);
-
+  .setDescription(`Witaj **${member.user.username}** na **Community Grafików** Cieszymy się że z nami jesteś!`)
+  .setFooter(`© 2017-2018 Kociak#6365`)
+  welcomechannel.send(welcomeEmebed);
+});
 
 bot.on("guildMemberRemove", async member => {
   console.log(`${member.id} wyszedł z serwera.`);
 
   const welcomechannel = member.guild.channels.find("name", "witaj-zegnaj");
- 
+
   welcomechannel.send(`**Użytkownik ${member.user.tag} wyszedł z serwera! Pożegnajmy go zniczem [*] na kanale <#435686053408538626> <:pepepng:503162541074153482>**`);
 
 });
@@ -73,11 +73,11 @@ bot.on("message", async message => {
 });
 
 bot.on("ready", async() => {
-
+ 
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
-  bot.user.setActivity("<news", {type: "WATCHING"});
-});
-bot.on("message", async message => {
+  bot.user.setActivity("Community Grafików", {type: "WATCHING"});	   bot.user.setActivity("<news", {type: "WATCHING"});
+ });
+ bot.on("message", async message => {
 
   if (message.author.bot) return;
   if (message.channel.type === "dm") return;
@@ -87,8 +87,8 @@ bot.on("message", async message => {
     prefixes[message.guild.id] = {
       prefixes: botconfig.prefix
     };
+  
   }
-
   if (!coins[message.author.id]) {
     coins[message.author.id] = {
       coins: 0
@@ -96,7 +96,7 @@ bot.on("message", async message => {
   }
   if (!messages[message.author.id]) {
     messages[message.author.id] = {
-      messages: 0
+      messages: 0 
     };
   }
 
@@ -115,23 +115,23 @@ bot.on("message", async message => {
   }
   //messages
   {
-    messages[message.author.id] = {
-      messages: messages[message.author.id].messages + 1
-    };
-    fs.writeFile("messages.json", JSON.stringify(messages), (err) => {
-      if (err) console.log(err);
-    });
+messages[message.author.id] = {
+  messages: messages[message.author.id].messages + 1
+};
+fs.writeFile("messages.json", JSON.stringify(messages), (err) => {
+  if (err) console.log(err);
+});
   }
   const prefix = prefixes[message.guild.id].prefixes;
 
   const messageArray = message.content.split(" ");
- const cmd = messageArray[0];
-const args = messageArray.slice(1);
-if(cmd.substring(0, prefix.length) != prefix){
+  const cmd = messageArray[0];
+  const args = messageArray.slice(1);
+  if(cmd.substring(0, prefix.length) != prefix){
     return;
-}
-const commandfile = bot.commands.get(cmd.slice(prefix.length));
-if (commandfile) commandfile.run(bot, message, args);
+  }
+  const commandfile = bot.commands.get(cmd.slice(prefix.length));	
+  if (commandfile) commandfile.run(bot, message, args);
 
 });
 
