@@ -37,14 +37,14 @@ bot.on("guildMemberAdd", member => {
 
   if (member.guild.id !== serverStats.guildID) return;
 
-  bot.channels.get(serverStats.totalUsersID).setName(`✭ ${member.guild.memberCount}os | 500os`);
+  bot.channels.get(serverStats.totalUsersID).setName(`✭ ${member.guild.memberCount} os | 500 os`);
   bot.channels.get(serverStats.onlinecountID).setName(`👋 ${member.user.tag}`);
 });
 bot.on("guildMemberRemove", member => {
 
   if (member.guild.id !== serverStats.guildID) return;
 
-  bot.channels.get(serverStats.totalUsersID).setName(`✭ ${member.guild.memberCount}os | 500os`);
+  bot.channels.get(serverStats.totalUsersID).setName(`✭ ${member.guild.memberCount} os | 500 os`);
 });
 bot.on("guildMemberAdd", async member => {
   console.log(`${member.id} dołączył(a) na serwer.`);
@@ -75,7 +75,7 @@ bot.on("message", async message => {
 bot.on("ready", async() => {
  
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
-  bot.user.setActivity("Community Grafików", {type: "WATCHING"});	   bot.user.setActivity("<news", {type: "WATCHING"});
+  bot.user.setActivity("Working", {type: "WATCHING"});	   bot.user.setActivity("<news", {type: "WATCHING"});
  });
  bot.on("message", async message => {
 
