@@ -51,8 +51,8 @@ bot.on("guildMemberAdd", async member => {
   const welcomechannel = member.guild.channels.find("name", "witaj-zegnaj");
   const welcomeEmebed = new Discord.RichEmbed()
   .setColor("RANDOM")
-  .setDescription(`Witaj **${member.user.username}** na **Community Grafików** \n Cieszymy się że jesteś!`)
-  .setFooter(`© 2017-2018 Kociak#6365`)
+  .setDescription(`Witaj **${member.user.username}** na **Community Grafików** \n \n Cieszymy się że jesteś!`)
+  .setFooter(`© 2017-2018 Kociak#6365`);
  welcomechannel.send(welcomeEmebed);
 });
 
