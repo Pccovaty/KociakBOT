@@ -63,12 +63,12 @@ bot.on("guildMemberAdd", async member => {
 bot.on("guildMemberRemove", async member => {
   console.log(`${member.id} wyszedł z serwera.`);
 
-  const welcomechannel = member.guild.channels.find("name", "witaj-zegnaj");
-const welcomeEMebed = new Discord.RichEmbed()
+  const welcomeechannel = member.guild.channels.find("name", "witaj-zegnaj");
+  const welcomeeEmebed = new Discord.RichEmbed()
   .setColor("RANDOM")
-  .setDescription(`Użytkownik **${member.user.usertag}** opuścił **Community Grafików** *Sad*`)
+  .setDescription(`Użytkownik **${member.user.username}** opuścił **Community Grafików**... *Sad*`)
   .setFooter(`© 2017-2018 Kociak#6365`)
-  welcomechannel.send(welcomeEMebed);
+  welcomeechannel.send(welcomeeEmebed);
 });
 bot.on("message", async message => {
   if (message.content === "<@465227329661304834>") {
