@@ -42,7 +42,7 @@ exports.run = (bot, message, args) => {
     const botembed = new Discord.RichEmbed()
         .addBlankField()
         .setColor(`RANDOM`)
-        .addField(`od aktualizacji bota minelo:`, `**Uptime :**  ${uptime}`)
+        .addField(`Od aktualizacji bota minelo:`, `**Uptime :**  ${uptime}`)
         .setThumbnail(bicon);
 
     message.channel.send(botembed);
