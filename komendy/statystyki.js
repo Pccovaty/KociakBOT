@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args) => {
     bot.guilds.map(g => users += g.memberCount);
     
     // Form Embed
-    const embed = new Discord.MessageEmbed()
+    const embed = new Discord.RichEmbed()
         .setTitle('Serwerowe Statystyki')
         .addField('Serwer', servers, true)
         .addField('Użytkowników', users, true)
