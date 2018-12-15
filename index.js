@@ -78,7 +78,7 @@ let guild = bot.guilds.get('435686053408538624');
     let offline = 0;
  
     const interval = setInterval(function () {
-        let guild = bot.guilds.get('GUILD_ID');
+        let guild = bot.guilds.get('435686053408538624');
         guild.members.forEach(member => {
  
             if (!member.user.bot) all++;
