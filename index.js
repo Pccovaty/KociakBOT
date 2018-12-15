@@ -30,6 +30,7 @@ fs.readdir("./komendy/", (err, files) => {
 const serverStats = {
   guildID: "435686053408538624",
   totalUsersID: "467226426563756032",
+  botCountID: "523590251856265225",
   onlinecountID: "481414408699117568"
 
 };
@@ -39,12 +40,14 @@ bot.on("guildMemberAdd", member => {
 
   bot.channels.get(serverStats.totalUsersID).setName(`|👥| Osób: ${member.guild.memberCount}`);
   bot.channels.get(serverStats.onlinecountID).setName(`|👭| ${member.user.tag}`);
+  bot.channels.get(serverStats.botCountID).setName(`|🤖| Boty: ${member.guild.members.filter(m => m.user.bot).size}`);
 });
 bot.on("guildMemberRemove", member => {
 
   if (member.guild.id !== serverStats.guildID) return;
 
   bot.channels.get(serverStats.totalUsersID).setName(`|👥| Osób: ${member.guild.memberCount}`);
+  bot.channels.get(serverStats.botCountID).setName(`|🤖| Boty: ${member.guild.members.filter(m => m.user.bot).size}`);
 });
 bot.on("guildMemberAdd", async member => {
   console.log(`${member.id} dołączył(a) na serwer.`);
@@ -61,9 +64,11 @@ bot.on("guildMemberRemove", async member => {
   console.log(`${member.id} wyszedł z serwera.`);
 
   const welcomechannel = member.guild.channels.find("name", "witaj-zegnaj");
-
-  welcomechannel.send(`**Użytkownik ${member.user.tag} wyszedł z serwera! Pożegnajmy go zniczem [*] na kanale <#435686053408538626> <:pepepng:503162541074153482>**`);
-
+const welcomeEMebed = new Discord.RichEmbed()
+  .setColor("RANDOM")
+  .setDescription(`Użytkownik **${member.user.usertag}** opuścił **Community Grafików** *Sad*`)
+  .setFooter(`© 2017-2018 Kociak#6365`)
+  welcomechannel.send(welcomeEMebed);
 });
 bot.on("message", async message => {
   if (message.content === "<@465227329661304834>") {
