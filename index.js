@@ -93,11 +93,11 @@ let guild = bot.guilds.get('435686053408538624');
  
      }, 1 * 5000);
   } catch(e) {console.log(e);}
-
+});
 bot.on("ready", async() => {
  
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
-  bot.user.setActivity("Working", {type: "WATCHING"});	   bot.user.setActivity("<news", {type: "WATCHING"});
+  bot.user.setActivity("New Stats Servers ♥", {type: "WATCHING"});	   bot.user.setActivity("<news", {type: "WATCHING"});
  });
  bot.on("message", async message => {
 
