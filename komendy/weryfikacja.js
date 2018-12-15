@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 
-module.exports.run = async (bot, message, args, msg) => {
+module.exports.run = async (bot, message, args) => {
     message.delete();
     let role = message.guild.roles.find(role => role.name === 'Uzytkownicy');
     if (message.channel.name !== 'weryfikacja') return message.reply('Musisz dołączyć na kanał <#523602318168686602>');
@@ -10,14 +10,14 @@ module.exports.run = async (bot, message, args, msg) => {
             .setAuthor(message.member.displayName, message.author.displayAvatarURL)
             .setColor('#36393f')
             .setDescription('Twoje konto zostało już zweryfikowane!')
-        return msg.channel.send((verifyEmbed));
+        return message.channel.send((verifyEmbed));
     } else {
         let verifyEmbed = new Discord.RichEmbed()
             .setAuthor(message.member.displayName, message.author.displayAvatarURL)
             .setColor('#36393f')
             .setDescription('Twoje konto zostało pomyślnie zweryfikowane.')
-        return msg.channel.send((verifyEmbed));
-         msg.delete({timeout: 1000});
+        return message.channel.send((verifyEmbed));
+         
     }
 }
 
