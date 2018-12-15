@@ -102,8 +102,29 @@ let guild = bot.guilds.get('435686053408538624');
 });
 bot.on("ready", async() => {
  
-  console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
-  bot.user.setActivity("New Stats Servers ♥", {type: "WATCHING"});	   bot.user.setActivity("<news", {type: "WATCHING"});
+ bot.on('ready', function() {
+      setInterval(async () => {
+    const statuslist = [
+      `<help | ${bot.guilds.size} guilds`,
+      `<help | ${bot.channels.size} channels`,
+      `<help | ${bot.users.size} users`
+    ];
+    const random = Math.floor(Math.random() * statuslist.length);
+
+    try {
+      await bot.user.setPresence({
+        game: {
+          name: `${statuslist[random]}`,
+          type: "PLAYING"
+          //url: 'https://www.twitch.tv/spokloo'
+        },
+        status: "online"
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  }, 10000);
+
  });
  bot.on("message", async message => {
 
