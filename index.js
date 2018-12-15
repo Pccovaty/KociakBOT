@@ -103,9 +103,11 @@ let guild = bot.guilds.get('435686053408538624');
 bot.on("ready", async() => {
       setInterval(async () => {
     const statuslist = [
-      `<help | ${bot.guilds.size} guilds`,
-      `<help | ${bot.channels.size} channels`,
-      `<help | ${bot.users.size} users`
+      `Potrzebujesz pomocy?`,
+      `użyj: <help`,
+      `Dzisiaj jest 16.12.2018r`,
+      `Bot aktualnie w Budowie`,
+      `90% Complete!`
     ];
     const random = Math.floor(Math.random() * statuslist.length);
 
