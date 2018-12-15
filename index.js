@@ -87,7 +87,7 @@ let guild = bot.guilds.get('435686053408538624');
  
      let online = all - offline;
  
-        bot.channels.get('523583115583815690').setName("|👤| Online: " + online);
+        bot.channels.get('523583115583815690').setName("|🔵| Online: " + online);
  
         all = 0;
         offline = 0;
