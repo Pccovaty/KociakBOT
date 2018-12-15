@@ -32,7 +32,7 @@ exports.run = (bot, message, args) => {
 
 
     let u = convertMS(bot.uptime);
-    let uptime = u.d + " days : " + u.h + " hours : " + u.m + " minutes : " + u.s + " seconds"
+    let uptime = u.d + " dni : " + u.h + " godzin : " + u.m + " minut : " + u.s + " sekund"
 
 
 
@@ -42,7 +42,7 @@ exports.run = (bot, message, args) => {
     const botembed = new Discord.RichEmbed()
         .addBlankField()
         .setColor(`RANDOM`)
-        .addField(`Czas który pokazuje ile mineło od ostatniej aktualizacji bota`, `**Uptime :**  ${uptime}`)
+        .addField(`od aktualizacji bota minelo:`, `**Uptime :**  ${uptime}`)
         .setThumbnail(bicon);
 
     message.channel.send(botembed);
