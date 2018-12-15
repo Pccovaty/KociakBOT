@@ -17,6 +17,7 @@ module.exports.run = async (bot, message, args) => {
             .setColor('#36393f')
             .setDescription('Twoje konto zostało pomyślnie zweryfikowane.')
         return message.channel.send((verifyEmbed));
+         message.delete({timeout: 1000});
     }
 }
 
