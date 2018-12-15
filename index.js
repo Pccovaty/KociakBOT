@@ -101,8 +101,6 @@ let guild = bot.guilds.get('435686053408538624');
   
 });
 bot.on("ready", async() => {
- 
- bot.on('ready', function() {
       setInterval(async () => {
     const statuslist = [
       `<help | ${bot.guilds.size} guilds`,
