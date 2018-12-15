@@ -14,8 +14,8 @@ module.exports.run = async (bot, message, args) => {
     
     // Form Embed
     const embed = new Discord.RichEmbed()
-        .setTitle('Serwerowe Statystyki')
-        .addField('Serwer', servers, true)
+        .setTitle('Statystyki Bota')
+        .addField('Serwerów', servers, true)
         .addField('Użytkowników', users, true)
         .addField('Kanałów', channels, true);
 
