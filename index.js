@@ -71,6 +71,7 @@ bot.on("message", async message => {
   }
 
 });
+bot.on("ready", async() => {
 let guild = bot.guilds.get('435686053408538624');
  
     let all = 0;
