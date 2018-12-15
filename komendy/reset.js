@@ -1,3 +1,5 @@
+const discord = ('Discord-js');
+
 exports.run = async (bot, message, args) => {
     if (message.author.id === '340557425511759892') {
         if (!args || args.size < 1) return message.channel.send("Musisz podać komendę do przeładowania...");
@@ -6,3 +8,7 @@ exports.run = async (bot, message, args) => {
     }
 
 }
+exports.help = {
+  name: "reset",
+  usage: "reset"
+};
