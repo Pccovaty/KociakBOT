@@ -93,7 +93,7 @@ let guild = bot.guilds.get('435686053408538624');
         offline = 0;
  
      }, 1 * 5000);
-  } catch(e) {console.log(e);}
+  
 });
 bot.on("ready", async() => {
  
