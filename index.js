@@ -31,16 +31,18 @@ const serverStats = {
   guildID: "435686053408538624",
   totalUsersID: "467226426563756032",
   botCountID: "523590251856265225",
-  onlinecountID: "481414408699117568"
+  onlinecountID: "481414408699117568",
+  dataID: "523819168689029121"
 
 };
 bot.on("guildMemberAdd", member => {
-
+const moment = require('moment');
   if (member.guild.id !== serverStats.guildID) return;
 
   bot.channels.get(serverStats.totalUsersID).setName(`|👥| Osób: ${member.guild.memberCount}`);
   bot.channels.get(serverStats.onlinecountID).setName(`|👭| ${member.user.tag}`);
   bot.channels.get(serverStats.botCountID).setName(`|🤖| Boty: ${member.guild.members.filter(m => m.user.bot).size}`);
+  bot.channels.get(serverStats.totalUsersID).setName(`|■|Data: ${moment(this.date).format('DD.MM.YYYY')}`);
 });
 bot.on("guildMemberRemove", member => {
 
