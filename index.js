@@ -42,7 +42,7 @@ const moment = require('moment');
   bot.channels.get(serverStats.totalUsersID).setName(`|👥| Osób: ${member.guild.memberCount}`);
   bot.channels.get(serverStats.onlinecountID).setName(`|👭| ${member.user.tag}`);
   bot.channels.get(serverStats.botCountID).setName(`|🤖| Boty: ${member.guild.members.filter(m => m.user.bot).size}`);
-  bot.channels.get(serverStats.totalUsersID).setName(`|■|Data: ${moment(this.date).format('DD.MM.YYYY')}`);
+  bot.channels.get(serverStats.totalUsersID).edit({ Data: `${moment(this.date).format('DD.MM.YYYY')}`});
 });
 bot.on("guildMemberRemove", member => {
 
