@@ -107,7 +107,7 @@ bot.on("ready", async() => {
     const statuslist = [
       `Potrzebujesz pomocy?`,
       `użyj: <help`,
-      `Dzisiaj jest 17.12.2018r`,
+      `Dzisiaj jest 19.12.2018r`,
       `Bot aktualnie w Budowie`,
       `90% Complete!`
     ];
