@@ -107,9 +107,9 @@ bot.on("ready", async() => {
     const statuslist = [
       `Potrzebujesz pomocy?`,
       `użyj: <help`,
-      `Dzisiaj jest 19.12.2018r`,
+      `Dzisiaj jest 20.12.2018r`,
       `Bot aktualnie w Budowie`,
-      `90% Complete!`
+      `30% Complete!`
     ];
     const random = Math.floor(Math.random() * statuslist.length);
 
