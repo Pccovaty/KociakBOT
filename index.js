@@ -107,9 +107,10 @@ bot.on("ready", async() => {
     const statuslist = [
       `Potrzebujesz pomocy?`,
       `użyj: <help`,
-      `Dzisiaj jest 20.12.2018r`,
+      `Dzisiaj jest 22.12.2018r`,
       `Bot aktualnie w Budowie`,
-      `30% Complete!`
+      `30% Complete!`,
+      `Wiele zmian w bocie!`
     ];
     const random = Math.floor(Math.random() * statuslist.length);
 
@@ -117,10 +118,10 @@ bot.on("ready", async() => {
       await bot.user.setPresence({
         game: {
           name: `${statuslist[random]}`,
-          type: "PLAYING"
+          type: "WATCHING"
           //url: 'https://www.twitch.tv/spokloo'
         },
-        status: "online"
+        status: "dnd"
       });
     } catch (error) {
       console.error(error);
