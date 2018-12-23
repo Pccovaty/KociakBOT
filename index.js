@@ -3,12 +3,25 @@ const Discord = require("discord.js");
 const fs = require("fs");
 const moment = require('moment');
 const bot = new Discord.Client({disableEveryone: true});
+moment.locale('PL');
+const antispam = require("discord-anti-spam"); //the main function for the anti spam
 bot.commands = new Discord.Collection();
 bot.mutes = [];
+
 
 var coins = require("./coins.json");
 var messages = require("./messages.json");
 
+antispam(bot, {
+    warnBuffer: 3, //Maximum amount of messages allowed to send in the interval time before getting warned.
+    maxBuffer: 5, // Maximum amount of messages allowed to send in the interval time before getting banned.
+    interval: 1000, // Amount of time in ms users can send a maximum of the maxBuffer variable before getting banned.
+    warningMessage: "Cześć, Nie próbuj spamić bo dostaniesz bana...", // Warning message send to the user indicating they are going to fast.
+    banMessage: "Dostał bana, Nie radzimy spamić ^^", // Ban message, always tags the banned user in front of it.
+    maxDuplicatesWarning: 7, // Maximum amount of duplicate messages a user can send in a timespan before getting warned
+    maxDuplicatesBan: 10, // Maximum amount of duplicate messages a user can send in a timespan before getting banned
+    deleteMessagesAfterBanForPastDays: 7 // Delete the spammed messages after banning for the past x days.
+});
 
 fs.readdir("./komendy/", (err, files) => {
 
@@ -42,7 +55,7 @@ const moment = require('moment');
   bot.channels.get(serverStats.totalUsersID).setName(`|👥| Osób: ${member.guild.memberCount}`);
   bot.channels.get(serverStats.onlinecountID).setName(`|👭| ${member.user.tag}`);
   bot.channels.get(serverStats.botCountID).setName(`|🤖| Boty: ${member.guild.members.filter(m => m.user.bot).size}`);
-  bot.channels.get(serverStats.totalUsersID).edit({ Data: `${moment(this.date).format('DD.MM.YYYY')}`});
+  bot.channels.get(serverStats.totalUsersID).edit({ Data: `${moment().format('DD.MM.YYYY')}r`});
 });
 bot.on("guildMemberRemove", member => {
 
@@ -105,12 +118,12 @@ let guild = bot.guilds.get('435686053408538624');
 bot.on("ready", async() => {
       setInterval(async () => {
     const statuslist = [
-      `Potrzebujesz pomocy?`,
+      `by Kociak#0001`,
       `użyj: <help`,
-      `Dzisiaj jest 22.12.2018r`,
-      `Bot aktualnie w Budowie`,
-      `30% Complete!`,
-      `Wiele zmian w bocie!`
+      `Dzisiaj jest ${moment().format('DD.MM.YYYY')}r`,
+      ``,
+      `15% Complete!`,
+      `Nowości! <news`
     ];
     const random = Math.floor(Math.random() * statuslist.length);
 
