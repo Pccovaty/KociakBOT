@@ -110,7 +110,7 @@ bot.on("ready", async() => {
       `by Kociak#0001`,
       `użyj: <help`,
       `Dzisiaj jest ${moment().format('DD.MM.YYYY')}r`,
-      ``,
+      `https://discord.gg/pppgZCV ♥`,
       `15% Complete!`,
       `Nowości! <news`
     ];
@@ -128,7 +128,7 @@ bot.on("ready", async() => {
     } catch (error) {
       console.error(error);
     }
-  }, 10000);
+  }, 30000);
 
  });
  bot.on("message", async message => {
