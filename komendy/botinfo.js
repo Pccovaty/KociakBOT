@@ -10,7 +10,7 @@ module.exports.run = async(bot, message, args) => {
     .addField("Nazwa bota:", bot.user.username)
     .addField("Autor bota:", "<@340557425511759892>", true)
     .addField("Pomoc w bocie:", "<@396284197389729793>, <@151436376712151041>, <@267761613438713876>", true)
-    .addField("Język bota:", "Discord")
+     .addField("Język bota:", "[discord.js](https://discord.js.org/)")
     .setFooter(`${moment().calendar()}  |  ${message.author.tag}`, `${message.author.avatarURL}`)
     
   message.channel.send(botembed);
