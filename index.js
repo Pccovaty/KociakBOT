@@ -6,7 +6,7 @@ const bot = new Discord.Client({disableEveryone: true});
 moment.locale('PL');
 bot.commands = new Discord.Collection();
 bot.mutes = [];
-const antispam = require("discord-anti-spam");
+const antispam = require("discordantispam");
 
 antispam(bot, {
   warnBuffer: 3, //Maximum amount of messages allowed to send in the interval time before getting warned.
