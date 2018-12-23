@@ -17,8 +17,7 @@ antispam(bot, {
   maxDuplicatesWarning: 7,// Maximum amount of duplicate messages a user can send in a timespan before getting warned
   maxDuplicatesBan: 10, // Maximum amount of duplicate messages a user can send in a timespan before getting banned
   deleteMessagesAfterBanForPastDays: 7 // Delete the spammed messages after banning for the past x days.
-  exemptRoles: ["Administracja", "Chat Moderator"] // The names of the roles which should not be spam-filtered
-  exemptUsers: ["Kociak#0001"] // The Discord tags of the users who should not be spam-filtered
+ 
 });
 
 var coins = require("./coins.json");
