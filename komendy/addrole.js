@@ -23,7 +23,7 @@ message.channel.send(`Użytkownik ${rMember.tag} otrzymał role **${gRole.name}*
     await rMember.send(`Brawo, <@${rMember.id}> otrzymałeś role **${gRole.name}**`)
   } catch (e) {
     console.log(e.stack);
-    message.channel.send(`Brawo **<@${rMember.id}>**, właśnie dostałeś(aś) role ${gRole.name}.`)
+    message.channel.send(`Brawo *{rMember.user.username}, właśnie dostałeś(aś) role ${gRole.name}.`)
   }
 }
 
