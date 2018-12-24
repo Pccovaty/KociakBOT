@@ -39,6 +39,7 @@ const serverStats = {
 };
 bot.on("guildMemberAdd", member => {
 const moment = require('moment');
+  
   if (member.guild.id !== serverStats.guildID) return;
 
   bot.channels.get(serverStats.totalUsersID).setName(`|👥| Osób: ${member.guild.memberCount}`);
@@ -59,7 +60,7 @@ bot.on("guildMemberAdd", async member => {
   const welcomechannel = member.guild.channels.find("name", "witaj-zegnaj");
   const welcomeEmebed = new Discord.RichEmbed()
   .setColor("RANDOM")
-  .setDescription(`Witaj **${member.user.username}** na **Community Grafików** Cieszymy się że z nami jesteś!`)
+  .setDescription(`Witaj **${member.user.username}** na **Community Graczy** Cieszymy się że z nami jesteś!`)
   .setFooter(`© 2017-2018 Kociak#6365`)
   welcomechannel.send(welcomeEmebed);
 });
@@ -70,7 +71,7 @@ bot.on("guildMemberRemove", async member => {
   const welcomeechannel = member.guild.channels.find("name", "witaj-zegnaj");
   const welcomeeEmebed = new Discord.RichEmbed()
   .setColor("RANDOM")
-  .setDescription(`Użytkownik **${member.user.username}** opuścił **Community Grafików**... *Sad*`)
+  .setDescription(`Użytkownik **${member.user.username}** opuścił **Community Graczy**... *Sad*`)
   .setFooter(`© 2017-2018 Kociak#6365`)
   welcomeechannel.send(welcomeeEmebed);
 });
