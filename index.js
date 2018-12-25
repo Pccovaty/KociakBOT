@@ -59,7 +59,7 @@ const moment = require('moment');
   bot.channels.get(serverStats.totalUsersID).setName(`|👥| Osób: ${member.guild.memberCount}`);
   bot.channels.get(serverStats.onlinecountID).setName(`|👭| ${member.user.tag}`);
   bot.channels.get(serverStats.botCountID).setName(`|🤖| Boty: ${member.guild.members.filter(m => m.user.bot).size}`);
-  bot.channels.get(serverStats.totalUsersID).edit({ Data: `moment().format('LTS');`});
+  bot.channels.get(serverStats.DataID).edit({ Data: `moment().format('LTS');`});
 });
 bot.on("guildMemberRemove", member => {
 
