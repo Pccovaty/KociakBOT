@@ -27,7 +27,21 @@ fs.readdir("./komendy/", (err, files) => {
     bot.commands.set(props.help.name, props);
   });
 });
-
+bot.on(`message`, async message => {
+  if(message.content ===  `b<reboot`) { 
+if (message.author.id === "340557425511759892") {
+  message.channel.send(":gear: ponowne uruchamianie...")
+  
+  bot.destroy()
+  bot.login(process.env.TOKEN)
+message.channel.send(":gear: ponownne uruchamianie...")
+} else {
+	
+message.channel.send("Tylko Autor bota moze uzyc tej komendy.")
+  
+  }
+  }
+});
 
 const serverStats = {
   guildID: "435686053408538624",
