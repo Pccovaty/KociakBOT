@@ -28,7 +28,7 @@ fs.readdir("./komendy/", (err, files) => {
   });
 });
 bot.on(`message`, async message => {
-  if(message.content ===  `b<reboot`) { 
+  if(message.content ===  `<reboot`) { 
 if (message.author.id === "340557425511759892") {
   message.channel.send(":gear: ponowne uruchamianie...")
   
