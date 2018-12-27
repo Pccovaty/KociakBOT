@@ -1,6 +1,6 @@
 const botconfig = require("./botconfig.json");
 const Discord = require('discord.js');
-const osu! = require("node-osu")
+const osu = require("node-osu")
 
 const fs = require("fs");
 
