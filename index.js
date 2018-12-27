@@ -241,4 +241,4 @@ fs.writeFile("messages.json", JSON.stringify(messages), (err) => {
 });
 
 
-bot.login("DUPA");
+ bot.login(process.env.BOT_TOKEN);
