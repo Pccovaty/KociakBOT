@@ -14,6 +14,7 @@ module.exports.run = async(bot, message, args) => {
       .setAuthor(`Pogoda dla ${current.observationpoint}`)
       .setThumbnail(current.imageUrl)
       .setColor(0x00AE86)
+      .setTimestamp()
       .addField("Strefa czasowa", `UTC${location.timezone}`, true)
       .addField("Rodzaj stopnia", location.degreetype, true)
       .addField("Temperatura", `${current.temperature}°C`, true)
