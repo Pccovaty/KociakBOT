@@ -5,8 +5,9 @@ module.exports.run = async(bot, message, args) => {
   const napisz = args.join(" ");
 
   const embeed = new Discord.RichEmbed()
-  .setdescription(napisz) 
-  .setColor("Green") 
+  .addField("Taryfikator kar", napisz) 
+
+.setColor("Green") 
 
 
   message.channel.send(embeed);
