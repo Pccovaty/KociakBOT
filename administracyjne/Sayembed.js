@@ -2,11 +2,12 @@ const Discord = require("discord.js");
 
 module.exports.run = async(bot, message, args) => {
   if (!message.member.roles.find(r => r.name === "Administracja")) return message.channel.send("❌ Błąd | Nie posiadasz roli  ``Administracja``");
-  const sayMessage = args.join(" ");
+  const napisz = args.join(" ");
 
   const embeed = new Discord.RichEmbed()
-  .setdescription(sayMessage) 
+  .setdescription(napisz) 
   .setColor("Green") 
+
 
   message.channel.send(embeed);
 };
