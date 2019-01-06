@@ -110,7 +110,7 @@ bot.on("guildMemberRemove", async member => {
   welcomeechannel.send(welcomeeEmebed);
 });
 bot.on(`message`, async message => {
-  if(message.content ===  `b<reboot`) { 
+  if(message.content ===  `<reboot`) { 
 if (message.author.id === "340557425511759892") {
   message.channel.send(":gear: ponowne uruchamianie...")
   
@@ -158,12 +158,9 @@ bot.on("ready", async() => {
 bot.on("ready", async() => {
       setInterval(async () => {
     const statuslist = [
-      `BOT by Kociak#0001`,
-      `<help | 2.2.1`,
+      `!!rekrutacja`
       `Dzisiaj jest ${moment().format('DD.MM.YYYY')}r`,
-      `Mega zmiany!`,
-      `<news`,
-      `https://discord.gg/pppgZCV ♥`
+     
     ];
     const random = Math.floor(Math.random() * statuslist.length);
 
