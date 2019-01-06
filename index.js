@@ -158,8 +158,9 @@ bot.on("ready", async() => {
 bot.on("ready", async() => {
       setInterval(async () => {
     const statuslist = [
-      `!!rekrutacja`
+      `Wystartowała rekrutacja`,
       `Dzisiaj jest ${moment().format('DD.MM.YYYY')}r`,
+      `!!rekrutacja`
      
     ];
     const random = Math.floor(Math.random() * statuslist.length);
