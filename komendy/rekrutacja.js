@@ -31,12 +31,14 @@ module.exports.run = async(bot, message, args, msg) => {
      message.channel.send(help)
      message.channel.send(heelp)
     } else  {
+        incidentchannel.send("<@&521378978569912340>")
         const msg = await incidentchannel.send(embed);
 
         await msg.react("526698392810815518");
         await msg.react("526698394543194112");
       
         message.delete({timeout: 1000});
+        message.channel.send("Rekrutacja została pomyślnie napisana! (teraz tylko czekac na adminów)")
             }
         };
 
