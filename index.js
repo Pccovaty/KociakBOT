@@ -131,11 +131,6 @@ bot.on("message", async message => {
 
 });
 bot.on("ready", async() => {
-	const moment = require('moment');
-  
-  if (member.guild.id !== serverStats.guildID) return;
-	bot.channels.get(serverStats.dataID).edit({ Data: `${moment().format('DD.MM.YYYY')}`});
-});
  let guild = bot.guilds.get('435686053408538624');	
  
       let all = 0;	
