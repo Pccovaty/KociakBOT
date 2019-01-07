@@ -93,7 +93,7 @@ bot.on("guildMemberAdd", async member => {
   const welcomechannel = member.guild.channels.find("name", "witaj-zegnaj");
   const welcomeEmebed = new Discord.RichEmbed()
   .setColor("RANDOM")
-  .setDescription(`Witaj **${member.user.username}** na **Community Graczy** Cieszymy się że z nami jesteś!`)
+  .setDescription(`Witaj **${member.user.username}** na **${member.guild.name}** Cieszymy się że z nami jesteś!`)
   .setFooter(`© 2017-2018 Kociak#6365`)
   welcomechannel.send(welcomeEmebed);
 });
@@ -105,7 +105,7 @@ bot.on("guildMemberRemove", async member => {
   const welcomeechannel = member.guild.channels.find("name", "witaj-zegnaj");
   const welcomeeEmebed = new Discord.RichEmbed()
   .setColor("#323438")
-  .setDescription(`**${member.user.tag}** opuścił(a) **Community Graczy**`)
+  .setDescription(`**${member.user.tag}** opuścił(a) **${member.guild.name}**`)
   
   welcomeechannel.send(welcomeeEmebed);
 });
