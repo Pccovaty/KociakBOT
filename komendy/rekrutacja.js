@@ -38,7 +38,7 @@ module.exports.run = async(bot, message, args, msg) => {
         await msg.react("526698394543194112");
       
         message.delete({timeout: 1000});
-        message.channel.send("Rekrutacja została pomyślnie napisana! (teraz tylko czekac na adminów)")
+        message.channel.send("Rekrutacja została pomyślnie napisana! (teraz tylko czekac na adminów).")
             }
         };
 
