@@ -16,8 +16,8 @@ module.exports.run = async(bot, message, args) => {
     .setDescription(`**▸ Wyrzucony użytkownik:**  ${member.user.tag} \n **▸ Wyrzucony przez:** ${message.author.tag} \n **▸ Powód:** ${kReason}`)
     .setFooter(`${moment().format('L')}  |  ${message.author.tag}`, `${message.author.avatarURL}`)
 
-    const incidentchannel = message.guild.channels.find("name", "mod-log");
-    if (!incidentchannel) return message.channel.send("Nie mogę znaleźć kanału. ``mod-log``");
+    const incidentchannel = message.guild.channels.find("name", "💻║mod-log");
+    if (!incidentchannel) return message.channel.send("Nie mogę znaleźć kanału. ``💻║mod-log``");
 
     incidentchannel.send(kickeembed);
 
