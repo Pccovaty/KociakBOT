@@ -4,7 +4,7 @@ const ms = require("ms");
 module.exports.run = async (bot, message, args) => {
     if (!message.member.roles.find(r => r.name === "Administracja")) return message.channel.send("❌ Błąd | Nie posiadasz roli  ``Administracja``");
     if (!message.member.hasPermissions ('KICK_MEMBERS')) return message.channel.send("Potrzebujesz permisji **KICK_MEMBERS** aby użyć tej komendy")
-    const modlog = message.guild.channels.find(channel => channel.name === 'mod-logs');
+    const modlog = message.guild.channels.find(channel => channel.name === '💻║mod-log');
     const mod = message.author;
     let user = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if (!user) return message.channel.send("Couldn't find user.")
@@ -16,8 +16,8 @@ module.exports.run = async (bot, message, args) => {
       message.reply("Użycie: <unmute <user> <reason>");
       return;
     }
-  let muteChannel = message.guild.channels.find(`name`, "mod-log");
-  if (!muteChannel) return message.channel.send('**Please create a channel with the name `mod-log`**')
+  let muteChannel = message.guild.channels.find(`name`, "💻║mod-log");
+  if (!muteChannel) return message.channel.send('**Please create a channel with the name `💻║mod-log`**')
 
     if (!muterole) {
         try {
