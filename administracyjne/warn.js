@@ -32,8 +32,8 @@ module.exports.run = async(bot, message, args) => {
         .setDescription(`**▸ Użytkownik ostrzeżony:** ${wUser.user.tag} \n **▸ Ostrzeżony przez:** ${message.author.tag} \n  **▸ Powód:** ${reason}`)
         .setFooter(`${moment().format('DD.MM.YYYY')} `)
     
-      const warnchannel = message.guild.channels.find("name", "mod-log");
-      if (!warnchannel) return message.reply("Nie znalazłem kanału ``mod-log``");
+      const warnchannel = message.guild.channels.find("name", "💻║mod-log");
+      if (!warnchannel) return message.reply("Nie znalazłem kanału ``💻║mod-log``");
     
       warnchannel.send(warnEmbed);
     
