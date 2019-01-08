@@ -15,8 +15,8 @@ module.exports.run = async(bot, message, args) => {
     
     message.react("524964849181130782")
 
-  const incidentchannel = message.guild.channels.find("name", "mod-log");
-  if (!incidentchannel) return message.channel.send("Nie mogę znaleźć kanału. ``mod-log``");
+  const incidentchannel = message.guild.channels.find("name", "💻║mod-log");
+  if (!incidentchannel) return message.channel.send("Nie mogę znaleźć kanału. ``💻║mod-log``");
   message.channel.send(`Kolejny ban do kolekcji 🤣.`);
 
 
