@@ -61,22 +61,6 @@ fs.readdir("./4fun/", (err, files) => {
     bot.commands.set(props.help.name, props);
   });
 });
-bot.on("ready", async() => {
-  const moment = require('moment');
-  
-  const serwer = {
-    guildID: "435686053408538624",
-    dataID: "523819168689029121"
-  };
-  bot.channels.get(serwer.dataID).edit({ Data: `${moment().format('DD.MM.YYYY')}`});
-});
-const serverStats = {
-  guildID: "435686053408538624",
-  totalUsersID: "528977589046607893",
-  botCountID: "528978081059176448",
-  
-
-};
 const serverStats = {
   guildID: "435686053408538624",
   totalUsersID: "467226426563756032",
