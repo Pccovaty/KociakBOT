@@ -114,7 +114,7 @@ bot.on("guildMemberRemove", member => {
 bot.on("guildMemberAdd", async member => {
 
   console.log(`${member.id} dołączył(a) na serwer.`);
-  const welcomechannel = member.guild.channels.find("id", "528978810884849674");
+  const welcomechannel = member.guild.channels.find("id", "522427423090802688");
   const welcomeEmebed = new Discord.RichEmbed()
   .setColor("RANDOM")
   .setDescription(`Witaj **${member.user.tag}** na **${member.guild.name}**. \n \n Jesteś aktualnie na kanale <#523602318168686602> \n Aby uzyskać całkowity dostęp do serwera wpisz komende **<verify** `)
@@ -179,9 +179,26 @@ bot.on("ready", async() => {
     }
   }, 10000);
 
- 
-});
 
+
+    const data = setInterval(function () {
+  
+         let data = moment().format("DD.MM.YYYY");
+         bot.channels.get('523819168689029121').setName("|📊| Dzisiaj jest: " + data);
+  
+      }, 1 * 1000);
+
+    
+  
+
+
+  const date = setInterval(function () {
+  
+    let date = moment().format("HH:mm:ss");
+    bot.channels.get('533016026888011786').setName("|🕐| Godzina: " + date);
+
+ }, 1 * 1000);
+});
  bot.on("message", async message => {
 
   if (message.author.bot) return;
