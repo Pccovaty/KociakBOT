@@ -4,7 +4,7 @@ module.exports.run = async (bot, message, args, msg) => {
     message.delete();
     let role = message.guild.roles.find(role => role.name === 'Uzytkownicy');
     let rolee = message.guild.roles.find(role => role.name === 'Nowy(a)');
-    if (message.channel.name !== 'weryfikacja') return message.reply('Musisz dołączyć na kanał <#523602318168686602>');
+    if (message.channel.name !== 'weryfikacja') return message.reply('Musisz dołączyć na kanał <#523602318168686602>');	
     message.member.addRole(role);
     message.member.removeRole(rolee)
     if (message.member.roles.has(role.id)) {
@@ -19,7 +19,7 @@ module.exports.run = async (bot, message, args, msg) => {
             .setAuthor(message.member.displayName, message.author.displayAvatarURL)
             .setColor('#36393f')
             .setDescription('Twoje konto zostało pomyślnie zweryfikowane.')
-        return msg.channel.send((verifyEmbed)).then(msg => msg.delete(10000))
+        return msg.channel.send((verifyEmbed));
          
         
     }
