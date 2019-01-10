@@ -156,6 +156,29 @@ bot.on("message", async message => {
 
 });
 bot.on("ready", async() => {
+	let guild = bot.guilds.get('G435686053408538624');
+ 
+    let all = 0;
+    let offline = 0;
+ 
+    const interval = setInterval(function () {
+        let guild = bot.guilds.get('435686053408538624');
+        guild.members.forEach(member => {
+ 
+            if (!member.user.bot) all++;
+            if (member.user.presence.status == 'offline' && !member.user.bot) offline++;
+        });
+ 
+     let online = all - offline;
+ 
+        bot.channels.get('523583115583815690').setName("|🔵| Online: " + online);
+ 
+        all = 0;
+        offline = 0;
+ 
+     }, 1 * 5000);
+});
+bot.on("ready", async() => {
       setInterval(async () => {
     const statuslist = [
       `Dzisiaj jest ${moment().format('DD.MM.YYYY')}r`,
