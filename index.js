@@ -114,12 +114,12 @@ bot.on("guildMemberRemove", member => {
 bot.on("guildMemberAdd", async member => {
 
   console.log(`${member.id} dołączył(a) na serwer.`);
-  const welcomechannel = member.guild.channels.find("id", "522427423090802688");
+  const welcomechannel = member.guild.channels.find(`name`, "witaj");
   const welcomeEmebed = new Discord.RichEmbed()
   .setColor("RANDOM")
   .setDescription(`Witaj **${member.user.tag}** na **${member.guild.name}**. \n \n Jesteś aktualnie na kanale <#523602318168686602> \n Aby uzyskać całkowity dostęp do serwera wpisz komende **<verify** `)
   .setFooter(`© 2017-2018 Kociak#6365`)
-  welcomechannel.send(welcomeEmebed).then(msg => {msg.delete(1000000)})
+  welcomechannel.send(welcomeEmebed)
   
 });
 
