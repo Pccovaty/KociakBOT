@@ -4,7 +4,7 @@ const errors = require("../utils/errors.js");
 module.exports.run = async (bot, message, args) => {
   const incidentchannel = message.guild.channels.find("id", "527946215791525908");
   if (!incidentchannel) return message.channel.send("Nie mogę znaleźć kanału. ``527946215791525908``");
-  const modlog = guild.channels.find('id', '521716025457377297');//mod-log channel name. change for you
+  const modlog = message.guild.channels.find('id', '521716025457377297');//mod-log channel name. change for you
   if (!modlog) return message.channel.send("Nie mogę znaleźć kanału. ``💻║mod-log``");
   //!dodaj @andrew VIP
   if (!message.member.roles.find(r => r.name === "Administracja")) return message.channel.send("❌ Błąd | Nie posiadasz roli  ``Administracja``");
