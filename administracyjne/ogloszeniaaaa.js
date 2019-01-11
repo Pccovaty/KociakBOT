@@ -9,7 +9,7 @@ module.exports.run = async(bot, message, args, msg) => {
           if (!tekst) return message.channel.send("Podaj tekst ogłoszenia"); // tutaj jak nic nie wpisze sie to bot pisze:
           let embed = new Discord.RichEmbed() // tutaj tabelka sie tworzy
             .setTitle("Nowe ogłoszenie") // tytuł
-            .setColor("Purple") // kolor
+            .setColor("Blue") // kolor
             .addField('Opis:', tekst) //Opis:
             .setFooter(`  Ogłoszenie dodane przez: ${message.author.tag}`, `${message.author.avatarURL}`) // tutaj footer (podspodem)
             .setTimestamp() // tutaj data xd
