@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 const fs = require("fs");
 const moment = require('moment');
 const bot = new Discord.Client({disableEveryone: true});
-moment.locale('PL');
+//moment.locale('PL');
 bot.commands = new Discord.Collection();
 bot.mutes = [];
 
