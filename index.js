@@ -90,8 +90,8 @@ fs.readdir("./4fun/", (err, files) => {
 
 const serverStats = {
   guildID: "435686053408538624",
-  totalUsersID: "528977589046607893",
-  botCountID: "528978081059176448",
+  totalUsersID: "467226426563756032",
+  botCountID: "523590251856265225",
   onlinecountID: "481414408699117568"
 
 };
