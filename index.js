@@ -112,13 +112,13 @@ bot.on("guildMemberRemove", member => {
   bot.channels.get(serverStats.botCountID).setName(`|🤖| Boty: ${member.guild.members.filter(m => m.user.bot).size}`);
 });
 bot.on("guildMemberAdd", async member => {
-
+const welcomechannel = member.guild.channels.find(`name`, "witaj");
   console.log(`${member.id} dołączył(a) na serwer.`);
-  const welcomechannel = member.guild.channels.find(`name`, "witaj");
+
   const welcomeEmebed = new Discord.RichEmbed()
   .setColor("RANDOM")
-  .setDescription(`Witaj **${member.user.tag}** na **${member.guild.name}**. \n \n Jesteś aktualnie na kanale <#523602318168686602> \n Aby uzyskać całkowity dostęp do serwera wpisz komende **<verify** `)
-  .setFooter(`© 2017-2018 Kociak#6365`)
+  .setDescription(`Witaj **${member.user.tag}** na **${member.guild.name}**. Cieszymy się że z nami jesteś!`)
+  .setFooter(`© 2017-2018 Kociak#0001`)
   welcomechannel.send(welcomeEmebed)
   
 });
