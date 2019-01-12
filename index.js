@@ -100,16 +100,16 @@ bot.on("guildMemberAdd", member => {
   
   if (member.guild.id !== ser.guildID) return;
 
-  bot.channels.get(ser.totalUsersID).setname(`|👥| Osób: ${member.guild.memberCount}`);
-  bot.channels.get(ser.onlinecountID).setname(`|👭| ${member.user.tag}`);
-  bot.channels.get(ser.botCountID).setname(`|🤖| Boty: ${member.guild.members.filter(m => m.user.bot).size}`);
+  bot.channels.get(ser.totalUsersID).setName(`|👥| Osób: ${member.guild.memberCount}`);
+  bot.channels.get(ser.onlinecountID).setName(`|👭| ${member.user.tag}`);
+  bot.channels.get(ser.botCountID).setName(`|🤖| Boty: ${member.guild.members.filter(m => m.user.bot).size}`);
 });
 bot.on("guildMemberRemove", member => {
 
   if (member.guild.id !== ser.guildID) return;
 
-  bot.channels.get(ser.totalUsersID).setname(`|👥| Osób: ${member.guild.memberCount}`);
-  bot.channels.get(ser.botCountID).setname(`|🤖| Boty: ${member.guild.members.filter(m => m.user.bot).size}`);
+  bot.channels.get(ser.totalUsersID).setName(`|👥| Osób: ${member.guild.memberCount}`);
+  bot.channels.get(ser.botCountID).setName(`|🤖| Boty: ${member.guild.members.filter(m => m.user.bot).size}`);
 });
 bot.on("guildMemberAdd", async member => {
 const welcomechannel = member.guild.channels.find(`name`, "witaj");
