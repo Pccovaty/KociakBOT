@@ -113,8 +113,6 @@ bot.on("guildMemberRemove", member => {
 });
 bot.on("guildMemberAdd", async member => {
 const welcomechannel = member.guild.channels.find(`name`, "witaj");
-  console.log(`${member.id} dołączył(a) na serwer.`);
-
   const welcomeEmebed = new Discord.RichEmbed()
   .setColor("RANDOM")
   .setDescription(`Witaj **${member.user.tag}** na **${member.guild.name}**. Cieszymy się że z nami jesteś!`)
