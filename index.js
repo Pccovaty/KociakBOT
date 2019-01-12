@@ -88,7 +88,7 @@ fs.readdir("./4fun/", (err, files) => {
   });
 });
 
-const serverStats = {
+const ser = {
   guildID: "435686053408538624",
   totalUsersID: "467226426563756032",
   botCountID: "523590251856265225",
@@ -98,18 +98,18 @@ const serverStats = {
 
 bot.on("guildMemberAdd", member => {
   
-  if (member.guild.id !== serverStats.guildID) return;
+  if (member.guild.id !== ser.guildID) return;
 
-  bot.channels.get(serverStats.totalUsersID).setName(`|👥| Osób: ${member.guild.memberCount}`);
-  bot.channels.get(serverStats.onlinecountID).setName(`|👭| ${member.user.tag}`);
-  bot.channels.get(serverStats.botCountID).setName(`|🤖| Boty: ${member.guild.members.filter(m => m.user.bot).size}`);
+  bot.channels.get(ser.totalUsersID).setName(`|👥| Osób: ${member.guild.memberCount}`);
+  bot.channels.get(ser.onlinecountID).setName(`|👭| ${member.user.tag}`);
+  bot.channels.get(ser.botCountID).setName(`|🤖| Boty: ${member.guild.members.filter(m => m.user.bot).size}`);
 });
 bot.on("guildMemberRemove", member => {
 
-  if (member.guild.id !== serverStats.guildID) return;
+  if (member.guild.id !== ser.guildID) return;
 
-  bot.channels.get(serverStats.totalUsersID).setName(`|👥| Osób: ${member.guild.memberCount}`);
-  bot.channels.get(serverStats.botCountID).setName(`|🤖| Boty: ${member.guild.members.filter(m => m.user.bot).size}`);
+  bot.channels.get(ser.totalUsersID).setName(`|👥| Osób: ${member.guild.memberCount}`);
+  bot.channels.get(ser.botCountID).setName(`|🤖| Boty: ${member.guild.members.filter(m => m.user.bot).size}`);
 });
 bot.on("guildMemberAdd", async member => {
 const welcomechannel = member.guild.channels.find(`name`, "witaj");
