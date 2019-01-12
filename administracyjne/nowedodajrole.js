@@ -25,11 +25,11 @@ module.exports.run = async (bot, message, args) => {
   await (users.addRole(gRole.id));
   const emeeed = new Discord.RichEmbed()
   .setAuthor(`${message.author.tag}`, message.author.avatarURL)
-  .setDescription(`**▸ Użytkownik:** ${users.user.tag} \n  **▸ otrzymał role** ${gRole} \n **▸ Moderator który daje role:** ${message.author.tag}`)
+  .setDescription(`**▸ Użytkownik:** ${users.user.tag} \n  **▸ otrzymał(a) role** ${gRole} \n **▸ Moderator który daje role:** ${message.author.tag}`)
   .setColor("#b275f3")
   const emeed = new Discord.RichEmbed()
   .setAuthor(`${message.author.tag}`, message.author.avatarURL)
-  .setDescription(`**▸ Użytkownik:** ${users.user.tag} \n  **▸ otrzymał(a) role:** ${gRole} \n **▸ Moderator który daje role:** ${message.author.tag}`)
+  .setDescription(`**▸ Użytkownik:** ${users.user.tag} (${users.user.id}) \n  **▸ otrzymał(a) role:** ${gRole} \n **▸ Moderator który daje role:** ${message.author.tag}`)
   .setColor("#b275f3")
   message.channel.send("Rola została pomyślnie dodana!").then(msg => {msg.delete(5000)})
 incidentchannel.send(emeeed)
