@@ -92,8 +92,8 @@ const ser = {
   guildID: "435686053408538624",
   totalUsersID: "467226426563756032",
   botCountID: "523590251856265225",
-  onlinecountID: "481414408699117568"
-
+  onlinecountID: "481414408699117568",
+  banID: "523588993678311426",
 };
 
 bot.on("guildMemberAdd", member => {
@@ -110,6 +110,16 @@ bot.on("guildMemberRemove", member => {
 
   bot.channels.get(ser.totalUsersID).setName(`» Osób: ${member.guild.memberCount}`);
   bot.channels.get(ser.botCountID).setName(`» Boty: ${member.guild.members.filter(m => m.user.bot).size}`);
+});
+bot.on("guildBanAdd", guild => {
+guild.fetchBans().then(bans => {
+        bot.channels.get(ser.banID).setName(`» Banów: ${bans.size}`);
+});
+});
+bot.on("guildBanRemove", guild => {
+guild.fetchBans().then(bans => {
+        bot.channels.get(ser.banID).setName(`» Banów: ${bans.size}`);
+});
 });
 bot.on("guildMemberAdd", async member => {
 const welcomechannel = member.guild.channels.find(`name`, "👋║witaj");
