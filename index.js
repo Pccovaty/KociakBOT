@@ -112,7 +112,7 @@ bot.on("guildMemberRemove", member => {
   bot.channels.get(ser.botCountID).setName(`|🤖| Boty: ${member.guild.members.filter(m => m.user.bot).size}`);
 });
 bot.on("guildMemberAdd", async member => {
-const welcomechannel = member.guild.channels.find(`name`, "witaj");
+const welcomechannel = member.guild.channels.find(`name`, "👋║witaj");
   const welcomeEmebed = new Discord.RichEmbed()
   .setColor("RANDOM")
   .setDescription(`Witaj **${member.user.tag}** na **${member.guild.name}**. Cieszymy się że z nami jesteś!`)
