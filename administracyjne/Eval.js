@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 exports.run = async (bot, message, args, color, prefix) => {
 
-    if (message.author.id !== '340557425511759892' && message.author.id !== '340557425511759892') {
+    if (message.author.id !== '340557425511759892' && message.author.id !== '340557425511759892') return;
        
 
     try {
@@ -35,7 +35,7 @@ exports.run = async (bot, message, args, color, prefix) => {
 
 } else {
     message.channel.send("Nie masz permisjii do komendy ``eval``") 
-   } 
+
        } 
           
 
