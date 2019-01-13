@@ -33,8 +33,8 @@ exports.run = async (bot, message, args, color, prefix) => {
 
     }
 
-} else {
-    message.channel.send("Nie masz permisjii do komendy ``eval``") 
+
+
 
        } 
           
