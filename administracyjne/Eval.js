@@ -31,7 +31,8 @@ exports.run = async (bot, message, args, color, prefix) => {
         message.channel.send(`\`\`\`js\n${e}\n\`\`\``);
 
     } else {
-        message.channel.send("Nie masz permisjii do komendy ``eval``) 
+        message.channel.send("Nie masz permisjii do komendy ``eval``") 
+
        } 
 
 }
