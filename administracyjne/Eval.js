@@ -2,7 +2,8 @@ const Discord = require("discord.js");
 
 exports.run = async (bot, message, args, color, prefix) => {
 
-    if (message.author.id !== '340557425511759892' && message.author.id !== '340557425511759892') return;
+    if (message.author.id !== '340557425511759892' && message.author.id !== '340557425511759892') {
+       
 
     try {
 
@@ -30,10 +31,13 @@ exports.run = async (bot, message, args, color, prefix) => {
 
         message.channel.send(`\`\`\`js\n${e}\n\`\`\``);
 
-    } else {
-        message.channel.send("Nie masz permisjii do komendy ``eval``") 
+    }
 
+} else {
+    message.channel.send("Nie masz permisjii do komendy ``eval``") 
+   } 
        } 
+          
 
 }
 
