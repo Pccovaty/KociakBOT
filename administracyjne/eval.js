@@ -1,46 +1,25 @@
 const Discord = require("discord.js");
 
-module.exports.run = async(bot, message, args) => {
-var util = require("util");
-let args = message.content.split(" ").slice(1);   
-let code = args.join(' ');
-  if (message.author.id != '340557425511759892') return;
+exports.run = async (bot, message, args, color, prefix) => {
+    if (message.author.id !== '340557425511759892' && message.author.id !== '340557425511759892') return;
     try {
-  let ev = eval(code)
-                let str = util.inspect(ev, {
-                    depth: 1
-                })
-                 str = `${str.replace(new RegExp(`${client.token}|${process.env.TOKEN}`, "g"), "nop?")}`;
-                if(str.length > 1800) {
-                    str = str.substr(0, 1800)
-                    str = str + "..."
-                }
-                message.delete(); 
-    message.channel.send("", { embed: { 
-      color: 2551400,      
-  fields: [{        
-    name: '**Input**',     
-      value: '\`\`\`' + code + '\`\`\`'         
-},{     
-      name: '**Output**', 
-          value: '\`\`\`' + str + '\`\`\`'  
-        }], 
-      footer: {     
-    text: ``    }     }});} catch (err) {   message.react("❌");
-message.channel.send("", { embed: { 
-      color: 2551400,      
-  fields: [{        
-    name: '**Input**',     
-      value: '\`\`\`' + code + '\`\`\`'         
-},{     
-      name: '**Output**', 
-          value: '\`\`\`' + err + '\`\`\`'  
-        }], 
-      footer: {     
-    text: ``    }     }});    } }
-    
-};
+        let codein = args.join(" ");
+        let code = eval(codein);
 
-module.exports.help = {
-  name: "eval"
-};
+        if (typeof code !== 'string')
+            code = require('util').inspect(code, { depth: 0 });
+        let embed = new Discord.RichEmbed()
+        .setAuthor('Evaluate')
+        .setColor('RANDOM')
+        .addField(':inbox_tray: Input', `\`\`\`js\n${codein}\`\`\``)
+        .addField(':outbox_tray: Output', `\`\`\`js\n${code}\n\`\`\``)
+        message.channel.send(embed)
+    } catch(e) {
+        message.channel.send(`\`\`\`js\n${e}\n\`\`\``);
+    }
+}
+
+exports.help = {
+    name: 'eval',
+    category: 'OWNER BOT'
+}
