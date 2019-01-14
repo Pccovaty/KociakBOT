@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args, messages) => {
    
     const fetched = await message.channel.fetchMessages({limit: deleteCount});
     message.channel.bulkDelete(fetched)
-      .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
+      .catch(error => message.reply(`Usuwanie wiadomości się nie powiodło, powod: ${error}`));
   
   let purgeEmbed = new Discord.RichEmbed()
     .setAuthor("♻️ Akcja | Usuwanie wiadomości")
