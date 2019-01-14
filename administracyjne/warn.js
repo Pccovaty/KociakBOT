@@ -8,7 +8,7 @@ module.exports.run = async(bot, message, args) => {
       message.react("452183703267835910");
       //!warn @daeshan <reason>
       if (!message.member.roles.find(r => r.name === "Administracja")) return message.channel.send("❌ Błąd | Nie posiadasz roli  ``Administracja``");
-      if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(":lock: | Dostęp zablokowany! Nie posiadasz roli z uprawieniami ``ADMINISTRATOR``");
+    
       const wUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
       if (!wUser) return message.reply("Nie mogłem znaleźć użytkownika");
       const reason = args.join(" ").slice(22);
