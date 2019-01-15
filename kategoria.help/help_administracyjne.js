@@ -6,7 +6,7 @@ module.exports.run = async(bot, message, args) => {
   .setTitle("Komendy administracyjne:")
   .setColor("RED")
   .setTimestamp()
-  .setDescription(":black_small_square:  ``!!kick <@user> <powód>`` - wyrzuca użytkownika z serwera  \n \n :black_small_square:  ``!!ban <@user> <powód>`` - banuje użytkownika na serwerze \n \n  :black_small_square:  ``!!clear <ilość wiadomości>`` - Usuwa X wiadomości \n \n :black_small_square: ``!!dodajrole <@user> <rola>`` - Dodaje użytkownikowi daną role \n \n :black_small_square: ``!!usunrole <@user> <rola>`` - Odbiera użytkownikowi daną role \n \n :black_small_square:  ``!!say <treść>`` - Wysyła to samo \n \n :black_small_square:  ``!!sayembed <treść>`` - Wysyła to samo tylko że w tabelce")
+  .setDescription(":black_small_square:  ``!!kick <@user> <powód>`` - wyrzuca użytkownika z serwera  \n \n :black_small_square:  ``!!ban <@user> <powód>`` - banuje użytkownika na serwerze \n \n  :black_small_square:  ``!!clear <ilość wiadomości>`` - Usuwa X wiadomości \n \n :black_small_square: ``!!dodaj <@user> <rola>`` - Dodaje użytkownikowi daną role \n \n :black_small_square: ``!!usun <@user> <rola>`` - Odbiera użytkownikowi daną role \n \n :black_small_square:  ``!!say <treść>`` - Wysyła to samo \n \n :black_small_square:  ``!!sayembed <treść>`` - Wysyła to samo tylko że w tabelce")
   .setFooter(`Komenda użyta przez: ${message.author.tag}`)
   const fun = new Discord.RichEmbed()
   .setTitle("Komendy 4fun:")
