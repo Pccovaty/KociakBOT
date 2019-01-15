@@ -12,7 +12,7 @@ module.exports.run = async(bot, message, args) => {
   .setTitle("Komendy 4fun:")
   .setColor("GREEN")
   .setTimestamp()
-  .setDescription(":black_small_square: ``!!8ball <treść>`` - Zapytaj magiczną kulke o wszystko! \n \n :black_small_square: ``!!slots`` - zabawa w hazard \n \n :black_small_square: ``!!cat`` - wysyła losowe zdjęcie kota \n \n :black_small_square: ``!!dog`` - wysyła losowe zdjęcie psa \n \n :black_small_square: ``!!hastebin <treść>`` - Wysyła treść na strone hastebin.com \n \n :black_small_square: ``!!hug <@user>`` - Przytula daną osobe \n \n :black_small_square: ``!!kiss <@user>`` - Całuje daną osobe \n \n :black_small_square: ``!!pat <@user>`` - Głaszcze daną osobe \n \n :black_small_square: ``!!ping`` - Pokazuje twój aktualny ping  ")
+  .setDescription(":black_small_square: ``!!8ball <treść>`` - Zapytaj magiczną kulke o wszystko! \n \n :black_small_square: ``!!cat`` - wysyła losowe zdjęcie kota \n \n :black_small_square: ``!!dog`` - wysyła losowe zdjęcie psa \n \n :black_small_square: ``!!hastebin <treść>`` - Wysyła treść na strone hastebin.com \n \n :black_small_square: ``!!hug <@user>`` - Przytula daną osobe \n \n :black_small_square: ``!!kiss <@user>`` - Całuje daną osobe \n \n :black_small_square: ``!!pat <@user>`` - Głaszcze daną osobe \n \n :black_small_square: ``!!ping`` - Pokazuje twój aktualny ping  ")
   .setFooter(`Komenda użyta przez: ${message.author.tag}`)
   const zabawa = new Discord.RichEmbed()
   .setTitle("Komendy zabawa:")
