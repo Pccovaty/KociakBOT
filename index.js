@@ -190,9 +190,9 @@ bot.on("ready", async() => {
       setInterval(async () => {
     const statuslist = [
       `Dzisiaj jest ${moment().format('DD.MM.YYYY')}r`,
-      `50% Working`,
-      `31/50 komend xd`,
-      `Nowe komendy`
+      `Bot by Kociak#0001`,
+      `45/50 Command Complete`,
+      `!!help`
     ];
     const random = Math.floor(Math.random() * statuslist.length);
 
