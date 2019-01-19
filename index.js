@@ -111,16 +111,16 @@ fs.readdir("./4fun/", (err, files) => {
 //  bot.channels.get(ser.totalUsersID).setName(`» Osób: ${member.guild.memberCount}`);
 //bot.channels.get(ser.botCountID).setName(`» Boty: ${member.guild.members.filter(m => m.user.bot).size}`);
 //});
-bot.on("guildBanAdd", guild => {
-guild.fetchBans().then(bans => {
-        bot.channels.get(ser.banID).setName(`» Banów: ${bans.size}`);
-});
-});
-bot.on("guildBanRemove", guild => {
-guild.fetchBans().then(bans => {
-        bot.channels.get(ser.banID).setName(`» Banów: ${bans.size}`);
-});
-});
+//bot.on("guildBanAdd", guild => {
+//guild.fetchBans().then(bans => {
+ //       bot.channels.get(ser.banID).setName(`» Banów: ${bans.size}`);
+//});
+//});
+//bot.on("guildBanRemove", guild => {
+//guild.fetchBans().then(bans => {
+  //      bot.channels.get(ser.banID).setName(`» Banów: ${bans.size}`);
+//});
+//});
 bot.on("guildMemberAdd", async member => {
 const welcomechannel = member.guild.channels.find(`name`, "👋║witaj");
   const welcomeEmebed = new Discord.RichEmbed()
