@@ -88,29 +88,29 @@ fs.readdir("./4fun/", (err, files) => {
   });
 });
 
-const ser = {
-  guildID: "435686053408538624",
-  totalUsersID: "467226426563756032",
-  botCountID: "523590251856265225",
-  onlinecountID: "481414408699117568",
-  banID: "523588993678311426",
-};
+//const ser = {
+ // guildID: "435686053408538624",
+  //totalUsersID: "467226426563756032",
+  //botCountID: "523590251856265225",
+  //onlinecountID: "481414408699117568",
+  //banID: "523588993678311426",
+//};
 
-bot.on("guildMemberAdd", member => {
+//bot.on("guildMemberAdd", member => {
   
-  if (member.guild.id !== ser.guildID) return;
+ // if (member.guild.id !== ser.guildID) return;
 
-  bot.channels.get(ser.totalUsersID).setName(`» Osób: ${member.guild.memberCount}`);
-  bot.channels.get(ser.onlinecountID).setName(`» ${member.user.tag}`);
-  bot.channels.get(ser.botCountID).setName(`» Boty: ${member.guild.members.filter(m => m.user.bot).size}`);
-});
-bot.on("guildMemberRemove", member => {
+// bot.channels.get(ser.totalUsersID).setName(`» Osób: ${member.guild.memberCount}`);
+//  bot.channels.get(ser.onlinecountID).setName(`» ${member.user.tag}`);
+//  bot.channels.get(ser.botCountID).setName(`» Boty: ${member.guild.members.filter(m => m.user.bot).size}`);
+//});
+//bot.on("guildMemberRemove", member => {
 
-  if (member.guild.id !== ser.guildID) return;
+ // if (member.guild.id !== ser.guildID) return;
 
-  bot.channels.get(ser.totalUsersID).setName(`» Osób: ${member.guild.memberCount}`);
-  bot.channels.get(ser.botCountID).setName(`» Boty: ${member.guild.members.filter(m => m.user.bot).size}`);
-});
+//  bot.channels.get(ser.totalUsersID).setName(`» Osób: ${member.guild.memberCount}`);
+//bot.channels.get(ser.botCountID).setName(`» Boty: ${member.guild.members.filter(m => m.user.bot).size}`);
+//});
 bot.on("guildBanAdd", guild => {
 guild.fetchBans().then(bans => {
         bot.channels.get(ser.banID).setName(`» Banów: ${bans.size}`);
@@ -163,35 +163,35 @@ bot.on("message", async message => {
   }
 
 });
-bot.on("ready", async() => {
-	let guild = bot.guilds.get('G435686053408538624');
+//bot.on("ready", async() => {
+//	let guild = bot.guilds.get('G435686053408538624');
  
-    let all = 0;
-    let offline = 0;
+  //  let all = 0;
+  //  let offline = 0;
  
-    const interval = setInterval(function () {
-        let guild = bot.guilds.get('435686053408538624');
-        guild.members.forEach(member => {
+   // const interval = setInterval(function () {
+   //     let guild = bot.guilds.get('435686053408538624');
+   //     guild.members.forEach(member => {
  
-            if (!member.user.bot) all++;
-            if (member.user.presence.status == 'offline' && !member.user.bot) offline++;
-        });
+   //         if (!member.user.bot) all++;
+   //         if (member.user.presence.status == 'offline' && !member.user.bot) offline++;
+    //    });
  
-     let online = all - offline;
+   //  let online = all - offline;
+ //
+    //    bot.channels.get('523583115583815690').setName("» Online: " + online);
  
-        bot.channels.get('523583115583815690').setName("» Online: " + online);
+   //     all = 0;
+   //     offline = 0;
  
-        all = 0;
-        offline = 0;
- 
-     }, 1 * 5000);
-});
+   //  }, 1 * 5000);
+//});
 bot.on("ready", async() => {
       setInterval(async () => {
     const statuslist = [
       `Dzisiaj jest ${moment().format('DD.MM.YYYY')}r`,
       `Bot by Kociak#0001`,
-      `45/50 Command Complete`,
+      `Nudne zabawy`,
       `!!help`
     ];
     const random = Math.floor(Math.random() * statuslist.length);
@@ -208,27 +208,27 @@ bot.on("ready", async() => {
     } catch (error) {
       console.error(error);
     }
-  }, 10000);
+  }, 50000);
 
 
 
-    const data = setInterval(function () {
+//    const data = setInterval(function () {
   
-         let data = moment().format("DD.MM.YYYY");
-         bot.channels.get('523819168689029121').setName("» Dzisiaj jest: " + data);
+ //        let data = moment().format("DD.MM.YYYY");
+ //        bot.channels.get('523819168689029121').setName("» Dzisiaj jest: " + data);
   
-      }, 1 * 1000);
+  //    }, 1 * 1000);
 
     
   
 
 
-  const date = setInterval(function () {
+//  const date = setInterval(function () {
   
-    let date = moment().format("HH:mm");
-    bot.channels.get('533016026888011786').setName("» Godzina: " + date);
+ //   let date = moment().format("HH:mm");
+ //   bot.channels.get('533016026888011786').setName("» Godzina: " + date);
 
- }, 1 * 1000);
+// }, 1 * 1000);
 });
  bot.on("message", async message => {
 
