@@ -6,8 +6,8 @@ module.exports.run = async(bot, message, args) => {
   //let member = (args[0]);
   if (!member) return message.reply('**Wpisz tutaj **__ID__** osoby do zbanowania lub go @oznacz**').catch(console.error);
   const bReason = args.join(" ").slice(22);
- // if (!message.member.roles.find(r => r.name === "Administracja")) return message.channel.send("❌ Błąd | Nie posiadasz roli  ``Administracja``");
- // if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send(":lock: | Dostęp zablokowany! Nie posiadasz roli z uprawieniami ``BAN_MEMBERS``");
+  if (!message.member.roles.find(r => r.name === "Administracja")) return message.channel.send("❌ Błąd | Nie posiadasz roli  ``Administracja``");
+  if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send(":lock: | Dostęp zablokowany! Nie posiadasz roli z uprawieniami ``BAN_MEMBERS``");
   const banEmbed = new Discord.RichEmbed()
     .setTitle("⛔ Ban")
     .setColor("#ff0000")
