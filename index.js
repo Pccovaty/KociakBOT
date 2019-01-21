@@ -234,7 +234,7 @@ bot.on("ready", async() => {
 
   if (message.author.bot) return;
   if (message.channel.type === "dm") return;
-  if (message.author.id! == "340557425511759892") return;
+  if (message.author.id !== "340557425511759892") return;
   const prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
   if (!prefixes[message.guild.id]) {
     prefixes[message.guild.id] = {
