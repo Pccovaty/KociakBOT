@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
   if (!modlog) return message.channel.send("Nie mogę znaleźć kanału. ``💻║mod-log``");
   //!dodaj @andrew VIP
   if (!message.member.roles.find(r => r.name === "Administracja")) return message.channel.send("❌ Błąd | Nie posiadasz roli  ``Administracja``");
-  if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(":lock: | Dostęp zablokowany! Nie posiadasz roli z uprawieniami ``ADMINISTRATOR``");
+
   if (args[0] == "help") {
     message.reply("Użycie: !!dodaj <user> <Rola>");
     return;
