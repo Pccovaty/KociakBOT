@@ -5,7 +5,7 @@ const warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
 
 module.exports.run = async(bot, message, args) => {
       const warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
-      message.react("452183703267835910");
+
       //!warn @daeshan <reason>
       if (!message.member.roles.find(r => r.name === "Administracja")) return message.channel.send("❌ Błąd | Nie posiadasz roli  ``Administracja``");
     
