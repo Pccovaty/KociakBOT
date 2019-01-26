@@ -206,8 +206,7 @@ bot.on("ready", async() => {
       setInterval(async () => {
     const statuslist = [
       `Dzisiaj jest ${moment().format('DD.MM.YYYY')}r`,
-      `A co tam patrzysz?`,
-      `!!invite`
+      `A co tam patrzysz?`
     ];
     const random = Math.floor(Math.random() * statuslist.length);
 
