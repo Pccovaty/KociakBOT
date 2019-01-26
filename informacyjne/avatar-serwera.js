@@ -6,7 +6,8 @@ module.exports.run = async(bot, message, args) => {
   .setDescription("Avatar serwera:")
   .setColor('RANDOM')
   .setImage(ikona)
-  .setFooter(`${moment().calendar()}  |  ${message.author.tag}`, `${message.author.avatarURL}`);
+  .setThumbnail()
+  .setFooter(`   ${message.author.tag}`, `${message.author.avatarURL}`);
 
   message.channel.send(embed);
 }
