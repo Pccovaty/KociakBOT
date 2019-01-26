@@ -143,7 +143,7 @@ await member.send(URLSerweryDiscord)
 bot.on("guildMemberRemove", async member => {
   const incidentchannel = member.guild.channels.find('id', '435686053408538626');//mod-log channel name. change for you
   if (!incidentchannel) return message.channel.send("Nie mogę znaleźć kanału. <#435686053408538626>");
-  incidentchannel.send(`Użytkownik ${member.user.tag} Opuścił serwer :(`)
+  incidentchannel.send(`Użytkownik **${member.user.tag}** Opuścił serwer :(`)
 
 });
 
