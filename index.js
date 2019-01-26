@@ -136,7 +136,7 @@ await member.send(UrlKociaZiemia)
 const URLSerweryDiscord = new Discord.RichEmbed()
 .setTitle("📈 Serwery Discord (klik)")
 .setURL("https://discord.gg/NaWTakw")
-.setImage("https://media.discordapp.net/attachments/536240424805990411/536266028687163421/Bez_nazwy-1.png?width=473&height=473")
+.setImage("https://images-ext-2.discordapp.net/external/AJ-nP89SW-l74aPdAtroQd-LImw2GL8MWQ6VZ2QEDko/%3Fwidth%3D473%26height%3D473/https/media.discordapp.net/attachments/536240424805990411/536266028687163421/Bez_nazwy-1.png")
 await member.send(URLSerweryDiscord)
 // welcomechannel.send(welcomeEmebed)
 });
