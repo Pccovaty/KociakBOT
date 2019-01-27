@@ -12,6 +12,7 @@ const emmbed = new Discord.RichEmbed()
     .setColor(role.hexColor)
     .setTitle(`Rola: ${role.name}`)
     .setDescription(`**Liczba osób która ma tą role:** ${role.members.size} \n **Kolor rangi ( w hex):** ${role.hexColor} \n **ID roli:** ${role.id} `)
+    .addField(`Członkowie`, role.members.map(e => e.user.tag).join(", ").length >= 2048 ? "Za dużo osób posiada tę rolę" : role.members.map(e => e.user.tag).join(", "))
     message.channel.send(emmbed);
 
 
