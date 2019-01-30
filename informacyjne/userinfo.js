@@ -28,8 +28,8 @@ module.exports.run = async(bot, message, args) => {
 
     const profilkolor = new Discord.RichEmbed()
     .setThumbnail(user.avatarURL)
-    .setTitle(`Role ${member.user.tag}`)
-
+    .setTitle(`Role użytkownika ${member.user.tag}`)
+    .setColor("BLUE")
     .setDescription(member.roles.map(roles => `${roles}`).join(" | "))
     
     if (args[0] == "role"){
