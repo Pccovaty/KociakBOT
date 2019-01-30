@@ -30,7 +30,7 @@ module.exports.run = async(bot, message, args) => {
     .setThumbnail(user.avatarURL)
     .setTitle(`Role użytkownika ${member.user.tag}`)
     .setColor("BLUE")
-    .setDescription(member.roles.map(roles => `${roles}`).join(" | "))
+    .setDescription(member.roles.map(roles => `${roles}`).join("\n"))
     
     if (args[0] == "role"){
       message.channel.send(profilkolor)
