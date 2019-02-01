@@ -206,7 +206,8 @@ bot.on("ready", async() => {
       setInterval(async () => {
     const statuslist = [
       `Dzisiaj jest ${moment().format('DD.MM.YYYY')}r`,
-      `A co tam patrzysz?`
+      `A co tam patrzysz?`,
+      `Kocia Ziemia Umiera [*]`
     ];
     const random = Math.floor(Math.random() * statuslist.length);
 
@@ -222,7 +223,7 @@ bot.on("ready", async() => {
     } catch (error) {
       console.error(error);
     }
-  }, 10000);
+  }, 60000 * 5);
 
 
 
