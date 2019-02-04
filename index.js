@@ -136,14 +136,14 @@ await member.send(UrlKociaZiemia)
 const URLSerweryDiscord = new Discord.RichEmbed()
 .setTitle("📈 Serwery Discord (klik)")
 .setURL("https://discord.gg/NaWTakw")
-.setImage("https://i.fratikbot.pl/YgwBD3b.png%22")
+.setImage("https://i.fratikbot.pl/YgwBD3b.png")
 await member.send(URLSerweryDiscord)
 // welcomechannel.send(welcomeEmebed)
 });
 bot.on("guildMemberRemove", async member => {
   const incidentchannel = member.guild.channels.find('id', '435686053408538626');//mod-log channel name. change for you
   if (!incidentchannel) return message.channel.send("Nie mogę znaleźć kanału. <#435686053408538626>");
-  incidentchannel.send(`Użytkownik **${member.user.tag}** Opuścił serwer :(`)
+  incidentchannel.send(`Użytkownik **${member.user.tag}* 😭`)
 
 });
 
