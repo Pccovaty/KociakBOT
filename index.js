@@ -261,31 +261,6 @@ bot.on("ready", async() => {
       messages: 0 
     };
   }
-const bannedWords = ["discord.gg", ".gg/", ".gg /", ". gg /", ". gg/", "discord .gg /", "discord.gg /", "discord .gg/", "discord .gg", "discord . gg", "discord. gg", "discord gg", "discordgg", "discord gg /"];
-    try {
-      if (bannedWords.some(word => content.toLowerCase().includes(word))) {
-        if (message.author.id === message.guild.ownerID) return;
-        const banUser = message.member;
-        const userIcon = banUser.user.displayAvatarURL;
-        const banReason = "Reklama serwera Discord na kanale nie przeznaczonym do tego...";
-        let error = false;
-        message.guild.member(banUser).ban(banReason).catch(O_o => {
-          error = true;
-          return message.channel.send("Nie mogę zbanować tego użytkownika, nie mam do tego permisji!");
-        }).then(() => {
-          if (error) return;
-          message.delete().catch(O_o => {});
-        
-          const embed = new Discord.RichEmbed()
-            .setAuthor("Automatyczny Ban")
-            .setDescription(`**Zbanowana osoba:** ${banUser.user} (${banUser.id}) \n **Zbanowany przez: ${bot.user.id} \n Powód: ${banReason}`);
-          message.channel.send(embed)
-        });
-      }
-    } catch (e) {
-      console.log(e);
-    }
-
   }
   //messages
   {
