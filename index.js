@@ -285,7 +285,6 @@ const bannedWords = ["discord.gg", ".gg/", ".gg /", ". gg /", ". gg/", "discord 
     } catch (e) {
       console.log(e);
     }
-  });
 
   }
   //messages
