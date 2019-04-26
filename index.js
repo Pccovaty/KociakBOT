@@ -205,13 +205,13 @@ bot.on("ready", async() => {
       console.error(error);
     }
   }, 10000 * 5);
-
+a
 
 
     const data = setInterval(function () {
   
         let data = moment().format("DD.MM.YYYY");
-        bot.channels.get('571298264071012352').setName(" Dzisiaj jest: " + data);
+        bot.channels.get('571298264071012352').setName(" 📆Dzisiaj jest: " + data);
   
       }, 1 * 1000);
 
