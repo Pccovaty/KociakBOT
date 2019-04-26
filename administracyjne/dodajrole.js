@@ -2,10 +2,8 @@ const Discord = require("discord.js");
 const errors = require("../utils/errors.js");	
 
  module.exports.run = async (bot, message, args) => {	
-  const incidentchannel = message.guild.channels.find("id", "527946215791525908");	
-  if (!incidentchannel) return message.channel.send("Nie mogę znaleźć kanału. ``527946215791525908``");	
-  const modlog = message.guild.channels.find('id', '531434222217592859');//mod-log channel name. change for you	
-  if (!modlog) return message.channel.send("Nie mogę znaleźć kanału. ``💻║mod-log``");	
+  const modlog = message.guild.channels.find('id', '571244340584644619');//mod-log channel name. change for you	
+  if (!modlog) return message.channel.send("Nie mogę znaleźć kanału.");	
   //!dodaj @andrew VIP	
   if (!message.member.roles.find(r => r.name === "Administracja")) return message.channel.send("❌ Błąd | Nie posiadasz roli  ``Administracja``");	
 
@@ -32,7 +30,6 @@ const errors = require("../utils/errors.js");
   .setDescription(`**▸ Użytkownik:** ${users.user.tag} (ID: ${users.id}) \n  **▸ otrzymał(a) role:** ${gRole} \n **▸ Moderator który daje role:** ${message.author.tag} (ID: ${message.author.id})`)	
   .setColor("#b275f3")	
   message.channel.send("Rola została pomyślnie dodana!").then(msg => {msg.delete(5000)})	
-incidentchannel.send(emeeed)	
 modlog.send(emeed)	
 
  }	
