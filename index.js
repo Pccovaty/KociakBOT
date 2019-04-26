@@ -87,13 +87,13 @@ fs.readdir("./4fun/", (err, files) => {
     bot.commands.set(props.help.name, props);
   });
 });
-
+/*
 const ser = {
   guildID: "435686053408538624",
- totalUsersID: "571296997215174656",
- botCountID: "571297074935758849",
-  onlinecountID: "571297090500689920",
-  banID: "571297124889788447"
+ totalUsersID: "467226426563756032",
+ botCountID: "523590251856265225",
+  onlinecountID: "481414408699117568",
+  banID: "523588993678311426"
 
 };
 bot.on("guildBanAdd", guild => {
@@ -114,18 +114,20 @@ bot.on("guildMemberRemove", member => {
   if (member.guild.id !== ser.guildID) return;
 
   bot.channels.get(ser.totalUsersID).setName(`|👥| Osób: ${member.guild.memberCount}`);
-  bot.channels.get(ser.botCountID).setName(`|🤖| Boty: ${member.guild.members.filter(m => m.user.bot).size}`);
-});
+ bot.channels.get(ser.botCountID).setName(`|🤖| Boty: ${member.guild.members.filter(m => m.user.bot).size}`);
+}); */
 bot.on("guildMemberAdd", async member => {
 const welcomechannel = member.guild.channels.find(`id`, '571241486558167040');
   const welcomeEmebed = new Discord.RichEmbed()
   .setColor("BLUE")
-  .setDescription("yolo")
+  .setDescription(`Witaj ${member.user.tag} na naszym serwerze! Cieszymy się że przybyłeś.`)
+
+ welcomechannel.send(welcomeEmebed)
 });
 bot.on("guildMemberRemove", async member => {
   const incidentchannel = member.guild.channels.find('id', '571241504245284864');//mod-log channel name. change for you
-  if (!incidentchannel) return message.channel.send("Nie mogę znaleźć kanału. <#571241504245284864>");
-  incidentchannel.send(`Użytkownik **${member.user.tag}* uciekł na syberie`)
+  if (!incidentchannel) return message.channel.send("Nie mogę znaleźć kanału :(");
+  incidentchannel.send(`Użytkownik ${member.user.tag} Opuścił serwer :(`)
 
 });
 
@@ -160,8 +162,8 @@ bot.on("message", async message => {
   }
 
 });
-bot.on("ready", async() => {
-	let guild = bot.guilds.get('435686053408538624');
+/*bot.on("ready", async() => {
+	let guild = bot.guilds.get('G435686053408538624');
  
     let all = 0;
     let offline = 0;
@@ -170,25 +172,24 @@ bot.on("ready", async() => {
         let guild = bot.guilds.get('435686053408538624');
         guild.members.forEach(member => {
  
-           if (!member.user.bot) all++;
-           if (member.user.presence.status == 'offline' && !member.user.bot) offline++;
+          if (!member.user.bot) all++;
+      if (member.user.presence.status == 'offline' && !member.user.bot) offline++;
         });
  
-    let online = all - offline;
+     let online = all - offline;
  
-        bot.channels.get('571298247201652757').setName("|🔵| Online: " + online);
+        bot.channels.get('').setName("|🔵| Online: " + online);
  
-       all = 0;
-       offline = 0;
+        all = 0;
+        offline = 0;
  
-    }, 1 * 5000);
-});
+     }, 1 * 5000);
+}); */
 bot.on("ready", async() => {
       setInterval(async () => {
     const statuslist = [
-      `Dzisiaj jest ${moment().format('DD.MM.YYYY')}r`,
-      `A co tam patrzysz?`,
-      `World of Gamers wraca`
+
+      `Dzialam z kompa okej?`
     ];
     const random = Math.floor(Math.random() * statuslist.length);
 
@@ -204,34 +205,68 @@ bot.on("ready", async() => {
     } catch (error) {
       console.error(error);
     }
-  }, 10000 * 5);
+      }, 5* 60000);
 
 
 
-    const data = setInterval(function () {
+ /*   const data = setInterval(function () {
   
-        let data = moment().format("DD.MM.YYYY");
-        bot.channels.get('571298264071012352').setName(" 📆Dzisiaj jest: " + data);
+       let data = moment().format("DD.MM.YYYY");
+        bot.channels.get('523819168689029121').setName(" » Dzisiaj jest: " + data);
   
       }, 1 * 1000);
 
     
-  
-
-
-  const date = setInterval(function () {
+const date = setInterval(function () {
   
    let date = moment().format("HH:mm");
-    bot.channels.get('571298303895928832').setName("|🕐| Godzina: " + date);
-
- }, 1 * 1000);
+ bot.channels.get('533016026888011786').setName("» Godzina: " + date);
+ }, 1 * 1000); */
 });
 
  bot.on("message", async message => {
 
+   
   if (message.author.bot) return;
   if (message.channel.type === "dm") return;
-	
+  let content = message.content;
+
+
+
+  let bannedWords = ["discord.gg", ".gg/", ".gg /", ". gg /", ". gg/", "discord .gg /", "discord.gg /", "discord .gg/", "discord .gg", "discord . gg", "discord. gg", "discord gg", "discordgg", "discord gg /"];
+  try {
+    if (bannedWords.some(word => content.toLowerCase().includes(word))) {
+      if (message.author.id === message.guild.ownerID) return;
+      if (message.content.includes("/FYaZxyt")) return;
+      //message.channel.guild.roles.forEach(role => {
+      //  if (role.name.toLowerCase().includes("moderator")) message.channel.send(`<@&${role.id}>, banować!`);
+      //});
+      //message.channel.send(`<@341454923495637002>, banuj!`);
+      let banUser = message.member;
+      let userIcon = banUser.user.displayAvatarURL;
+      if (banUser.hasPermission("BAN_MEMBERS")) return;
+      let banReason = "Reklama serwera Discord.";
+      let error = false;
+      const incidentchannel = member.guild.channels.find('id', '571244340584644619');//mod-log channel name. change for you
+  if (!incidentchannel) return message.channel.send("ERROR! Nie mogę znaleźć Kanału <#571244340584644619>");
+      message.guild.member(banUser).ban(banReason).catch(O_o => {
+        error = true;
+        return message.channel.send("Nie mogę zbanować tego użytkownika, nie mam do tego permisji!");
+        
+      }).then(() => {
+        if (error) return;
+        message.delete().catch(O_o => {});
+        const embed = new Discord.RichEmbed()
+        .setTitle("Automatyczny ban")
+        .setColor("RED")
+        .setDescription(`**Zbanowana osoba:** ${banUser.user.tag} \n ** Zbanowana przez:** ${bot.user.tag} \n **Powod:** ${banReason}`)
+          incidentchannel.channel.send(embed);
+        
+      });
+    }
+  } catch (e) {
+    console.log(e);
+  }
   const prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
   if (!prefixes[message.guild.id]) {
     prefixes[message.guild.id] = {
@@ -242,7 +277,10 @@ bot.on("ready", async() => {
       messages: 0 
     };
   }
+
+
   }
+  
   //messages
   {
 messages[message.author.id] = {
@@ -251,6 +289,7 @@ messages[message.author.id] = {
 fs.writeFile("messages.json", JSON.stringify(messages), (err) => {
   if (err) console.log(err);
 });
+
   }
   const prefix = prefixes[message.guild.id].prefixes;
 
@@ -265,4 +304,5 @@ fs.writeFile("messages.json", JSON.stringify(messages), (err) => {
 
 });
 
-//bot.login(process.env.BOT_TOKEN);
+
+bot.login(process.env.BOT_TOKEN);
