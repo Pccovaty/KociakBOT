@@ -20,8 +20,8 @@ module.exports.run = async(bot, message, args) => {
   .setDescription(`**▸ Zostałeś(aś) Zbanowany(a) na serwerze:** ${member.guild.name} \n **▸ Moderator** ${message.author.tag} \n **▸ Powód:** ${bReason}`)
   .setFooter("unban all 1 Lipca 2019r | Discord.gg/pppgZCV")
   member.send(embedpriv)
-  const incidentchannel = member.guild.channels.find('id', '521716025457377297');//mod-log channel name. change for you
-  if (!incidentchannel) return message.channel.send("Nie mogę znaleźć kanału. ``💻║mod-log``");
+  const incidentchannel = member.guild.channels.find('id', '571244340584644619');//mod-log channel name. change for you
+  if (!incidentchannel) return message.channel.send("Nie mogę znaleźć kanału.");
   message.channel.send(`Pomyślnie zbanowano użytkownika: ${member.user.tag}`);
 
 
