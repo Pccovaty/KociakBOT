@@ -205,7 +205,7 @@ bot.on("ready", async() => {
       console.error(error);
     }
   }, 10000 * 5);
-a
+
 
 
     const data = setInterval(function () {
@@ -265,4 +265,4 @@ fs.writeFile("messages.json", JSON.stringify(messages), (err) => {
 
 });
 
-bot.login(process.env.BOT_TOKEN);
+//bot.login(process.env.BOT_TOKEN);
