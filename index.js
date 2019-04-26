@@ -90,10 +90,10 @@ fs.readdir("./4fun/", (err, files) => {
 
 const ser = {
   guildID: "435686053408538624",
- totalUsersID: "467226426563756032",
- botCountID: "523590251856265225",
-  onlinecountID: "481414408699117568",
-  banID: "523588993678311426"
+ totalUsersID: "571296997215174656",
+ botCountID: "571297074935758849",
+  onlinecountID: "571297090500689920",
+  banID: "571297124889788447"
 
 };
 bot.on("guildBanAdd", guild => {
@@ -101,49 +101,31 @@ bot.on("guildBanAdd", guild => {
           bot.channels.get(ser.banID).setName(`» Banów: ${bans.size}`);
   });
   });
-//bot.on("guildMemberAdd", member => {
+bot.on("guildMemberAdd", member => {
   
-  //if (member.guild.id !== ser.guildID) return;
+  if (member.guild.id !== ser.guildID) return;
 
-  //bot.channels.get(ser.totalUsersID).setName(`|👥| Osób: ${member.guild.memberCount}`);
- // bot.channels.get(ser.onlinecountID).setName(`|👭| ${member.user.tag}`);
- /// bot.channels.get(ser.botCountID).setName(`|🤖| Boty: ${member.guild.members.filter(m => m.user.bot).size}`);
-//});
-//bot.on("guildMemberRemove", member => {
+  bot.channels.get(ser.totalUsersID).setName(`|👥| Osób: ${member.guild.memberCount}`);
+  bot.channels.get(ser.onlinecountID).setName(`|👭| ${member.user.tag}`);
+  bot.channels.get(ser.botCountID).setName(`|🤖| Boty: ${member.guild.members.filter(m => m.user.bot).size}`);
+});
+bot.on("guildMemberRemove", member => {
 
-  //if (member.guild.id !== ser.guildID) return;
+  if (member.guild.id !== ser.guildID) return;
 
- // bot.channels.get(ser.totalUsersID).setName(`|👥| Osób: ${member.guild.memberCount}`);
- // bot.channels.get(ser.botCountID).setName(`|🤖| Boty: ${member.guild.members.filter(m => m.user.bot).size}`);
-//});
+  bot.channels.get(ser.totalUsersID).setName(`|👥| Osób: ${member.guild.memberCount}`);
+  bot.channels.get(ser.botCountID).setName(`|🤖| Boty: ${member.guild.members.filter(m => m.user.bot).size}`);
+});
 bot.on("guildMemberAdd", async member => {
-//const welcomechannel = member.guild.channels.find(`name`, "👋║witaj");
+const welcomechannel = member.guild.channels.find(`id`, '571241486558167040');
   const welcomeEmebed = new Discord.RichEmbed()
   .setColor("BLUE")
-  .setDescription(`Witamy na **${member.guild.name} ${member.user.tag}**!\nNa głównym drapaku czyli <#435686053408538626> mozesz zakomunikowac sie z innymi kotami!\nMamy nadzieje, ze nie uciekniesz od nas! (:`)
- await  member.send(welcomeEmebed)
-  let URLembed = new Discord.RichEmbed()
-            .setTitle("(Link do kanału z regulaminem)")
-            .setColor("BLUE")
-            .setURL("https://discordapp.com/channels/435686053408538624/435827081654304789");
-     await   member.send(URLembed);
- await  member.send("Aktualnie prowadzimy dwa serwery Discord! \n \n **📈 Serwery Discord** oraz **Kocia Ziemia** ")
-const UrlKociaZiemia = new Discord.RichEmbed()
-.setTitle("Kocia Ziemia (klik)")
-.setURL("https://discord.gg/pppgZCV")
-.setImage("https://images-ext-2.discordapp.net/external/lK9sU3rN54SHLUfRm_xoYtO4EdggiPhbaUOwvIokams/%3Fsize%3D2048/https/cdn.discordapp.com/icons/435686053408538624/b0dc68803f7caf29a0cc383726c6f6e2.jpg?width=473&height=473")
-await member.send(UrlKociaZiemia)
-const URLSerweryDiscord = new Discord.RichEmbed()
-.setTitle("📈 Serwery Discord (klik)")
-.setURL("https://discord.gg/NaWTakw")
-.setImage("https://i.fratikbot.pl/YgwBD3b.png")
-await member.send(URLSerweryDiscord)
-// welcomechannel.send(welcomeEmebed)
+  .setDescription("yolo")
 });
 bot.on("guildMemberRemove", async member => {
-  const incidentchannel = member.guild.channels.find('id', '435686053408538626');//mod-log channel name. change for you
-  if (!incidentchannel) return message.channel.send("Nie mogę znaleźć kanału. <#435686053408538626>");
-  incidentchannel.send(`Użytkownik **${member.user.tag}* 😭`)
+  const incidentchannel = member.guild.channels.find('id', '571241504245284864');//mod-log channel name. change for you
+  if (!incidentchannel) return message.channel.send("Nie mogę znaleźć kanału. <#571241504245284864>");
+  incidentchannel.send(`Użytkownik **${member.user.tag}* uciekł na syberie`)
 
 });
 
@@ -156,7 +138,7 @@ if (message.author.id === "340557425511759892") {
   
   bot.destroy()
   bot.login(process.env.TOKEN)
-message.channel.send(":gear: ponownne uruchamianie...")
+message.channel.send(":gear: ponownne uruchamianie... 100%")
 } else {
 	
 message.channel.send("Tylko Autor bota moze uzyc tej komendy.")
@@ -171,43 +153,42 @@ bot.on("message", async message => {
     .setTitle("Informacje o bocie WellsBOT")
     .setColor("#a630ff")
     .setThumbnail(bicon)
-    .addField("O Nas", "Bot Tylko i wyłącznie dla serwera ``Kocia Ziemia``. Posiada ``42`` komend, autorem bota jest <@340557425511759892> (**Kociak#6846**)")
+    .addField("O Nas", "Bot Tylko i wyłącznie dla serwera ``World of Gamers``. Posiada ``42`` komend, autorem bota jest <@340557425511759892> (**Kociak#6846**)")
     .addField("Lista Komend", "Prefix bota to: ``!!``. Wszystkie komendy dostępne są pod: ``!!help``")
-    .addField("Linki:", "[Serwery Discord](https://discord.gg/NaWTakw) | [Kocia Ziemia](https://discord.gg/pppgZCV)")
     .setFooter(`Komenda użyta przez ${message.author.username}`, `${message.author.avatarURL}`)
     message.channel.send(embed)
   }
 
 });
-//bot.on("ready", async() => {
-	//let guild = bot.guilds.get('G435686053408538624');
+bot.on("ready", async() => {
+	let guild = bot.guilds.get('435686053408538624');
  
-    //let all = 0;
-    //let offline = 0;
+    let all = 0;
+    let offline = 0;
  
-    //const interval = setInterval(function () {
-        //let guild = bot.guilds.get('435686053408538624');
-       // guild.members.forEach(member => {
+    const interval = setInterval(function () {
+        let guild = bot.guilds.get('435686053408538624');
+        guild.members.forEach(member => {
  
-       //    if (!member.user.bot) all++;
-      //     if (member.user.presence.status == 'offline' && !member.user.bot) offline++;
-    //    });
+           if (!member.user.bot) all++;
+           if (member.user.presence.status == 'offline' && !member.user.bot) offline++;
+        });
  
-  //   let online = all - offline;
+    let online = all - offline;
  
-       // bot.channels.get('').setName("|🔵| Online: " + online);
+        bot.channels.get('571298247201652757').setName("|🔵| Online: " + online);
  
-     //   all = 0;
-    //    offline = 0;
+       all = 0;
+       offline = 0;
  
-  //   }, 1 * 5000);
-//});
+    }, 1 * 5000);
+});
 bot.on("ready", async() => {
       setInterval(async () => {
     const statuslist = [
       `Dzisiaj jest ${moment().format('DD.MM.YYYY')}r`,
       `A co tam patrzysz?`,
-      `Kocia Ziemia Umiera [*]`
+      `World of Gamers wraca`
     ];
     const random = Math.floor(Math.random() * statuslist.length);
 
@@ -223,27 +204,27 @@ bot.on("ready", async() => {
     } catch (error) {
       console.error(error);
     }
-  }, 60000 * 5);
+  }, 10000 * 5);
 
 
 
-   /// const data = setInterval(function () {
+    const data = setInterval(function () {
   
-     //    let data = moment().format("DD.MM.YYYY");
-     //    bot.channels.get('523819168689029121').setName(" Dzisiaj jest: " + data);
+        let data = moment().format("DD.MM.YYYY");
+        bot.channels.get('571298264071012352').setName(" Dzisiaj jest: " + data);
   
-     // }, 1 * 1000);
+      }, 1 * 1000);
 
     
   
 
 
- // const date = setInterval(function () {
+  const date = setInterval(function () {
   
-   // let date = moment().format("HH:mm");
-  //  bot.channels.get('533016026888011786').setName("|🕐| Godzina: " + date);
-//
- //}, 1 * 1000);
+   let date = moment().format("HH:mm");
+    bot.channels.get('571298303895928832').setName("|🕐| Godzina: " + date);
+
+ }, 1 * 1000);
 });
 
  bot.on("message", async message => {
