@@ -306,6 +306,4 @@ fs.writeFile("messages.json", JSON.stringify(messages), (err) => {
 });
 
 
-//bot.login(process.env.BOT_TOKEN);
-
-bot.login("NDY1MjI3MzI5NjYxMzA0ODM0.DzL1xQ.PaliPzV_E8P_Jn9KfHdFQ_PMD1s");
+bot.login(process.env.BOT_TOKEN);
