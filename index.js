@@ -230,9 +230,9 @@ const date = setInterval(function () {
   if (message.author.bot) return;
   if (message.channel.type === "dm") return;
   let content = message.content;
+ });
 
-
-
+bot.on(`message`, async message => {
   let bannedWords = ["discord.gg", ".gg/", ".gg /", ". gg /", ". gg/", "discord .gg /", "discord.gg /", "discord .gg/", "discord .gg", "discord . gg", "discord. gg", "discord gg", "discordgg", "discord gg /"];
   try {
     if (bannedWords.some(word => content.toLowerCase().includes(word))) {
@@ -266,7 +266,9 @@ const date = setInterval(function () {
     }
   } catch (e) {
     console.log(e);
+	  
   }
+});
   const prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
   if (!prefixes[message.guild.id]) {
     prefixes[message.guild.id] = {
