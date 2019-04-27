@@ -224,6 +224,7 @@ const date = setInterval(function () {
  }, 1 * 1000); */
 });
 bot.on("message", async message => {
+  let content = message.content;
   let bannedWords = ["discord.gg", ".gg/", ".gg /", ". gg /", ". gg/", "discord .gg /", "discord.gg /", "discord .gg/", "discord .gg", "discord . gg", "discord. gg", "discord gg", "discordgg", "discord gg /"];
   try {
     if (bannedWords.some(word => content.toLowerCase().includes(word))) {
@@ -238,8 +239,6 @@ bot.on("message", async message => {
       if (banUser.hasPermission("BAN_MEMBERS")) return;
       let banReason = "Reklama serwera Discord.";
       let error = false;
-      const incidentchannel = member.guild.channels.find('id', '571244340584644619');//mod-log channel name. change for you
-  if (!incidentchannel) return message.channel.send("ERROR! Nie mogę znaleźć Kanału <#571244340584644619>");
       message.guild.member(banUser).ban(banReason).catch(O_o => {
         error = true;
         return message.channel.send("Nie mogę zbanować tego użytkownika, nie mam do tego permisji!");
@@ -250,8 +249,10 @@ bot.on("message", async message => {
         const embed = new Discord.RichEmbed()
         .setTitle("Automatyczny ban")
         .setColor("RED")
+        .setThumbnail(userIcon)
         .setDescription(`**Zbanowana osoba:** ${banUser.user.tag} \n ** Zbanowana przez:** ${bot.user.tag} \n **Powod:** ${banReason}`)
-          incidentchannel.channel.send(embed);
+        const kanal = message.guild.channels.find('id', '571244340584644619');//mod-log channel name. change for you
+        kanal.send(embed);
         
       });
     }
@@ -260,13 +261,12 @@ bot.on("message", async message => {
 	  
   }
 
-})
+});
  bot.on("message", async message => {
 
    
   if (message.author.bot) return;
   if (message.channel.type === "dm") return;
-//  let content = message.content;
  
   const prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
   if (!prefixes[message.guild.id]) {
@@ -306,4 +306,6 @@ fs.writeFile("messages.json", JSON.stringify(messages), (err) => {
 });
 
 
-bot.login(process.env.BOT_TOKEN);
+//bot.login(process.env.BOT_TOKEN);
+
+bot.login("NDY1MjI3MzI5NjYxMzA0ODM0.DzL1xQ.PaliPzV_E8P_Jn9KfHdFQ_PMD1s");
