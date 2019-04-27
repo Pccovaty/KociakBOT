@@ -189,7 +189,7 @@ bot.on("ready", async() => {
       setInterval(async () => {
     const statuslist = [
 
-      `Dzialam z kompa okej?`
+      `Testuje nowe komendy`
     ];
     const random = Math.floor(Math.random() * statuslist.length);
 
@@ -197,8 +197,8 @@ bot.on("ready", async() => {
       await bot.user.setPresence({
         game: {
           name: `${statuslist[random]}`,
-          type: "WATCHING"
-          //url: 'https://www.twitch.tv/spokloo'
+          type: "WATCHING",
+          url: 'https://www.youtube.com/c/Pccovaty'
         },
         status: "dnd"
       });
@@ -268,7 +268,7 @@ bot.on(`message`, async message => {
     console.log(e);
 	  
   }
-});
+
   const prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
   if (!prefixes[message.guild.id]) {
     prefixes[message.guild.id] = {
