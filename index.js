@@ -197,8 +197,8 @@ bot.on("ready", async() => {
       await bot.user.setPresence({
         game: {
           name: `${statuslist[random]}`,
-          type: "WATCHING",
-          url: 'https://www.youtube.com/c/Pccovaty'
+          type: "WATCHING"
+          //url: 'https://www.youtube.com/c/Pccovaty'
         },
         status: "dnd"
       });
@@ -223,16 +223,7 @@ const date = setInterval(function () {
  bot.channels.get('533016026888011786').setName("» Godzina: " + date);
  }, 1 * 1000); */
 });
-
- bot.on("message", async message => {
-
-   
-  if (message.author.bot) return;
-  if (message.channel.type === "dm") return;
-  let content = message.content;
- });
-
-bot.on(`message`, async message => {
+bot.on("message", async message => {
   let bannedWords = ["discord.gg", ".gg/", ".gg /", ". gg /", ". gg/", "discord .gg /", "discord.gg /", "discord .gg/", "discord .gg", "discord . gg", "discord. gg", "discord gg", "discordgg", "discord gg /"];
   try {
     if (bannedWords.some(word => content.toLowerCase().includes(word))) {
@@ -269,6 +260,14 @@ bot.on(`message`, async message => {
 	  
   }
 
+})
+ bot.on("message", async message => {
+
+   
+  if (message.author.bot) return;
+  if (message.channel.type === "dm") return;
+//  let content = message.content;
+ 
   const prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
   if (!prefixes[message.guild.id]) {
     prefixes[message.guild.id] = {
