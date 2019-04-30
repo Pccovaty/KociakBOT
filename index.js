@@ -88,13 +88,13 @@ fs.readdir("./4fun/", (err, files) => {
   });
 });
 
-bot.on("ready", async() => {
+bot.on("message", async message => {
 	
   let content = message.content;
   let bannedWords = ["discord.gg", ".gg/", ".gg /", ". gg /", ". gg/", "discord .gg /", "discord.gg /", "discord .gg/", "discord .gg", "discord . gg", "discord. gg", "discord gg", "discordgg", "discord gg /"];
   try {
     if (bannedWords.some(word => content.toLowerCase().includes(word))) {
-      if (message.author.id === message.guild.ownerID) return;
+     // if (message.author.id === message.guild.ownerID) return;
       if (message.content.includes("/FYaZxyt")) return;
       //message.channel.guild.roles.forEach(role => {
       //  if (role.name.toLowerCase().includes("moderator")) message.channel.send(`<@&${role.id}>, banować!`);
