@@ -88,7 +88,7 @@ fs.readdir("./4fun/", (err, files) => {
   });
 });
 
-bot.on("message", async message => {
+bot.on("ready", async() => {
 	
   let content = message.content;
   let bannedWords = ["discord.gg", ".gg/", ".gg /", ". gg /", ". gg/", "discord .gg /", "discord.gg /", "discord .gg/", "discord .gg", "discord . gg", "discord. gg", "discord gg", "discordgg", "discord gg /"];
