@@ -224,6 +224,7 @@ const date = setInterval(function () {
  }, 1 * 1000); */
 });
 bot.on("message", async message => {
+	
   let content = message.content;
   let bannedWords = ["discord.gg", ".gg/", ".gg /", ". gg /", ". gg/", "discord .gg /", "discord.gg /", "discord .gg/", "discord .gg", "discord . gg", "discord. gg", "discord gg", "discordgg", "discord gg /"];
   try {
@@ -242,10 +243,6 @@ bot.on("message", async message => {
       message.guild.member(banUser).ban(banReason).catch(O_o => {
         error = true;
         return message.channel.send("Nie mogę zbanować tego użytkownika, nie mam do tego permisji!");
-        
-      }).then(() => {
-        if (error) return;
-        message.delete().catch(O_o => {});
         const embed = new Discord.RichEmbed()
         .setTitle("Automatyczny ban")
         .setColor("RED")
@@ -253,6 +250,10 @@ bot.on("message", async message => {
         .setDescription(`**Zbanowana osoba:** ${banUser.user.tag} \n ** Zbanowana przez:** ${bot.user.tag} \n **Powod:** ${banReason}`)
         const kanal = message.guild.channels.find('id', '571244340584644619');//mod-log channel name. change for you
         kanal.send(embed);
+      }).then(() => {
+        if (error) return;
+        message.delete().catch(O_o => {});
+        
         
       });
     }
