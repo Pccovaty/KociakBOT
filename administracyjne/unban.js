@@ -7,8 +7,8 @@ exports.run = (bot, message, args) => {
   .setColor("RANDOM")
   .setTimestamp()
   .setAuthor(message.author.tag, message.author.avatarURL)
-  .addField(':warning: **Ostrzeżenie** :warning:', '\:lock: Nie masz wymaganej roli ``admin``, aby móc używać tej komendy')
- f (!message.member.roles.find(r => r.name === "admin")) return message.channel.send("❌ Błąd | Nie posiadasz roli  ``admin`` więc nie możesz używać tej komendy :)");
+  .addField(':warning: **Ostrzeżenie** :warning:', '\:lock: Nie masz wymaganej roli ``Administracja``, aby móc używać tej komendy')
+ if (!message.member.roles.find(r => r.name === "Administracja")) return message.channel.send("❌ Błąd | Nie posiadasz roli  ``Administracja`` więc nie możesz używać tej komendy :)");
   if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(":lock: | Dostęp zablokowany! Nie posiadasz roli z uprawieniami ``Administrator``");
   if (!message.guild) {
   //const embeed = new Discord.RichEmbed()
