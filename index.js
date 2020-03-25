@@ -158,7 +158,7 @@ bot.on("guildMemberRemove", member => {
  bot.channels.get(ser.botCountID).setName(`|🤖| Boty: ${member.guild.members.filter(m => m.user.bot).size}`);
 }); */
 bot.on("guildMemberAdd", async member => {
-const welcomechannel = member.guild.channels.find(`id`, '571241486558167040');
+const welcomechannel = member.guild.channels.find(`id`, '692282990008467477');
   const welcomeEmebed = new Discord.RichEmbed()
   .setColor("BLUE")
   .setDescription(`Witaj ${member.user.tag} na naszym serwerze! Cieszymy się że przybyłeś.`)
@@ -166,7 +166,7 @@ const welcomechannel = member.guild.channels.find(`id`, '571241486558167040');
  welcomechannel.send(welcomeEmebed)
 });
 bot.on("guildMemberRemove", async member => {
-  const incidentchannel = member.guild.channels.find('id', '571241504245284864');//mod-log channel name. change for you
+  const incidentchannel = member.guild.channels.find('id', '692282990008467477');//mod-log channel name. change for you
   if (!incidentchannel) return message.channel.send("Nie mogę znaleźć kanału :(");
   incidentchannel.send(`Użytkownik ${member.user.tag} Opuścił serwer :(`)
 
@@ -196,7 +196,7 @@ bot.on("message", async message => {
     .setTitle("Informacje o bocie WellsBOT")
     .setColor("#a630ff")
     .setThumbnail(bicon)
-    .addField("O Nas", "Bot Tylko i wyłącznie dla serwera ``World of Gamers``. Posiada ``42`` komend, autorem bota jest <@340557425511759892> (**Kociak#6846**)")
+    .addField("O Nas", "Bot Tylko i wyłącznie dla serwera ``1ck``. Posiada ``42`` komend, autorem bota jest <@340557425511759892> (**Dsaffy#6846**)")
     .addField("Lista Komend", "Prefix bota to: ``!!``. Wszystkie komendy dostępne są pod: ``!!help``")
     .setFooter(`Komenda użyta przez ${message.author.username}`, `${message.author.avatarURL}`)
     message.channel.send(embed)
@@ -230,7 +230,8 @@ bot.on("ready", async() => {
       setInterval(async () => {
     const statuslist = [
 
-      `Testuje nowe komendy`
+      `1ck Zaprasza`,
+      `Bot stworzony przez Mateusz Bieniek`
     ];
     const random = Math.floor(Math.random() * statuslist.length);
 
