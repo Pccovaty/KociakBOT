@@ -2,8 +2,8 @@ const Discord = require("discord.js");
 
 module.exports.run = async(bot, message, args) => {
 
-  if (!message.member.roles.find(r => r.name === "Administracja")) return message.channel.send("❌ Błąd | Nie posiadasz roli  ``Administracja``");
-  if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(":lock: | Dostęp zablokowany! Nie posiadasz roli z uprawieniami ``ADMINISTRATOR``");
+  if (!message.member.roles.find(r => r.name === "admin")) return message.channel.send("❌ Błąd | Nie posiadasz roli  ``admin`` więc nie możesz używać tej komendy :)");
+  if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(":lock: | Dostęp zablokowany! Nie posiadasz roli z uprawieniami ``Administrator``");
 
   if (!args[0]) return message.channel.send("Prawidłowe użycie to: !!ankieta [pytanie]");
 
