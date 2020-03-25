@@ -3,7 +3,7 @@ module.exports.run = async(bot, message, args, msg) => {
   const incidentchannel = message.guild.channels.find('id', '692279961767379005');//mod-log channel name. change for you
   if (!incidentchannel) return message.channel.send("Nie mogę znaleźć kanału. ``ID: 692279961767379005``");
     cmd = message.content;
-    const heelp = new Discord.RichEmbed()
+    const help = new Discord.RichEmbed()
     .setTitle("Wzór na weryfikacje")
     .setDescription("**Jesteś Nauczycielem czy Uczniem? (jeśli uczniem, to Elektryk czy Mechatronik)\n Twoje Imie i Nazwisko? \n (Krótka wiedza) Po co stworzyliśmy ten serwer?**")
     .addField("Jak napisać poprawnie weryfikacje?", "**Aby poprawnie napisać weryfikacje, wystarczy ze napiszesz je tak jak ponizszy przyklad** \n \n \n Użyj: **!!w 1;2;3** < - zamiast liczb 1;2;3; itp daj swoje odpowiedzi")
@@ -20,7 +20,7 @@ module.exports.run = async(bot, message, args, msg) => {
         .addField("Nazwa", message.author.tag)
         .setColor("RED")
     if (args[0] == "pomoc"){
-     message.channel.send(heelp)
+     message.channel.send(help)
     } else  {
         const msg = await incidentchannel.send(embed);
       
