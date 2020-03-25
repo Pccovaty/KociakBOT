@@ -1,9 +1,11 @@
 const Discord = require("discord.js");
+const agree = "526698392810815518"
+const nieagre = "526698394543194112"
 module.exports.run = async(bot, message, args, msg) => {
-  const incidentchannel = message.guild.channels.find('id', '692279961767379005');//mod-log channel name. change for you
-  if (!incidentchannel) return message.channel.send("Nie mogę znaleźć kanału. ``ID: 692279961767379005``");
+  const incidentchannel = message.guild.channels.find('id', '692268510075813901');//mod-log channel name. change for you
+  if (!incidentchannel) return message.channel.send("Nie mogę znaleźć kanału. ``ID: 692268510075813901``");
     cmd = message.content;
-    const help = new Discord.RichEmbed()
+    const heelp = new Discord.RichEmbed()
     .setTitle("Wzór na weryfikacje")
     .setDescription("**Jesteś Nauczycielem czy Uczniem? (jeśli uczniem, to Elektryk czy Mechatronik)\n Twoje Imie i Nazwisko? \n (Krótka wiedza) Po co stworzyliśmy ten serwer?**")
     .addField("Jak napisać poprawnie weryfikacje?", "**Aby poprawnie napisać weryfikacje, wystarczy ze napiszesz je tak jak ponizszy przyklad** \n \n \n Użyj: **!!w 1;2;3** < - zamiast liczb 1;2;3; itp daj swoje odpowiedzi")
@@ -21,8 +23,12 @@ module.exports.run = async(bot, message, args, msg) => {
         .setColor("RED")
     if (args[0] == "pomoc"){
      message.channel.send(help)
+     message.channel.send(heelp)
     } else  {
         const msg = await incidentchannel.send(embed);
+
+        await msg.react("526698392810815518");
+        await msg.react("526698394543194112");
       
         message.delete({timeout: 1000});
             }
