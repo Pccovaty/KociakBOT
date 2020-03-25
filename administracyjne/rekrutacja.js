@@ -22,7 +22,6 @@ module.exports.run = async(bot, message, args, msg) => {
         .addField("Nazwa", message.author.tag)
         .setColor("RED")
     if (args[0] == "pomoc"){
-     message.channel.send(help)
      message.channel.send(heelp)
     } else  {
         const msg = await incidentchannel.send(embed);
