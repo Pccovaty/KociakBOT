@@ -58,7 +58,7 @@ let muteembed = new Discord.RichEmbed()
         .setColor("#ff0000")
         .setDescription(`**▸ Osoba wyciszona:** ${tomute.user.tag} \n **▸ Wyciszona przez:** ${message.author.tag} \n **▸ Na kanale:** ${message.channel} \n **▸ Na czas:** ${mutetime} \n **▸ Powód:** ${reason}`)
 
-        const incidentschannel = message.guild.channels.find('id', '521716025457377297');//mod-log channel name. change for you
+        const incidentschannel = message.guild.channels.find('id', '697378000152297512');//mod-log channel name. change for you
         if (!incidentschannel) return message.channel.send("Nie mogę znaleźć kanału. ``💻║mod-log``");
     incidentschannel.send(muteembed);
     message.channel.send(`<@${tomute.id}> został wyciszony na czas: ${mutetime}`)
