@@ -19,9 +19,7 @@ module.exports.run = async (bot, message, args) => {
         .setDescription(`
        
         Witaj na **${message.guild.name}**! Dodaj sobie role role
-       🇦 ${a.toString()}
-       🇧 ${b.toString()}
-       🇨 ${c.toString()}
+     
        `)
         .setColor(0xdd9323)
         .setFooter(`Serwerowe ID: ${message.guild.id}`);
