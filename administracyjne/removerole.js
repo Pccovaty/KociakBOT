@@ -2,8 +2,8 @@ const Discord = require("discord.js");
 const errors = require("../utils/errors.js");
 
 module.exports.run = async (bot, message, args) => {
-  const incidentchannel = message.guild.channels.find("id", "527946215791525908");
-  if (!incidentchannel) return message.channel.send("Nie mogę znaleźć kanału. ``527946215791525908``");
+  const incidentchannel = message.guild.channels.find("id", "697378000152297512");
+  if (!incidentchannel) return message.channel.send("Nie mogę znaleźć kanału. ``697378000152297512``");
 
   if (!message.member.hasPermission("MANAGE_ROLES")) return errors.noPerms(message, "MANAGE_ROLES");
   if(args[0] == "help"){
