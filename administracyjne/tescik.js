@@ -10,9 +10,9 @@ module.exports.run = async (bot, message, args) => {
 
     await message.delete().catch(O_o => {});
 
-    const a = message.guild.roles.get('570864402622971908'); // gracz
-    const b = message.guild.roles.get('570864388563664910'); // kolor
-    const c = message.guild.roles.get('570864389662703646'); // kolor2
+    const a = message.guild.roles.get('697382703179366461'); // gracz
+    const b = message.guild.roles.get('697382719289819207'); // kolor
+    const c = message.guild.roles.get('697382731390124063'); // kolor2
 
     const embed = new Discord.RichEmbed()
         .setTitle('Role do nadania')
