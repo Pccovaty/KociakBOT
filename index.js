@@ -261,7 +261,7 @@ bot.on("ready", async() => {
     
 const date = setInterval(function () {
   
-   let date = moment().format("HH:mm");
+   let date = moment().format("HH:mm:ss");
  bot.channels.get('697405302978641932').setName("» Godzina: " + date);
  }, 1 * 1000); 
 });
