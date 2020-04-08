@@ -17,8 +17,8 @@ module.exports.run = async (bot, message, args, messages) => {
     .setAuthor("♻️ Akcja | Usuwanie wiadomości")
     .setColor("Black")
     .setDescription(`**Moderator:** ${message.author.tag} \n **Usunął łącznie wiadomości:** ${args[0]}`)
-    let purgeChannel = message.guild.channels.find(`id`, "531434222217592859");
-    if(!purgeChannel) return message.channel.send("Nie znalazlem kanalu z id ``531434222217592859``");
+    let purgeChannel = message.guild.channels.find(`id`, "697378000152297512");
+    if(!purgeChannel) return message.channel.send("Nie znalazlem kanalu z id ``697378000152297512``");
 
     purgeChannel.send(purgeEmbed);
 
