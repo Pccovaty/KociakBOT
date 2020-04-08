@@ -129,48 +129,48 @@ bot.on("message", async message => {
 
 });
 
-/*const ser = {
-  guildID: "536236212168425482",
- totalUsersID: "696681298877743175",
- botCountID: "696676920309317743",
-  onlinecountID: "696676898629091378",
-  banID: "696676910284931083"
+//const ser = {
+ // guildID: "536236212168425482",
+ //totalUsersID: "696681298877743175",
+ //botCountID: "696676920309317743",
+  //onlinecountID: "696676898629091378",
+  //banID: "696676910284931083"
 
-};
-bot.on("guildBanAdd", guild => {
-  guild.fetchBans().then(bans => {
-          bot.channels.get(ser.banID).setName(`» Banów: ${bans.size}`);
-  });
-  });
-bot.on("guildMemberAdd", member => {
+//};
+//bot.on("guildBanAdd", guild => {
+ // guild.fetchBans().then(bans => {
+   //       bot.channels.get(ser.banID).setName(`» Banów: ${bans.size}`);
+  //});
+  //});
+//bot.on("guildMemberAdd", member => {
   
-  if (member.guild.id !== ser.guildID) return;
+  //if (member.guild.id !== ser.guildID) return;
 
-  bot.channels.get(ser.totalUsersID).setName(`|👥| Osób: ${member.guild.memberCount}`);
-  bot.channels.get(ser.onlinecountID).setName(`|👭| ${member.user.tag}`);
-  bot.channels.get(ser.botCountID).setName(`|🤖| Boty: ${member.guild.members.filter(m => m.user.bot).size}`);
-});
-bot.on("guildMemberRemove", member => {
+  //bot.channels.get(ser.totalUsersID).setName(`|👥| Osób: ${member.guild.memberCount}`);
+  //bot.channels.get(ser.onlinecountID).setName(`|👭| ${member.user.tag}`);
+  //bot.channels.get(ser.botCountID).setName(`|🤖| Boty: ${member.guild.members.filter(m => m.user.bot).size}`);
+//});
+//bot.on("guildMemberRemove", member => {
 
-  if (member.guild.id !== ser.guildID) return;
+  //if (member.guild.id !== ser.guildID) return;
 
-  bot.channels.get(ser.totalUsersID).setName(`|👥| Osób: ${member.guild.memberCount}`);
- bot.channels.get(ser.botCountID).setName(`|🤖| Boty: ${member.guild.members.filter(m => m.user.bot).size}`);
-}); /*/
-bot.on("guildMemberAdd", async member => {
-const welcomechannel = member.guild.channels.find(`id`, '692282990008467477');
-  const welcomeEmebed = new Discord.RichEmbed()
-  .setColor("BLUE")
-  .setDescription(`Witaj ${member.user.tag} na naszym serwerze! Cieszymy się że przybyłeś.`)
+  //bot.channels.get(ser.totalUsersID).setName(`|👥| Osób: ${member.guild.memberCount}`);
+ //bot.channels.get(ser.botCountID).setName(`|🤖| Boty: ${member.guild.members.filter(m => m.user.bot).size}`);
+//}); /*/
+//bot.on("guildMemberAdd", async member => {
+//const welcomechannel = member.guild.channels.find(`id`, '692282990008467477');
+ // const welcomeEmebed = new Discord.RichEmbed()
+  //.setColor("BLUE")
+  //.setDescription(`Witaj ${member.user.tag} na naszym serwerze! Cieszymy się że przybyłeś.`)
 
- welcomechannel.send(welcomeEmebed)
-});
-bot.on("guildMemberRemove", async member => {
-  const incidentchannel = member.guild.channels.find('id', '692282990008467477');//mod-log channel name. change for you
-  if (!incidentchannel) return message.channel.send("Nie mogę znaleźć kanału :(");
-  incidentchannel.send(`Użytkownik ${member.user.tag} Opuścił serwer :(`)
+ //welcomechannel.send(welcomeEmebed)
+//});
+//bot.on("guildMemberRemove", async member => {
+  //const incidentchannel = member.guild.channels.find('id', '692282990008467477');//mod-log channel name. change for you
+  //if (!incidentchannel) return message.channel.send("Nie mogę znaleźć kanału :(");
+  //incidentchannel.send(`Użytkownik ${member.user.tag} Opuścił serwer :(`)
 
-});
+//});
 
 
 
@@ -251,21 +251,21 @@ bot.on("ready", async() => {
 
 
 
- /*   const data = setInterval(function () {
+ //   const data = setInterval(function () {
   
-       let data = moment().format("DD.MM.YYYY");
-        bot.channels.get('697405216190103632').setName(" » Dzisiaj jest: " + data);
+   //    let data = moment().format("DD.MM.YYYY");
+     //   bot.channels.get('697405216190103632').setName(" » Dzisiaj jest: " + data);
   
-      }, 1 * 1000);
+ //     }, 1 * 1000);
 
     
-const date = setInterval(function () {
+//const date = setInterval(function () {
   
-   let date = moment().format("HH:mm");
- bot.channels.get('697405302978641932').setName("» Godzina: " + date);
- }, 1 * 1000); 
-});
-/*/
+  // let date = moment().format("HH:mm");
+ //bot.channels.get('697405302978641932').setName("» Godzina: " + date);
+ //}, 1 * 1000); 
+//});
+
  bot.on("message", async message => {
 
    
