@@ -219,7 +219,7 @@ bot.on("ready", async() => {
  
      let online = all - offline;
  
-        bot.channels.get('').setName("|🔵| Online: " + online);
+        bot.channels.get('697405109365243924').setName("|🔵| Online: " + online);
  
         all = 0;
         offline = 0;
@@ -251,10 +251,10 @@ bot.on("ready", async() => {
 
 
 
- /*   const data = setInterval(function () {
+    const data = setInterval(function () {
   
        let data = moment().format("DD.MM.YYYY");
-        bot.channels.get('523819168689029121').setName(" » Dzisiaj jest: " + data);
+        bot.channels.get('697405216190103632').setName(" » Dzisiaj jest: " + data);
   
       }, 1 * 1000);
 
@@ -262,8 +262,8 @@ bot.on("ready", async() => {
 const date = setInterval(function () {
   
    let date = moment().format("HH:mm");
- bot.channels.get('533016026888011786').setName("» Godzina: " + date);
- }, 1 * 1000); */
+ bot.channels.get('697405302978641932').setName("» Godzina: " + date);
+ }, 1 * 1000); 
 });
 
  bot.on("message", async message => {
