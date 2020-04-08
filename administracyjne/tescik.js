@@ -7,7 +7,16 @@ module.exports.run = async (bot, message, args) => {
         2) Remove the awaitReactions() function as we won't need that anymore
         3) Customize the message a bit more to fit a general welcome channel
     */
-
+      let users = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);	
+  if (!users) return errors.cantfindUser(message.channel);	
+  let role = args.join(" ").slice(22);	
+  if (!role) return message.reply("Najpierw podaj nazwe roli").then(msg => { msg.delete(5000)})	
+  let gRole = message.guild.roles.find(`name`, role);	
+  if (!gRole) return message.reply("Nie znalazlem roli").then(msg => { msg.delete(5000)})	
+  message.delete()	
+  if (users.roles.has(gRole.id)) return message.reply(`Ten użytkownik ma już role **${gRole.name}**..`).then(msg => { msg.delete(5000)	
+  });	
+  await (users.addRole(gRole.id));	 
     await message.delete().catch(O_o => {});
 
     const a = message.guild.roles.get('697382703179366461'); // gracz
