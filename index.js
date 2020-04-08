@@ -128,13 +128,13 @@ bot.on("message", async message => {
   }
 
 });
-/*
+
 const ser = {
-  guildID: "435686053408538624",
- totalUsersID: "467226426563756032",
- botCountID: "523590251856265225",
-  onlinecountID: "481414408699117568",
-  banID: "523588993678311426"
+  guildID: "536236212168425482",
+ totalUsersID: "696681298877743175",
+ botCountID: "696676920309317743",
+  onlinecountID: "696676898629091378",
+  banID: "696676910284931083"
 
 };
 bot.on("guildBanAdd", guild => {
@@ -156,7 +156,7 @@ bot.on("guildMemberRemove", member => {
 
   bot.channels.get(ser.totalUsersID).setName(`|👥| Osób: ${member.guild.memberCount}`);
  bot.channels.get(ser.botCountID).setName(`|🤖| Boty: ${member.guild.members.filter(m => m.user.bot).size}`);
-}); */
+}); 
 bot.on("guildMemberAdd", async member => {
 const welcomechannel = member.guild.channels.find(`id`, '692282990008467477');
   const welcomeEmebed = new Discord.RichEmbed()
@@ -196,21 +196,21 @@ bot.on("message", async message => {
     .setTitle("Informacje o bocie WellsBOT")
     .setColor("#a630ff")
     .setThumbnail(bicon)
-    .addField("O Nas", "Bot Tylko i wyłącznie dla serwera ``1ck``. Posiada ``42`` komend, autorem bota jest <@340557425511759892> (**Dsaffy#6846**)")
+    .addField("O Nas", "Bot Tylko i wyłącznie dla serwera ``Kocia Ziemia``. Posiada ``42`` komend, autorem bota jest <@340557425511759892> (**Dsaffy#6846**)")
     .addField("Lista Komend", "Prefix bota to: ``!!``. Wszystkie komendy dostępne są pod: ``!!help``")
     .setFooter(`Komenda użyta przez ${message.author.username}`, `${message.author.avatarURL}`)
     message.channel.send(embed)
   }
 
 });
-/*bot.on("ready", async() => {
-	let guild = bot.guilds.get('G435686053408538624');
+bot.on("ready", async() => {
+	let guild = bot.guilds.get('696676898629091378');
  
     let all = 0;
     let offline = 0;
  
     const interval = setInterval(function () {
-        let guild = bot.guilds.get('435686053408538624');
+        let guild = bot.guilds.get('696676898629091378');
         guild.members.forEach(member => {
  
           if (!member.user.bot) all++;
@@ -225,13 +225,13 @@ bot.on("message", async message => {
         offline = 0;
  
      }, 1 * 5000);
-}); */
+}); 
 bot.on("ready", async() => {
       setInterval(async () => {
     const statuslist = [
 
-      `1ck Zaprasza`,
-      `Bot stworzony przez Mateusz Bieniek`
+      `prefix to: !!`,
+      `Bot stworzony przez Dsaffy#6846`
     ];
     const random = Math.floor(Math.random() * statuslist.length);
 
