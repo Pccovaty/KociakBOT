@@ -203,29 +203,29 @@ bot.on("message", async message => {
   }
 
 });
-bot.on("ready", async() => {
-	let guild = bot.guilds.get('696676898629091378');
+// bot.on("ready", async() => {
+//	let guild = bot.guilds.get('696676898629091378');
  
-    let all = 0;
-    let offline = 0;
+ //   let all = 0;
+   // let offline = 0;
  
-    const interval = setInterval(function () {
-        let guild = bot.guilds.get('696676898629091378');
-        guild.members.forEach(member => {
+    //const interval = setInterval(function () {
+      //  let guild = bot.guilds.get('696676898629091378');
+        //guild.members.forEach(member => {
  
-          if (!member.user.bot) all++;
-      if (member.user.presence.status == 'offline' && !member.user.bot) offline++;
-        });
+          //if (!member.user.bot) all++;
+     // if (member.user.presence.status == 'offline' && !member.user.bot) offline++;
+      //  });
  
-     let online = all - offline;
+   //  let online = all - offline;
  
-        bot.channels.get('697405109365243924').setName("|🔵| Online: " + online);
+      //  bot.channels.get('697405109365243924').setName("|🔵| Online: " + online);
  
-        all = 0;
-        offline = 0;
+      //  all = 0;
+     //   offline = 0;
  
-     }, 1 * 5000);
-}); 
+  //   }, 1 * 5000); 
+//}); 
 bot.on("ready", async() => {
       setInterval(async () => {
     const statuslist = [
