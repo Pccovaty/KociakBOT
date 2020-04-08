@@ -215,11 +215,11 @@ bot.on("message", async message => {
  
     //      if (!member.user.bot) all++;
     ///  if (member.user.presence.status == 'offline' && !member.user.bot) offline++;
-    /   });
+    //  });
  
   //   let online = all - offline;
  
-    ///    bot.channels.get('697405109365243924').setName("|🔵| Online: " + online);
+    //   bot.channels.get('697405109365243924').setName("|🔵| Online: " + online);
  
    //    all = 0;
     //   offline = 0;
