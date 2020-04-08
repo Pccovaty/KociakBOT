@@ -129,7 +129,7 @@ bot.on("message", async message => {
 
 });
 
-const ser = {
+/*const ser = {
   guildID: "536236212168425482",
  totalUsersID: "696681298877743175",
  botCountID: "696676920309317743",
@@ -156,7 +156,7 @@ bot.on("guildMemberRemove", member => {
 
   bot.channels.get(ser.totalUsersID).setName(`|👥| Osób: ${member.guild.memberCount}`);
  bot.channels.get(ser.botCountID).setName(`|🤖| Boty: ${member.guild.members.filter(m => m.user.bot).size}`);
-}); 
+}); /*/
 bot.on("guildMemberAdd", async member => {
 const welcomechannel = member.guild.channels.find(`id`, '692282990008467477');
   const welcomeEmebed = new Discord.RichEmbed()
@@ -251,7 +251,7 @@ bot.on("ready", async() => {
 
 
 
-    const data = setInterval(function () {
+ /*   const data = setInterval(function () {
   
        let data = moment().format("DD.MM.YYYY");
         bot.channels.get('697405216190103632').setName(" » Dzisiaj jest: " + data);
@@ -265,7 +265,7 @@ const date = setInterval(function () {
  bot.channels.get('697405302978641932').setName("» Godzina: " + date);
  }, 1 * 1000); 
 });
-
+/*/
  bot.on("message", async message => {
 
    
