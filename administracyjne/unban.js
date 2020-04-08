@@ -22,7 +22,7 @@ exports.run = (bot, message, args) => {
   bot.unbanReason = reason;
   bot.unbanAuth = message.author;
   
-  let modlog = message.guild.channels.find('id', '692277589997387857');//mod-log channel name. change for you
+  let modlog = message.guild.channels.find('id', '697378000152297512');//mod-log channel name. change for you
   if (!modlog) return message.reply('`mod-log` Nie znalazłem kanału ``mod-log``');//don't find mod-log channel.
   if (!member) return message.reply('**Wpisz tutaj **__ID__** osoby zbanowanej**').catch(console.error);
   message.guild.unban(member);
