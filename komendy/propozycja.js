@@ -3,8 +3,8 @@ const moment = require("moment")
 const agree = "526698392810815518"
 const nieagre = "526698394543194112"
 module.exports.run = async(bot, message, args) => {
-  const incidentchannel = message.guild.channels.find("id", "522431708755263504");
-  if (!incidentchannel) return message.channel.send("Nie mogę znaleźć kanału. ``522431708755263504``");
+  const incidentchannel = message.guild.channels.find("id", "827128678021464134");
+  if (!incidentchannel) return message.channel.send("Nie mogę znaleźć kanału. ``827128678021464134``");
   const sayMessage = args.join(" ");
   message.delete().catch();
   const embed = new Discord.RichEmbed()
