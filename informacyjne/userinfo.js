@@ -18,7 +18,7 @@ module.exports.run = async(bot, message, args) => {
     .setColor("RANDOM")
     .setThumbnail(user.avatarURL)
     .setTitle(`${user.username}#${user.discriminator}`)
-    .setDescription(`**Pseudonim:** ${member.nickname !== null ? `${member.nickname}` : "Brak pseudonimu"} \n **Dołączył na Discord:** ${moment(user.createdAt).format('DD.MM.YYYY HH:mm:ss')} \n **Dołączł na serwer:** ${moment(member.joinedAt).format("DD.MM.YYYY HH:mm:ss")}  \n **Status:** ${user.presence.status} \n **w grze:** ${user.presence.game ? user.presence.game.name : "Użytkownik nie gra w żadną gre"} \n **Role:** ${member.roles.size} więcej informacji pod komendą **__!!profil role__** `)
+    .setDescription(`**Pseudonim:** `${member.nickname}` : "Brak pseudonimu"} \n **Dołączył na Discord:** ${moment(user.createdAt).format('DD.MM.YYYY HH:mm:ss')} \n **Dołączł na serwer:** ${moment(member.joinedAt).format("DD.MM.YYYY HH:mm:ss")}  \n **Status:** ${user.presence.status} \n **w grze:** ${user.presence.game ? user.presence.game.name : "Użytkownik nie gra w żadną gre"} \n **Role:** ${member.roles.size} więcej informacji pod komendą **__!!profil role__** `)
 
     const profilkolor = new Discord.RichEmbed()
     .setThumbnail(user.avatarURL)
