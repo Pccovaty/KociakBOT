@@ -88,47 +88,6 @@ fs.readdir("./4fun/", (err, files) => {
   });
 });
 
-bot.on("message", async message => {
-	
-  let content = message.content;
-  let bannedWords = ["discord.gg", ".gg/", ".gg /", ". gg /", ". gg/", "discord .gg /", "discord.gg /", "discord .gg/", "discord .gg", "discord . gg", "discord. gg", "discord gg", "discordgg", "discord gg /"];
-  try {
-    if (bannedWords.some(word => content.toLowerCase().includes(word))) {
-     // if (message.author.id === message.guild.ownerID) return;
-      if (message.content.includes("/FYaZxyt")) return;
-      //message.channel.guild.roles.forEach(role => {
-      //  if (role.name.toLowerCase().includes("moderator")) message.channel.send(`<@&${role.id}>, banować!`);
-      //});
-      //message.channel.send(`<@341454923495637002>, banuj!`);
-      let banUser = message.member;
-      let userIcon = banUser.user.displayAvatarURL;
-      if (banUser.hasPermission("BAN_MEMBERS")) return;
-      let banReason = "Reklama serwera Discord.";
-      let error = false;
-      message.guild.member(banUser).ban(banReason).catch(O_o => {
-        error = true;
-        return message.channel.send("Nie mogę zbanować tego użytkownika, nie mam do tego permisji!");
-       
-      }).then(() => {
-        if (error) return;
-        message.delete().catch(O_o => {});
-        
-         const embed = new Discord.RichEmbed()
-        .setTitle("Automatyczny ban")
-        .setColor("RED")
-        .setThumbnail(userIcon)
-        .setDescription(`**Zbanowana osoba:** ${banUser.user.tag} \n ** Zbanowana przez:** ${bot.user.tag} \n **Powod:** ${banReason}`)
-        const kanal = message.guild.channels.find('id', '571244340584644619');//mod-log channel name. change for you
-        kanal.send(embed);
-      });
-    }
-  } catch (e) {
-    console.log(e);
-	  
-  }
-
-});
-
 
 bot.on(`message`, async message => {
   if(message.content ===  `!!reboot`) { 
@@ -152,8 +111,8 @@ bot.on("message", async message => {
     .setTitle("Informacje o bocie WellsBOT")
     .setColor("#a630ff")
     .setThumbnail(bicon)
-    .addField("O Nas", "Bot Tylko i wyłącznie dla serwera ``Kocia Ziemia``. Posiada ``42`` komend, autorem bota jest <@340557425511759892> (**Dsaffy#6846**)")
-    .addField("Lista Komend", "Prefix bota to: ``!!``. Wszystkie komendy dostępne są pod: ``!!help``")
+    .addField("O Nas", "Bot Tylko i wyłącznie dla serwera ``CSY``. Posiada ``42`` komend, autorem bota jest <@340557425511759892> (**Benek#6846**)")
+    .addField("Lista Komend", "Prefix bota to: ``.``. Wszystkie komendy dostępne są pod: ``.help``")
     .setFooter(`Komenda użyta przez ${message.author.username}`, `${message.author.avatarURL}`)
     message.channel.send(embed)
   }
@@ -163,8 +122,8 @@ bot.on("ready", async() => {
       setInterval(async () => {
     const statuslist = [
 
-      `prefix to: !!`,
-      `Bot stworzony przez Dsaffy#6846`
+      `prefix to: .`,
+      `Bot stworzony przez Benek#6846`
     ];
     const random = Math.floor(Math.random() * statuslist.length);
 
