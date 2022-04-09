@@ -13,7 +13,7 @@
     "discord.js": "^11.3.2",
     "fortnite": "^4.1.1",
     "fs": "0.0.1-security",
-    "moment": "^2.22.2",
+    "moment": "^2.29.2",
     "nodemon": "^1.18.1",
     "snekfetch": "^4.0.4",
     "superagent": "^3.8.3",
